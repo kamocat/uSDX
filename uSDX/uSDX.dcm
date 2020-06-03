@@ -1,3 +1,8 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP AP6320x
+K AP63203 AP63205 buck regulator
+F https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf
+$ENDCMP
+#
 #End Doc Library
