@@ -38,12 +38,12 @@ $EndComp
 $Comp
 L 74xx:74LS00 U3
 U 5 1 5ED898A2
-P 1950 6250
-F 0 "U3" H 2180 6296 50  0000 L CNN
-F 1 "74ACT00" H 2180 6205 50  0000 L CNN
-F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 1950 6250 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 1950 6250 50  0001 C CNN
-	5    1950 6250
+P 1950 6800
+F 0 "U3" H 2180 6846 50  0000 L CNN
+F 1 "74ACT00" H 2180 6755 50  0000 L CNN
+F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 1950 6800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 1950 6800 50  0001 C CNN
+	5    1950 6800
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -82,12 +82,12 @@ $EndComp
 $Comp
 L Amplifier_Operational:LM4562 U2
 U 3 1 5ED9025C
-P 1300 6300
-F 0 "U2" H 1258 6346 50  0000 L CNN
-F 1 "LM4562" H 1258 6255 50  0000 L CNN
-F 2 "Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm" H 1300 6300 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lm4562.pdf" H 1300 6300 50  0001 C CNN
-	3    1300 6300
+P 1300 6850
+F 0 "U2" H 1258 6896 50  0000 L CNN
+F 1 "LM4562" H 1258 6805 50  0000 L CNN
+F 2 "Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm" H 1300 6850 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4562.pdf" H 1300 6850 50  0001 C CNN
+	3    1300 6850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -101,7 +101,6 @@ F 3 "~" H 9650 2760 50  0001 C CNN
 	1    9650 2500
 	1    0    0    -1  
 $EndComp
-NoConn ~ 2900 6450
 Wire Wire Line
 	3000 4100 3000 4200
 Wire Wire Line
@@ -259,23 +258,23 @@ $EndComp
 $Comp
 L power:+5V #PWR015
 U 1 1 5EDD4892
-P 1950 5750
-F 0 "#PWR015" H 1950 5600 50  0001 C CNN
-F 1 "+5V" H 1965 5923 50  0000 C CNN
-F 2 "" H 1950 5750 50  0001 C CNN
-F 3 "" H 1950 5750 50  0001 C CNN
-	1    1950 5750
+P 1950 6300
+F 0 "#PWR015" H 1950 6150 50  0001 C CNN
+F 1 "+5V" H 1965 6473 50  0000 C CNN
+F 2 "" H 1950 6300 50  0001 C CNN
+F 3 "" H 1950 6300 50  0001 C CNN
+	1    1950 6300
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR016
 U 1 1 5EDD5519
-P 1950 6750
-F 0 "#PWR016" H 1950 6500 50  0001 C CNN
-F 1 "GND" H 1955 6577 50  0000 C CNN
-F 2 "" H 1950 6750 50  0001 C CNN
-F 3 "" H 1950 6750 50  0001 C CNN
-	1    1950 6750
+P 1950 7300
+F 0 "#PWR016" H 1950 7050 50  0001 C CNN
+F 1 "GND" H 1955 7127 50  0000 C CNN
+F 2 "" H 1950 7300 50  0001 C CNN
+F 3 "" H 1950 7300 50  0001 C CNN
+	1    1950 7300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -559,9 +558,9 @@ Text Label 4800 1150 0    50   ~ 0
 ADC0
 Text Label 4800 2500 0    50   ~ 0
 ADC1
-Text Label 8800 1600 0    50   ~ 0
+Text Label 8800 2200 0    50   ~ 0
 ADC0
-Text Label 8800 1700 0    50   ~ 0
+Text Label 8800 2300 0    50   ~ 0
 ADC1
 $Comp
 L Device:C C15
@@ -1127,8 +1126,6 @@ Text Label 7350 2700 0    50   ~ 0
 SCL
 Text Label 7350 2900 0    50   ~ 0
 SDA
-Text Label 8800 1900 0    50   ~ 0
-BTN
 Wire Wire Line
 	10100 2950 10100 3400
 Connection ~ 10100 3400
@@ -1390,33 +1387,33 @@ Wire Wire Line
 $Comp
 L Device:Ferrite_Bead FB2
 U 1 1 5EDAC63B
-P 1200 5850
-F 0 "FB2" H 1063 5804 50  0000 R CNN
-F 1 "Ferrite_Bead" H 1063 5895 50  0000 R CNN
-F 2 "Resistors_SMD:R_0805" V 1130 5850 50  0001 C CNN
-F 3 "~" H 1200 5850 50  0001 C CNN
-	1    1200 5850
+P 1200 6400
+F 0 "FB2" H 1063 6354 50  0000 R CNN
+F 1 "Ferrite_Bead" H 1063 6445 50  0000 R CNN
+F 2 "Resistors_SMD:R_0805" V 1130 6400 50  0001 C CNN
+F 3 "~" H 1200 6400 50  0001 C CNN
+	1    1200 6400
 	-1   0    0    1   
 $EndComp
 $Comp
 L Device:C C8
 U 1 1 5EDADCF5
-P 750 6350
-F 0 "C8" H 635 6304 50  0000 R CNN
-F 1 "100n" H 635 6395 50  0000 R CNN
-F 2 "Capacitors_SMD:C_0805" H 788 6200 50  0001 C CNN
-F 3 "~" H 750 6350 50  0001 C CNN
-	1    750  6350
+P 750 6900
+F 0 "C8" H 635 6854 50  0000 R CNN
+F 1 "100n" H 635 6945 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0805" H 788 6750 50  0001 C CNN
+F 3 "~" H 750 6900 50  0001 C CNN
+	1    750  6900
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	750  6500 750  6600
+	750  7050 750  7150
 Wire Wire Line
-	750  6000 750  6200
+	750  6550 750  6750
 Wire Wire Line
-	1200 6000 750  6000
-Connection ~ 1200 6000
-Text Label 750  6000 0    50   ~ 0
+	1200 6550 750  6550
+Connection ~ 1200 6550
+Text Label 750  6550 0    50   ~ 0
 12v_clean
 Wire Wire Line
 	1100 1600 750  1600
@@ -1446,7 +1443,7 @@ Wire Wire Line
 	5000 5500 5100 5500
 Wire Wire Line
 	5100 5500 5100 5600
-Text HLabel 1200 5700 1    50   Input ~ 0
+Text HLabel 1200 6250 1    50   Input ~ 0
 12v
 Wire Wire Line
 	8200 800  8200 1300
@@ -1526,12 +1523,6 @@ Wire Wire Line
 Wire Wire Line
 	8800 2000 8700 2000
 Wire Wire Line
-	8700 1600 8800 1600
-Wire Wire Line
-	8700 1700 8800 1700
-Text Label 8800 1800 0    50   ~ 0
-MIC
-Wire Wire Line
 	8800 1800 8700 1800
 Wire Wire Line
 	7350 2700 7600 2700
@@ -1545,7 +1536,7 @@ U 1 1 5EE36B75
 P 8200 2300
 F 0 "U7" H 8150 1211 50  0000 C CNN
 F 1 "STM32F051K8Tx" H 8150 1120 50  0000 C CNN
-F 2 "Package_QFP:LQFP-32_7x7mm_P0.8mm" H 7700 1400 50  0001 R CNN
+F 2 "Housings_QFP:LQFP-32_7x7mm_Pitch0.8mm" H 7700 1400 50  0001 R CNN
 F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00039193.pdf" H 8200 2300 50  0001 C CNN
 	1    8200 2300
 	1    0    0    -1  
@@ -1673,21 +1664,21 @@ F 3 "" H 1100 2550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	750  6600 1000 6600
+	750  7150 1000 7150
 $Comp
 L power:GNDA #PWR0124
 U 1 1 5F0270FF
-P 1000 6600
-F 0 "#PWR0124" H 1000 6350 50  0001 C CNN
-F 1 "GNDA" H 1005 6427 50  0000 C CNN
-F 2 "" H 1000 6600 50  0001 C CNN
-F 3 "" H 1000 6600 50  0001 C CNN
-	1    1000 6600
+P 1000 7150
+F 0 "#PWR0124" H 1000 6900 50  0001 C CNN
+F 1 "GNDA" H 1005 6977 50  0000 C CNN
+F 2 "" H 1000 7150 50  0001 C CNN
+F 3 "" H 1000 7150 50  0001 C CNN
+	1    1000 7150
 	1    0    0    -1  
 $EndComp
-Connection ~ 1000 6600
+Connection ~ 1000 7150
 Wire Wire Line
-	1000 6600 1200 6600
+	1000 7150 1200 7150
 Connection ~ 6000 2050
 $Comp
 L power:GNDA #PWR0125
@@ -1733,8 +1724,6 @@ F 3 "http://www.adam-tech.com/downloader.php?p=ASJ-112-X.pdf" H 8000 4800 50  00
 	1    8000 4800
 	-1   0    0    -1  
 $EndComp
-Text Label 8800 2100 0    50   ~ 0
-MIC2
 Wire Wire Line
 	8800 2100 8700 2100
 $Comp
@@ -1778,34 +1767,34 @@ Wire Wire Line
 $Comp
 L Device:Ferrite_Bead FB1
 U 1 1 5F196E74
-P 850 5300
-F 0 "FB1" H 713 5254 50  0000 R CNN
-F 1 "Ferrite_Bead" H 713 5345 50  0000 R CNN
-F 2 "Resistors_SMD:R_0805" V 780 5300 50  0001 C CNN
-F 3 "~" H 850 5300 50  0001 C CNN
-	1    850  5300
+P 850 5850
+F 0 "FB1" H 713 5804 50  0000 R CNN
+F 1 "Ferrite_Bead" H 713 5895 50  0000 R CNN
+F 2 "Resistors_SMD:R_0805" V 780 5850 50  0001 C CNN
+F 3 "~" H 850 5850 50  0001 C CNN
+	1    850  5850
 	-1   0    0    1   
 $EndComp
 $Comp
 L power:GND #PWR0127
 U 1 1 5F1986B1
-P 850 5450
-F 0 "#PWR0127" H 850 5200 50  0001 C CNN
-F 1 "GND" H 855 5277 50  0000 C CNN
-F 2 "" H 850 5450 50  0001 C CNN
-F 3 "" H 850 5450 50  0001 C CNN
-	1    850  5450
+P 850 6000
+F 0 "#PWR0127" H 850 5750 50  0001 C CNN
+F 1 "GND" H 855 5827 50  0000 C CNN
+F 2 "" H 850 6000 50  0001 C CNN
+F 3 "" H 850 6000 50  0001 C CNN
+	1    850  6000
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GNDA #PWR0128
 U 1 1 5F199760
-P 850 5150
-F 0 "#PWR0128" H 850 4900 50  0001 C CNN
-F 1 "GNDA" H 855 4977 50  0000 C CNN
-F 2 "" H 850 5150 50  0001 C CNN
-F 3 "" H 850 5150 50  0001 C CNN
-	1    850  5150
+P 850 5700
+F 0 "#PWR0128" H 850 5450 50  0001 C CNN
+F 1 "GNDA" H 855 5527 50  0000 C CNN
+F 2 "" H 850 5700 50  0001 C CNN
+F 3 "" H 850 5700 50  0001 C CNN
+	1    850  5700
 	-1   0    0    1   
 $EndComp
 Text Label 11000 2850 0    50   ~ 0
@@ -2025,4 +2014,42 @@ F 3 "http://www.adam-tech.com/downloader.php?p=ASJ-112-X.pdf" H 8500 5950 50  00
 	1    8500 5950
 	-1   0    0    1   
 $EndComp
+$Comp
+L Connector:Conn_01x02_Female J9
+U 1 1 5F0E8087
+P 2100 5650
+F 0 "J9" H 2128 5626 50  0000 L CNN
+F 1 "Conn_01x02_Female" H 2128 5535 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 2100 5650 50  0001 C CNN
+F 3 "~" H 2100 5650 50  0001 C CNN
+	1    2100 5650
+	1    0    0    -1  
+$EndComp
+Text HLabel 1850 5650 0    50   Input ~ 0
+12v
+Wire Wire Line
+	1850 5650 1900 5650
+$Comp
+L power:GND #PWR02
+U 1 1 5F12A081
+P 1850 5750
+F 0 "#PWR02" H 1850 5500 50  0001 C CNN
+F 1 "GND" H 1855 5577 50  0000 C CNN
+F 2 "" H 1850 5750 50  0001 C CNN
+F 3 "" H 1850 5750 50  0001 C CNN
+	1    1850 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 5750 1900 5750
+Wire Wire Line
+	8800 2200 8700 2200
+Wire Wire Line
+	8800 2300 8700 2300
+Text Label 8800 1900 0    50   ~ 0
+MIC2
+Text Label 8800 2100 0    50   ~ 0
+MIC
+Text Label 8800 1800 0    50   ~ 0
+BTN
 $EndSCHEMATC

@@ -253,34 +253,12 @@ $EndComp
 Wire Wire Line
 	4050 2450 4300 2450
 $Comp
-L Transistor_FET:BS170F Q3
-U 1 1 5ED6EC62
-P 3350 2800
-F 0 "Q3" H 3555 2846 50  0000 L CNN
-F 1 "BS170F" H 3555 2755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3550 2725 50  0001 L CIN
-F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 3350 2800 50  0001 L CNN
-	1    3350 2800
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_FET:BS170F Q2
-U 1 1 5ED7155E
-P 2800 2800
-F 0 "Q2" H 3005 2846 50  0000 L CNN
-F 1 "BS170F" H 3005 2755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3000 2725 50  0001 L CIN
-F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 2800 2800 50  0001 L CNN
-	1    2800 2800
-	1    0    0    -1  
-$EndComp
-$Comp
 L Transistor_FET:BS170F Q1
 U 1 1 5ED72E39
 P 2300 2800
 F 0 "Q1" H 2505 2846 50  0000 L CNN
 F 1 "BS170F" H 2505 2755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 2500 2725 50  0001 L CIN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 2500 2725 50  0001 L CIN
 F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 2300 2800 50  0001 L CNN
 	1    2300 2800
 	1    0    0    -1  
@@ -330,17 +308,6 @@ Wire Wire Line
 Wire Wire Line
 	3150 3350 2600 3350
 Connection ~ 2600 3350
-$Comp
-L Transistor_FET:BS170F Q4
-U 1 1 5EE4EC38
-P 4600 1800
-F 0 "Q4" H 4805 1846 50  0000 L CNN
-F 1 "BS170F" H 4805 1755 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 4800 1725 50  0001 L CIN
-F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 4600 1800 50  0001 L CNN
-	1    4600 1800
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:C C2
 U 1 1 5EE528A3
@@ -459,4 +426,222 @@ F 3 "https://www.molex.com/pdm_docs/sd/731000105_sd.pdf" H 6600 2450 50  0001 C 
 	1    6600 2450
 	1    0    0    -1  
 $EndComp
+$Comp
+L Transistor_FET:BS170F Q2
+U 1 1 5EEEC0B8
+P 2800 2800
+F 0 "Q2" H 3005 2846 50  0000 L CNN
+F 1 "BS170F" H 3005 2755 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 3000 2725 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 2800 2800 50  0001 L CNN
+	1    2800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BS170F Q3
+U 1 1 5EEEE19F
+P 3350 2800
+F 0 "Q3" H 3555 2846 50  0000 L CNN
+F 1 "BS170F" H 3555 2755 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 3550 2725 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 3350 2800 50  0001 L CNN
+	1    3350 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:BS170F Q4
+U 1 1 5EEEFFE4
+P 4600 1800
+F 0 "Q4" H 4805 1846 50  0000 L CNN
+F 1 "BS170F" H 4805 1755 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 4800 1725 50  0001 L CIN
+F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 4600 1800 50  0001 L CNN
+	1    4600 1800
+	1    0    0    -1  
+$EndComp
+Text HLabel 2450 4150 0    50   Input ~ 0
+12v
+$Comp
+L Device:C C38
+U 1 1 5F215E00
+P 2550 4300
+F 0 "C38" H 2665 4346 50  0000 L CNN
+F 1 "10u" H 2665 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2588 4150 50  0001 C CNN
+F 3 "~" H 2550 4300 50  0001 C CNN
+	1    2550 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C39
+U 1 1 5F21646D
+P 2900 4300
+F 0 "C39" H 3015 4346 50  0000 L CNN
+F 1 "10u" H 3015 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 2938 4150 50  0001 C CNN
+F 3 "~" H 2900 4300 50  0001 C CNN
+	1    2900 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C40
+U 1 1 5F216926
+P 3250 4300
+F 0 "C40" H 3365 4346 50  0000 L CNN
+F 1 "10u" H 3365 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3288 4150 50  0001 C CNN
+F 3 "~" H 3250 4300 50  0001 C CNN
+	1    3250 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C41
+U 1 1 5F216D55
+P 3600 4300
+F 0 "C41" H 3715 4346 50  0000 L CNN
+F 1 "10u" H 3715 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3638 4150 50  0001 C CNN
+F 3 "~" H 3600 4300 50  0001 C CNN
+	1    3600 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C42
+U 1 1 5F2170BD
+P 3950 4300
+F 0 "C42" H 4065 4346 50  0000 L CNN
+F 1 "10u" H 4065 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 3988 4150 50  0001 C CNN
+F 3 "~" H 3950 4300 50  0001 C CNN
+	1    3950 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 4150 2550 4150
+Connection ~ 2550 4150
+Wire Wire Line
+	2550 4150 2900 4150
+Connection ~ 2900 4150
+Wire Wire Line
+	2900 4150 3250 4150
+Connection ~ 3250 4150
+Wire Wire Line
+	3250 4150 3600 4150
+Connection ~ 3600 4150
+Wire Wire Line
+	3600 4150 3950 4150
+$Comp
+L power:GND #PWR03
+U 1 1 5F219D7A
+P 3250 4450
+F 0 "#PWR03" H 3250 4200 50  0001 C CNN
+F 1 "GND" H 3255 4277 50  0000 C CNN
+F 2 "" H 3250 4450 50  0001 C CNN
+F 3 "" H 3250 4450 50  0001 C CNN
+	1    3250 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 4450 2900 4450
+Connection ~ 2900 4450
+Wire Wire Line
+	2900 4450 3250 4450
+Connection ~ 3250 4450
+Wire Wire Line
+	3250 4450 3600 4450
+Connection ~ 3600 4450
+Wire Wire Line
+	3600 4450 3950 4450
+$Comp
+L Device:C C43
+U 1 1 5F22075C
+P 4300 4300
+F 0 "C43" H 4415 4346 50  0000 L CNN
+F 1 "10u" H 4415 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4338 4150 50  0001 C CNN
+F 3 "~" H 4300 4300 50  0001 C CNN
+	1    4300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C44
+U 1 1 5F220766
+P 4650 4300
+F 0 "C44" H 4765 4346 50  0000 L CNN
+F 1 "10u" H 4765 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 4688 4150 50  0001 C CNN
+F 3 "~" H 4650 4300 50  0001 C CNN
+	1    4650 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C45
+U 1 1 5F220770
+P 5000 4300
+F 0 "C45" H 5115 4346 50  0000 L CNN
+F 1 "10u" H 5115 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5038 4150 50  0001 C CNN
+F 3 "~" H 5000 4300 50  0001 C CNN
+	1    5000 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C46
+U 1 1 5F22077A
+P 5350 4300
+F 0 "C46" H 5465 4346 50  0000 L CNN
+F 1 "10u" H 5465 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5388 4150 50  0001 C CNN
+F 3 "~" H 5350 4300 50  0001 C CNN
+	1    5350 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C47
+U 1 1 5F220784
+P 5700 4300
+F 0 "C47" H 5815 4346 50  0000 L CNN
+F 1 "10u" H 5815 4255 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 5738 4150 50  0001 C CNN
+F 3 "~" H 5700 4300 50  0001 C CNN
+	1    5700 4300
+	1    0    0    -1  
+$EndComp
+Connection ~ 4300 4150
+Wire Wire Line
+	4300 4150 4650 4150
+Connection ~ 4650 4150
+Wire Wire Line
+	4650 4150 5000 4150
+Connection ~ 5000 4150
+Wire Wire Line
+	5000 4150 5350 4150
+Connection ~ 5350 4150
+Wire Wire Line
+	5350 4150 5700 4150
+$Comp
+L power:GND #PWR04
+U 1 1 5F220797
+P 5000 4450
+F 0 "#PWR04" H 5000 4200 50  0001 C CNN
+F 1 "GND" H 5005 4277 50  0000 C CNN
+F 2 "" H 5000 4450 50  0001 C CNN
+F 3 "" H 5000 4450 50  0001 C CNN
+	1    5000 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 4450 4650 4450
+Connection ~ 4650 4450
+Wire Wire Line
+	4650 4450 5000 4450
+Connection ~ 5000 4450
+Wire Wire Line
+	5000 4450 5350 4450
+Connection ~ 5350 4450
+Wire Wire Line
+	5350 4450 5700 4450
+Wire Wire Line
+	3950 4150 4300 4150
+Connection ~ 3950 4150
 $EndSCHEMATC
