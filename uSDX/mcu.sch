@@ -188,17 +188,6 @@ Vbias
 Text HLabel 1000 2150 0    50   Input ~ 0
 Rx
 $Comp
-L Device:R_US R1
-U 1 1 5ED90241
-P 1100 2400
-F 0 "R1" V 1305 2400 50  0000 C CNN
-F 1 "10k" V 1214 2400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805" V 1140 2390 50  0001 C CNN
-F 3 "~" H 1100 2400 50  0001 C CNN
-	1    1100 2400
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R_US R3
 U 1 1 5ED90F83
 P 1100 1750
@@ -1418,14 +1407,12 @@ Text Label 750  6550 0    50   ~ 0
 Wire Wire Line
 	1100 1600 750  1600
 Text Label 750  1600 0    50   ~ 0
-12v_clean
+AVCC
 Text HLabel 8800 2800 2    50   Input ~ 0
 Rx_En
 Connection ~ 1100 2150
 Wire Wire Line
 	1100 1900 1100 2150
-Wire Wire Line
-	1100 2250 1100 2150
 $Comp
 L power:GND #PWR0113
 U 1 1 5EE6D6F0
@@ -1650,17 +1637,6 @@ F 1 "GNDA" H 5255 1427 50  0000 C CNN
 F 2 "" H 5250 1600 50  0001 C CNN
 F 3 "" H 5250 1600 50  0001 C CNN
 	1    5250 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR0123
-U 1 1 5F026941
-P 1100 2550
-F 0 "#PWR0123" H 1100 2300 50  0001 C CNN
-F 1 "GNDA" H 1105 2377 50  0000 C CNN
-F 2 "" H 1100 2550 50  0001 C CNN
-F 3 "" H 1100 2550 50  0001 C CNN
-	1    1100 2550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
