@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ECS-TXO-2016
+D Temperature-controlelled crystal oscillator
+K TXCO
+F https://www.ecsxtal.com/store/pdf/ECS-TXO-2016.pdf
+$ENDCMP
+#
+#End Doc Library
