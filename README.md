@@ -1,8 +1,5 @@
 # uSDX smd: An effecient and lightweight HF radio
 
-This project is a fork of Guido's [QCX-SSB](https://github.com/threeme3/QCX-SSB).
-You can participate in ongoing discussion at the [uSDX forum](https://groups.io/g/ucx).
-
 Goals of this particular build:
 - Light enough for backpacking (5oz without batteries, 12oz with batteries)
 - Effeciency for extended operation on battery power
