@@ -1,0 +1,377 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 4800 2900 1    50   Input ~ 0
+Vcc
+$Comp
+L power:GND #PWR04
+U 1 1 5ED2DC9F
+P 4800 3850
+F 0 "#PWR04" H 4800 3600 50  0001 C CNN
+F 1 "GND" H 4805 3677 50  0000 C CNN
+F 2 "" H 4800 3850 50  0001 C CNN
+F 3 "" H 4800 3850 50  0001 C CNN
+	1    4800 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V2
+U 1 1 5ED2E601
+P 4100 4800
+F 0 "V2" H 4328 4846 50  0000 L CNN
+F 1 "12" H 4328 4755 50  0000 L CNN
+F 2 "" H 4100 4800 50  0001 C CNN
+F 3 "~" H 4100 4800 50  0001 C CNN
+	1    4100 4800
+	1    0    0    -1  
+$EndComp
+Text GLabel 4100 4500 1    50   Input ~ 0
+Vcc
+$Comp
+L power:GND #PWR01
+U 1 1 5ED3060B
+P 4100 5100
+F 0 "#PWR01" H 4100 4850 50  0001 C CNN
+F 1 "GND" H 4105 4927 50  0000 C CNN
+F 2 "" H 4100 5100 50  0001 C CNN
+F 3 "" H 4100 5100 50  0001 C CNN
+	1    4100 5100
+	1    0    0    -1  
+$EndComp
+Text Notes 5650 4500 0    50   ~ 0
+.tran 1n 11u 10u
+$Comp
+L Transistor_FET:2N7000 Q1
+U 1 1 5ED335E0
+P 4700 3550
+F 0 "Q1" H 4904 3596 50  0000 L CNN
+F 1 "BS170" H 4904 3505 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4900 3475 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 4700 3550 50  0001 L CNN
+F 4 "M" H 4700 3550 50  0001 C CNN "Spice_Primitive"
+F 5 "BS170" H 4700 3550 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4700 3550 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "3 2 1" H 4700 3550 50  0001 C CNN "Spice_Node_Sequence"
+F 8 "BS170.LIB" H 4700 3550 50  0001 C CNN "Spice_Lib_File"
+	1    4700 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 3750 4800 3850
+Wire Wire Line
+	4800 2900 4800 3000
+Wire Wire Line
+	4800 3300 4800 3350
+Text Label 5250 3350 2    50   ~ 0
+V1
+$Comp
+L power:GND #PWR05
+U 1 1 5ED65D43
+P 6900 5050
+F 0 "#PWR05" H 6900 4800 50  0001 C CNN
+F 1 "GND" H 6905 4877 50  0000 C CNN
+F 2 "" H 6900 5050 50  0001 C CNN
+F 3 "" H 6900 5050 50  0001 C CNN
+	1    6900 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:VSOURCE V3
+U 1 1 5ED317FC
+P 6900 4750
+F 0 "V3" H 7128 4796 50  0000 L CNN
+F 1 "PULSE(-2 2 1n 5.5ns 4ns 65ns 142ns)" H 7128 4705 50  0000 L CNN
+F 2 "" H 6900 4750 50  0001 C CNN
+F 3 "~" H 6900 4750 50  0001 C CNN
+	1    6900 4750
+	1    0    0    -1  
+$EndComp
+Text GLabel 6900 4450 1    50   Input ~ 0
+Clk
+$Comp
+L pspice:VSOURCE V1
+U 1 1 5ED2FA2B
+P 4900 4800
+F 0 "V1" H 5128 4846 50  0000 L CNN
+F 1 "3" H 5128 4755 50  0000 L CNN
+F 2 "" H 4900 4800 50  0001 C CNN
+F 3 "~" H 4900 4800 50  0001 C CNN
+	1    4900 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5ED2FF74
+P 4900 5100
+F 0 "#PWR03" H 4900 4850 50  0001 C CNN
+F 1 "GND" H 4905 4927 50  0000 C CNN
+F 2 "" H 4900 5100 50  0001 C CNN
+F 3 "" H 4900 5100 50  0001 C CNN
+	1    4900 5100
+	1    0    0    -1  
+$EndComp
+Text GLabel 4900 4500 1    50   Input ~ 0
+bias
+Text GLabel 4300 4000 0    50   Input ~ 0
+Clk
+Text GLabel 4050 3550 0    50   Input ~ 0
+bias
+Wire Wire Line
+	4450 3550 4500 3550
+Wire Wire Line
+	4450 3600 4450 3550
+Connection ~ 4450 3550
+Wire Wire Line
+	4350 3550 4450 3550
+Text Label 4400 3550 2    50   ~ 0
+Vg
+$Comp
+L Device:R_US R1
+U 1 1 5ED2D1CA
+P 4200 3550
+F 0 "R1" V 3995 3550 50  0000 C CNN
+F 1 "10k" V 4086 3550 50  0000 C CNN
+F 2 "" V 4240 3540 50  0001 C CNN
+F 3 "~" H 4200 3550 50  0001 C CNN
+	1    4200 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4450 4000 4450 3900
+Wire Wire Line
+	4300 4000 4450 4000
+$Comp
+L Device:C C7
+U 1 1 5ED32746
+P 4450 3750
+F 0 "C7" H 4565 3796 50  0000 L CNN
+F 1 "10n" H 4565 3705 50  0000 L CNN
+F 2 "" H 4488 3600 50  0001 C CNN
+F 3 "~" H 4450 3750 50  0001 C CNN
+	1    4450 3750
+	1    0    0    -1  
+$EndComp
+Text Label 5900 3350 0    50   ~ 0
+V2
+Wire Wire Line
+	6350 3350 6400 3350
+Text Label 6550 3350 0    50   ~ 0
+V3
+Connection ~ 6400 3350
+Wire Wire Line
+	6400 3350 6700 3350
+$Comp
+L power:GND #PWR07
+U 1 1 5EF55F53
+P 6400 3650
+F 0 "#PWR07" H 6400 3400 50  0001 C CNN
+F 1 "GND" H 6405 3477 50  0000 C CNN
+F 2 "" H 6400 3650 50  0001 C CNN
+F 3 "" H 6400 3650 50  0001 C CNN
+	1    6400 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L2
+U 1 1 5EF5D988
+P 6900 3350
+F 0 "L2" V 6719 3350 50  0000 C CNN
+F 1 "560n" V 6810 3350 50  0000 C CNN
+F 2 "" H 6900 3350 50  0001 C CNN
+F 3 "~" H 6900 3350 50  0001 C CNN
+	1    6900 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C4
+U 1 1 5EF5E213
+P 6900 3000
+F 0 "C4" V 7152 3000 50  0000 C CNN
+F 1 "470p" V 7061 3000 50  0000 C CNN
+F 2 "" H 6938 2850 50  0001 C CNN
+F 3 "~" H 6900 3000 50  0001 C CNN
+	1    6900 3000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6750 3000 6700 3000
+Wire Wire Line
+	6700 3000 6700 3350
+Connection ~ 6700 3350
+Wire Wire Line
+	6700 3350 6750 3350
+Wire Wire Line
+	7050 3000 7100 3000
+Wire Wire Line
+	7100 3000 7100 3350
+Wire Wire Line
+	7100 3350 7050 3350
+Wire Wire Line
+	7550 3350 7550 3400
+Connection ~ 7100 3350
+Text Label 7450 3350 0    50   ~ 0
+V4
+$Comp
+L power:GND #PWR02
+U 1 1 5EF51F46
+P 7550 3700
+F 0 "#PWR02" H 7550 3450 50  0001 C CNN
+F 1 "GND" H 7555 3527 50  0000 C CNN
+F 2 "" H 7550 3700 50  0001 C CNN
+F 3 "" H 7550 3700 50  0001 C CNN
+	1    7550 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 5EF6014C
+P 7100 3550
+F 0 "C5" H 6985 3504 50  0000 R CNN
+F 1 "470p" H 6985 3595 50  0000 R CNN
+F 2 "" H 7138 3400 50  0001 C CNN
+F 3 "~" H 7100 3550 50  0001 C CNN
+	1    7100 3550
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	7100 3350 7100 3400
+$Comp
+L power:GND #PWR08
+U 1 1 5EF60B50
+P 7100 3700
+F 0 "#PWR08" H 7100 3450 50  0001 C CNN
+F 1 "GND" H 7105 3527 50  0000 C CNN
+F 2 "" H 7100 3700 50  0001 C CNN
+F 3 "" H 7100 3700 50  0001 C CNN
+	1    7100 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 3450 5400 3350
+Connection ~ 5400 3350
+Wire Wire Line
+	5400 3350 5450 3350
+$Comp
+L power:GND #PWR09
+U 1 1 5EF6195C
+P 5400 3750
+F 0 "#PWR09" H 5400 3500 50  0001 C CNN
+F 1 "GND" H 5405 3577 50  0000 C CNN
+F 2 "" H 5400 3750 50  0001 C CNN
+F 3 "" H 5400 3750 50  0001 C CNN
+	1    5400 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 3350 5400 3350
+Connection ~ 4800 3350
+$Comp
+L Device:R_US R2
+U 1 1 5ED674C5
+P 7550 3550
+F 0 "R2" V 7345 3550 50  0000 C CNN
+F 1 "50" V 7436 3550 50  0000 C CNN
+F 2 "" V 7590 3540 50  0001 C CNN
+F 3 "~" H 7550 3550 50  0001 C CNN
+	1    7550 3550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7100 3350 7550 3350
+Text Notes 3900 5950 0    50   ~ 0
+.control\n* I'm trying to measure power dissipation of the transistor\n* However, this doesn't show up as a graphable signal\nlet Qpower = v(V1) * id(Q1)\nplot Qpower\n.endc
+$Comp
+L Device:C C1
+U 1 1 5EF523A5
+P 5600 3350
+F 0 "C1" V 5348 3350 50  0000 C CNN
+F 1 "1n" V 5439 3350 50  0000 C CNN
+F 2 "" H 5638 3200 50  0001 C CNN
+F 3 "~" H 5600 3350 50  0001 C CNN
+	1    5600 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L3
+U 1 1 5ED357AA
+P 4800 3150
+F 0 "L3" H 4853 3196 50  0000 L CNN
+F 1 "470n" H 4853 3105 50  0000 L CNN
+F 2 "" H 4800 3150 50  0001 C CNN
+F 3 "~" H 4800 3150 50  0001 C CNN
+	1    4800 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5EF55D33
+P 6400 3500
+F 0 "C3" H 6285 3454 50  0000 R CNN
+F 1 "470p" H 6285 3545 50  0000 R CNN
+F 2 "" H 6438 3350 50  0001 C CNN
+F 3 "~" H 6400 3500 50  0001 C CNN
+	1    6400 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 5EF55344
+P 6200 3350
+F 0 "L1" V 6019 3350 50  0000 C CNN
+F 1 "600n" V 6110 3350 50  0000 C CNN
+F 2 "" H 6200 3350 50  0001 C CNN
+F 3 "~" H 6200 3350 50  0001 C CNN
+	1    6200 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5EF542CD
+P 5850 3650
+F 0 "#PWR06" H 5850 3400 50  0001 C CNN
+F 1 "GND" H 5855 3477 50  0000 C CNN
+F 2 "" H 5850 3650 50  0001 C CNN
+F 3 "" H 5850 3650 50  0001 C CNN
+	1    5850 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 3350 6050 3350
+Wire Wire Line
+	5850 3350 5750 3350
+Connection ~ 5850 3350
+$Comp
+L Device:C C2
+U 1 1 5EF53DBE
+P 5850 3500
+F 0 "C2" H 5735 3454 50  0000 R CNN
+F 1 "20p" H 5735 3545 50  0000 R CNN
+F 2 "" H 5888 3350 50  0001 C CNN
+F 3 "~" H 5850 3500 50  0001 C CNN
+	1    5850 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C6
+U 1 1 5EF60FCD
+P 5400 3600
+F 0 "C6" H 5285 3554 50  0000 R CNN
+F 1 "1n" H 5285 3645 50  0000 R CNN
+F 2 "" H 5438 3450 50  0001 C CNN
+F 3 "~" H 5400 3600 50  0001 C CNN
+	1    5400 3600
+	-1   0    0    1   
+$EndComp
+$EndSCHEMATC
