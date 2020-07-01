@@ -50,3 +50,36 @@ ssb_cap=1; dsp_cap=2;
 #define F_CPU F_XTAL
 experimentally: #define AUTO_ADC_BIAS 1
 */
+
+void initPins(){  
+  // initialize
+  digitalWrite(SIG_OUT, LOW);
+  digitalWrite(RX, HIGH);
+  digitalWrite(KEY_OUT, LOW);
+  digitalWrite(SIDETONE, LOW);
+
+  // pins
+  pinMode(SIDETONE, OUTPUT);
+  pinMode(SIG_OUT, OUTPUT);
+  pinMode(RX, OUTPUT);
+  pinMode(KEY_OUT, OUTPUT);
+//#define ONEBUTTON  1
+#ifdef ONEBUTTON
+  pinMode(BUTTONS, INPUT_PULLUP);  // rotary button
+#else
+  pinMode(BUTTONS, INPUT);  // L/R/rotary button
+#endif
+  pinMode(DIT, INPUT_PULLUP);
+  //pinMode(DAH, INPUT);  
+  pinMode(DAH, INPUT_PULLUP); // Could this replace D4?
+
+  digitalWrite(AUDIO1, LOW);  // when used as output, help can mute RX leakage into AREF
+  digitalWrite(AUDIO2, LOW);
+  pinMode(AUDIO1, INPUT);
+  pinMode(AUDIO2, INPUT);
+
+#ifdef NTX
+  digitalWrite(NTX, HIGH);
+  pinMode(NTX, OUTPUT);
+#endif
+}
