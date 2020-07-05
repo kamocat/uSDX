@@ -41,6 +41,20 @@ static const ADCConversionGroup mic_in = {
   ADC_SMPR_SMP_1P5,                                 /* SMPR */
   ADC_CHSELR_CHSEL5                                /* CHSELR */
 };
+
+static PWMConfig spkr = {
+  4096000,                                    /* 4MHz PWM clock frequency.   */
+  4096,                                      /* Initial PWM period 1ms.       */
+  NULL,
+  {
+   {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+   {PWM_OUTPUT_DISABLED, NULL},
+   {PWM_OUTPUT_DISABLED, NULL},
+   {PWM_OUTPUT_DISABLED, NULL}
+  },
+  0,
+  0
+};
 /*
  * Thread 1.
  */
@@ -49,11 +63,13 @@ THD_FUNCTION(Thread1, arg) {
 
   (void)arg;
   /* Audio test: copy audio in to audio out */
+  adcStart(&ADCD1, NULL);
+  pwmStart(&PWMD3, &spkr);
   while (true) {
     /* Read MIC analog input, output to SPKR (pwm ch1 on tim3) */
     uint16_t sample;
     adcConvert(&ADCD1, &mic_in, &sample, 1);
-    //FIXME: Write to PWM
+    pwmEnableChannel(&PWMD3, 0, sample); // No scaling for now
     chThdSleepMilliseconds(1);
   }
 }
