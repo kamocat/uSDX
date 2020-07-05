@@ -19,6 +19,28 @@
 #include "nil_test_root.h"
 #include "oslib_test_root.h"
 
+static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
+
+  (void)adcp;
+  (void)err;
+  chnWrite(&SD1, (const uint8_t *)"ADC Error\r\n", 11);
+}
+
+/*
+ * ADC conversion group.
+ * Mode:        Linear buffer, 8 samples of 1 channel, SW triggered.
+ * Channels:    IN10.
+ */
+static const ADCConversionGroup mic_in = {
+  FALSE, // single-shot
+  1,     // 1 channel
+  NULL,  // No callback
+  adcerrorcallback,
+  ADC_CFGR1_RES_12BIT,                              /* CFGR1 */
+  ADC_TR(0, 0),                                     /* TR */
+  ADC_SMPR_SMP_1P5,                                 /* SMPR */
+  ADC_CHSELR_CHSEL5                                /* CHSELR */
+};
 /*
  * Thread 1.
  */
@@ -28,10 +50,14 @@ THD_FUNCTION(Thread1, arg) {
   (void)arg;
   /* Audio test: copy audio in to audio out */
   while (true) {
-    /* FIXME: Read MIC analog input, output to SPKR (pwm ch1 on tim3) */
+    /* Read MIC analog input, output to SPKR (pwm ch1 on tim3) */
+    uint16_t sample;
+    adcConvert(&ADCD1, &mic_in, &sample, 1);
+    //FIXME: Write to PWM
     chThdSleepMilliseconds(1);
   }
 }
+
 
 static const DACConfig dac1cfg1 = {
   .init         = 2047U,
