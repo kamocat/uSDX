@@ -86,7 +86,7 @@
 #define STM32_DAC_USE_DAC1_CH1              TRUE
 #define STM32_DAC_DAC1_CH1_IRQ_PRIORITY     3
 #define STM32_DAC_DAC1_CH1_DMA_PRIORITY     2
-#define STM32_DAC_DAC1_CH1_DMA_STREAM       STM32_DMA_STREAM_ID(1, 5)
+#define STM32_DAC_DAC1_CH1_DMA_STREAM       STM32_DMA_STREAM_ID(1, 3)
 
 /*
  * GPT driver system settings.

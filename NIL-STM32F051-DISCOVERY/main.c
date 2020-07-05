@@ -26,15 +26,18 @@ THD_WORKING_AREA(waThread1, 128);
 THD_FUNCTION(Thread1, arg) {
 
   (void)arg;
-
+  /* Audio test: copy audio in to audio out */
   while (true) {
-    palSetPad(GPIOC, GPIOC_LED4);
-    chThdSleepMilliseconds(500);
-    palClearPad(GPIOC, GPIOC_LED4);
-    chThdSleepMilliseconds(500);
+    /* FIXME: Read MIC analog input, output to SPKR (pwm ch1 on tim3) */
+    chThdSleepMilliseconds(1);
   }
 }
 
+static const DACConfig dac1cfg1 = {
+  .init         = 2047U,
+  .datamode     = DAC_DHRM_12BIT_RIGHT,
+  .cr           = 0
+};
 /*
  * Thread 2.
  */
@@ -42,11 +45,13 @@ THD_WORKING_AREA(waThread2, 128);
 THD_FUNCTION(Thread2, arg) {
 
   (void)arg;
+  /* Power amplifier test: Demonstrate DAC and si5351 */
+  /* Starting DAC1 driver.*/
+  dacStart(&DACD1, &dac1cfg1);
+  uint16_t val = 0xFFF/3.3; // 1V desired, 3.3V max.
+  dacPutChannelX(&DACD1, 1, val); // Output to DAC
 
   while (true) {
-    palSetPad(GPIOC, GPIOC_LED3);
-    chThdSleepMilliseconds(250);
-    palClearPad(GPIOC, GPIOC_LED3);
     chThdSleepMilliseconds(250);
   }
 }
@@ -67,7 +72,7 @@ THD_FUNCTION(Thread3, arg) {
   /* Welcome message.*/
   chnWrite(&SD1, (const uint8_t *)"Hello World!\r\n", 14);
 
-  /* Waiting for button push and activation of the test suite.*/
+  /* Waiting for encoder turn and activation of the test suite.*/
   while (true) {
     if (palReadLine(LINE_ENC0)) {
       test_execute((BaseSequentialStream *)&SD1, &nil_test_suite);
