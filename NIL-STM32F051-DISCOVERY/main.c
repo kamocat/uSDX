@@ -64,15 +64,12 @@ THD_FUNCTION(Thread3, arg) {
    * PA9 and PA10 are routed to USART1.
    */
   sdStart(&SD1, NULL);
-  palSetPadMode(GPIOA, 9, PAL_MODE_ALTERNATE(1));       /* USART1 TX.       */
-  palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(1));      /* USART1 RX.       */
-
   /* Welcome message.*/
   chnWrite(&SD1, (const uint8_t *)"Hello World!\r\n", 14);
 
   /* Waiting for button push and activation of the test suite.*/
   while (true) {
-    if (palReadLine(LINE_BUTTON)) {
+    if (palReadLine(LINE_ENC0)) {
       test_execute((BaseSequentialStream *)&SD1, &nil_test_suite);
       test_execute((BaseSequentialStream *)&SD1, &oslib_test_suite);
     }
