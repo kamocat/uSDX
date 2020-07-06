@@ -39,10 +39,10 @@ static void adccallback(ADCDriver *adcp) {
     c1 += b1>>shift;             // 26+6=32 bits
     c2 += b2>>shift;
   }
-  struct complex c;
-  c.real = (c1>>16) - 0x8000;
-  c.imag = (c2>>16) - 0x8000;
-  chMsgSend((void*)radio_rx, (msg_t)&c);
+  union complex c;
+  c.x.real = (c1>>16) - 0x8000;
+  c.x.imag = (c2>>16) - 0x8000;
+  chMBPostTimeout(&new_sample, &c.msg, TIME_IMMEDIATE);
 }
 
 static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
@@ -74,15 +74,21 @@ void adc_rx_init(void){
   static char re_init = 0;
   static adcsample_t * samples;
   const int len = 64;
+  const int mb_size = 16; //< Mailbox length
   if(!re_init){
     re_init=1;
     // Allocate MxN buffer for continuous ADC
     samples = chCoreAllocFromBase(
         len * qsd_in.num_channels * sizeof(adcsample_t),
         sizeof(adcsample_t), 0);
+    // Allocate mailbox for data to radio_rx
+    msg_t * msg_buf = chCoreAllocFromBase(mb_size*sizeof(msg_t), sizeof(msg_t), 0);
+    // Reset the mailbox
+    chMBObjectInit(&new_sample, msg_buf, mb_size);
   }
   // Start the continuous conversion
   adcStart(&ADCD1, NULL);
   adcStartConversion(&ADCD1, &qsd_in, samples, len);
+
 }
 

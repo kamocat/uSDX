@@ -9,7 +9,7 @@
 #include "dsp.h"
 
 /** Mailbox for received data */
-msg_t new_sample;
+mailbox_t new_sample;
 
 THD_WORKING_AREA(waradio_rx, 128);
 THD_FUNCTION(radio_rx, arg){
@@ -17,12 +17,11 @@ THD_FUNCTION(radio_rx, arg){
   const int len = 256;
   int16_t * data = chCoreAllocFromBase(len*sizeof(int16_t), sizeof(int16_t), 0);
   while(1){
+    union complex c;
     for( int i=0; i<len;){
-      thread_t * thd = chMsgWait();
-      struct complex * c = (struct complex *)chMsgGet(thd);
-      data[i++] = c->real;
-      data[i++] = c->imag;
-      chMsgRelease(thd, MSG_OK);
+      chMBFetchTimeout(&new_sample, &c.msg, TIME_INFINITE);
+      data[i++] = c.x.real;
+      data[i++] = c.x.imag;
     }
     /** Here would be a good place to do a FFT or other processing */
   }

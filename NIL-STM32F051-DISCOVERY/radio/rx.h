@@ -14,6 +14,6 @@
 THD_FUNCTION(radio_rx, arg);
 
 /** Mailbox for received data */
-extern msg_t new_sample;
+extern mailbox_t new_sample;
 
 #endif /* RX_H_ */

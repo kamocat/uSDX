@@ -19,10 +19,16 @@
  * by an accumulate and decimation
  */
 
-/** Datatype for complex numbers */
-struct complex{
-  int16_t real;
-  int16_t imag;
+/** Datatype for complex numbers
+ *
+ * Designed to be the same size as msg_t for low overhead
+ */
+union complex{
+  struct {
+    int16_t real;
+    int16_t imag;
+  }x;
+  msg_t msg;
 };
 
 /** ADC init
