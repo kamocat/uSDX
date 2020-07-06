@@ -27,7 +27,7 @@ union complex{
   struct {
     int16_t real;
     int16_t imag;
-  }x;
+  };
   msg_t msg;
 };
 

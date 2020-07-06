@@ -40,9 +40,9 @@ static void adccallback(ADCDriver *adcp) {
     c2 += b2>>shift;
   }
   union complex c;
-  c.x.real = (c1>>16) - 0x8000;
-  c.x.imag = (c2>>16) - 0x8000;
-  chMBPostTimeout(&new_sample, &c.msg, TIME_IMMEDIATE);
+  c.real = (c1>>16) - 0x8000;
+  c.imag = (c2>>16) - 0x8000;
+  chMBPostTimeout(&new_sample, c.msg, TIME_IMMEDIATE);
 }
 
 static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {

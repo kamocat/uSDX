@@ -20,8 +20,8 @@ THD_FUNCTION(radio_rx, arg){
     union complex c;
     for( int i=0; i<len;){
       chMBFetchTimeout(&new_sample, &c.msg, TIME_INFINITE);
-      data[i++] = c.x.real;
-      data[i++] = c.x.imag;
+      data[i++] = c.real;
+      data[i++] = c.imag;
     }
     /** Here would be a good place to do a FFT or other processing */
   }
