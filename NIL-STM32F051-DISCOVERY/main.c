@@ -80,6 +80,71 @@ static const DACConfig dac1cfg1 = {
   .datamode     = DAC_DHRM_12BIT_RIGHT,
   .cr           = 0
 };
+
+/** Enables an output 
+
+Doesn't implement all features, just basic
+*/
+void si5351_clk_en(uint8_t clk, uint8_t pll){
+  uint8_t buf[2];
+  buf[0]=clk+16;
+  buf[1]= pll ? 0x2F : 0x1F;
+  const uint8_t si5351 = 0x60;
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2,
+                             NULL, 0, TIME_MS2I(100));
+}
+
+/** Configures the si5351 Outputs
+
+The desired divider value is given by a + b/c.
+*/
+void si5351_clk_set(uint8_t clk, uint32_t a, uint32_t b, uint32_t c){
+  uint32_t p1, p2, p3;
+  //FIXME: Validate the inputs
+  p1 = 128*a + (128*b)/c - 512;
+  p2 = 128*b + c*((128*b)/c);
+  p3 = c;
+  uint8_t buf[9];
+  uint8_t reg = clk*8 + 42;
+  buf[0]=reg;
+  buf[1]=p3>>8;
+  buf[2]=p3;
+  buf[3]=(0x03&(p1>>16)); //FIXME: Implement "divide by" options
+  buf[4]=p1>>8;
+  buf[5]=p1;
+  buf[6]=(0x0F&(p2>>16)) | (0xF0&(p3>>12));
+  buf[7]=p2>>8;
+  buf[8]=p2;
+  const uint8_t si5351 = 0x60;
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 9,
+                             NULL, 0, TIME_MS2I(100));
+}
+
+/** Configures the si5351 PLLs
+
+The desired value is given by a + b/c.
+*/
+void si5351_pll_set(uint8_t pll, uint32_t a, uint32_t b, uint32_t c){
+  uint32_t p1, p2, p3;
+  //FIXME: Validate the inputs
+  p1 = 128*a + (128*b)/c - 512;
+  p2 = 128*b + c*((128*b)/c);
+  p3 = c;
+  uint8_t reg = pll ? 34 : 26;  // PLLA 26, PLLB is 34
+  uint8_t buf[9];
+  buf[0]=reg;
+  buf[1]=p3>>8;
+  buf[2]=p3;
+  buf[3]=p3>>16;
+  buf[4]=p1>>8;
+  buf[5]=p1;
+  buf[6]=(0x0F&(p2>>16)) | (0xF0&(p3>>12));
+  buf[7]=p2>>8;
+  buf[8]=p2;
+  const uint8_t si5351 = 0x60;
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 9,
+                             NULL, 0, TIME_MS2I(100));
+}
 /*
  * Thread 2.
  */
@@ -92,12 +157,16 @@ THD_FUNCTION(Thread2, arg) {
   dacStart(&DACD1, &dac1cfg1);
   uint16_t val = 0xFFF/3.3; // 1V desired, 3.3V max.
   dacPutChannelX(&DACD1, 1, val); // Output to DAC
+  i2cStart(&I2CD1, NULL);
 
   while (true) {
     chThdSleepMilliseconds(250);
+    si5351_clk_en(2, 1);  // PLLB
+    si5351_pll_set(2, 31, 1, 2); // Multiply by 31.5
+    si5351_clk_set(2, 121,1, 2); // Divide by 121.5
+    // Output should be 7MHz
   }
 }
-
 /*
  * Thread 3.
  */
