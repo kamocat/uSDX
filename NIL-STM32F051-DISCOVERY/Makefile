@@ -120,7 +120,7 @@ LDSCRIPT= $(STARTUPLD)/STM32F051x8.ld
 # setting.
 CSRC = $(ALLCSRC) \
        $(TESTSRC) \
-       main.c dsp.c radio/rx.c
+       main.c radio/rx.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
