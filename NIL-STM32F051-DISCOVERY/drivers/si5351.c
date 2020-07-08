@@ -7,13 +7,30 @@
 #include "si5351.h"
 #include "../trig.h"
 
+const uint8_t si5351 = 0x60; // i2c address
+
+void pll_reset(uint8_t PLLx){
+  uint8_t buf[2];
+  buf[0]=177;
+  buf[1]=PLLx ? 0x80 : 0x20;
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
+}
+
 void synth_en(struct synth * cfg){
   uint8_t buf[2];
   buf[0]=cfg->channel+16;
   buf[1]=cfg->PLLx ? 0x2F : 0x1F;
-  const uint8_t si5351 = 0x60;
-  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2,
-                             NULL, 0, TIME_MS2I(100));
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
+  pll_reset(cfg->PLLx);
+}
+
+void synth_phase(struct synth * cfg, uint8_t phase){
+  cfg->phase = phase;
+  uint8_t buf[2];
+  buf[0]=cfg->channel+165;
+  buf[1]=phase;
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
+  pll_reset(cfg->PLLx);
 }
 
 void synth_write_params(uint8_t reg, uint64_t val, uint8_t div){
@@ -28,8 +45,6 @@ void synth_write_params(uint8_t reg, uint64_t val, uint8_t div){
   buf[6]=val>>16 | 0xF0;
   buf[7]=val>>8;
   buf[8]=val;
-
-  const uint8_t si5351 = 0x60;
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 9, NULL, 0, TIME_MS2I(100));
 }
 
@@ -77,8 +92,7 @@ void synth_set_baseband(struct synth * cfg, int32_t baseband){
   buf[2]=(val>>16) | 0xF0;
   buf[3]=val>>8;
   buf[4]=val;
-  const uint8_t si5351 = 0x60;
-  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 5,NULL, 0, TIME_MS2I(100));
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 5, NULL, 0, TIME_MS2I(100));
 }
 
 void synth_init(struct synth * cfg, uint8_t channel, uint8_t pll){

@@ -19,8 +19,9 @@ struct synth{
     uint8_t divide:2;   //< 4-bit field for extra divider settings
     int8_t shift;      //< Shift value for scaling the baseband frequency
   }reg;
-  uint8_t channel:2; //Supports four channels - increase bit width if more are desired
+  uint8_t channel:2; //< Supports four channels - increase bit width if more are desired
   uint8_t PLLx:1;  //< 0 is PLLA, 1 is PLLB
+  uint8_t phase:7;   //< Phase offset, in increments of 1/(vxco*4) seconds
 };
 
 void synth_init(struct synth * cfg, uint8_t channel, uint8_t pll);
@@ -28,6 +29,7 @@ void synth_en(struct synth * cfg);
 void synth_set_carrier(struct synth * cfg, float carrier);
 void synth_set_baseband(struct synth * cfg, int32_t baseband);
 void synth_write_params(uint8_t reg, uint64_t val, uint8_t div);
+void synth_phase(struct synth * cfg, uint8_t phase);
 
 
 #endif /* SI5351_H_ */
