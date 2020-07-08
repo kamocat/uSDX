@@ -67,9 +67,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding="radio" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
-                        						
-                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="radio"/>
+                        <entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
