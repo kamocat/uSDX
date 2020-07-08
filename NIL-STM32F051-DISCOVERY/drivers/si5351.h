@@ -30,6 +30,7 @@ void synth_set_carrier(struct synth * cfg, float carrier);
 void synth_set_baseband(struct synth * cfg, int32_t baseband);
 void synth_write_params(uint8_t reg, uint64_t val, uint8_t div);
 void synth_phase(struct synth * cfg, uint8_t phase);
+void synth_disable(struct synth * cfg);
 
 
 #endif /* SI5351_H_ */

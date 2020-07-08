@@ -24,6 +24,13 @@ void synth_en(struct synth * cfg){
   pll_reset(cfg->PLLx);
 }
 
+void synth_disable(struct synth * cfg){
+  uint8_t buf[2];
+  buf[0]=cfg->channel+16;
+  buf[1]=0x80;
+  i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
+}
+
 void synth_phase(struct synth * cfg, uint8_t phase){
   cfg->phase = phase;
   uint8_t buf[2];
