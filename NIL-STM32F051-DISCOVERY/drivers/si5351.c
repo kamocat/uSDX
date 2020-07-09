@@ -16,7 +16,7 @@ void pll_reset(uint8_t PLLx){
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
 }
 
-void synth_en(struct synth * cfg){
+void synthStart(struct synth * cfg){
   uint8_t buf[2];
   buf[0]=cfg->channel+16;
   buf[1]=cfg->PLLx ? 0x2F : 0x1F;
@@ -24,14 +24,14 @@ void synth_en(struct synth * cfg){
   pll_reset(cfg->PLLx);
 }
 
-void synth_disable(struct synth * cfg){
+void synthStop(struct synth * cfg){
   uint8_t buf[2];
   buf[0]=cfg->channel+16;
   buf[1]=0x80;
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
 }
 
-void synth_phase(struct synth * cfg, uint8_t phase){
+void synthSetPhase(struct synth * cfg, uint8_t phase){
   cfg->phase = phase;
   uint8_t buf[2];
   buf[0]=cfg->channel+165;
@@ -40,7 +40,7 @@ void synth_phase(struct synth * cfg, uint8_t phase){
   pll_reset(cfg->PLLx);
 }
 
-void synth_write_params(uint8_t reg, uint64_t val, uint8_t div){
+void synthWriteParam(uint8_t reg, uint64_t val, uint8_t div){
   uint8_t buf[9];
   buf[0]=reg*8+26;
   buf[1]=0xFF; // denominator is always 0xFFFFF
@@ -55,7 +55,7 @@ void synth_write_params(uint8_t reg, uint64_t val, uint8_t div){
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 9, NULL, 0, TIME_MS2I(100));
 }
 
-void synth_set_carrier(struct synth * cfg, float carrier){
+void synthSetCarrier(struct synth * cfg, float carrier){
   // Calculate PLL and Multisynth values
   const double xtal = 27e6;
   double pll = 27; // Good starting value to put vxco at 750MHz
@@ -82,12 +82,11 @@ void synth_set_carrier(struct synth * cfg, float carrier){
   cfg->reg.divide = div2;
 
   // Write changes to chip
-  synth_write_params(cfg->PLLx, cfg->reg.pll, 0);
-  synth_write_params(cfg->channel+2, cfg->reg.synth, cfg->reg.divide);
-  synth_en(cfg);
+  synthWriteParam(cfg->PLLx, cfg->reg.pll, 0);
+  synthWriteParam(cfg->channel+2, cfg->reg.synth, cfg->reg.divide);
 }
 
-void synth_set_baseband(struct synth * cfg, int32_t baseband){
+void synthSetBaseband(struct synth * cfg, int32_t baseband){
   int32_t diff = baseband - cfg->baseband;
   diff >>= cfg->reg.shift;
   cfg->reg.synth -= diff;
@@ -102,7 +101,7 @@ void synth_set_baseband(struct synth * cfg, int32_t baseband){
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 5, NULL, 0, TIME_MS2I(100));
 }
 
-void synth_init(struct synth * cfg, uint8_t channel, uint8_t pll){
+void synthInit(struct synth * cfg, uint8_t channel, uint8_t pll){
   cfg->channel = channel;
   cfg->PLLx = pll;
 }
