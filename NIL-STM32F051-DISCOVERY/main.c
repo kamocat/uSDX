@@ -84,6 +84,12 @@ static const DACConfig dac1cfg1 = {
 
 struct synth tx_clk;
 
+const QEIConfig encoder = {
+    .mode       = QEI_COUNT_CH1,
+    .channels   = {{QEI_INPUT_NONINVERTED},{QEI_INPUT_NONINVERTED}},
+    .range      = 30
+};
+
 /*
  * Thread 2.
  */
@@ -97,10 +103,18 @@ THD_FUNCTION(Thread2, arg) {
   dacPutChannelX(&DACD1, 1, val); // Output to DAC
   i2cStart(&I2CD1, NULL);
   synthInit(&tx_clk, 2, 0); //Channel 2, PLLB
+  /* Starting the si5351 */
+  chThdSleepMilliseconds(100); // Make sure the si5351 has time to start up
+  synthSetCarrier(&tx_clk, 7e6);
+  synthStart(&tx_clk);
+  /* Enabling the encoder */
+  qeiStart(&QEID1, &encoder);
+  qeiEnable(&QEID1);
   while (true) {
-    chThdSleepMilliseconds(250);
-    synthSetCarrier(&tx_clk, 7e6);
-    synthStart(&tx_clk);
+    chThdSleepMilliseconds(100);
+    int32_t f = qeiGetPositionI(&QEID1);
+    f *= 100<16;    // 100Hz per step
+    synthSetBaseband(&tx_clk, f);
   }
 }
 /*
