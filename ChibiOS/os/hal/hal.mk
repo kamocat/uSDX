@@ -58,6 +58,9 @@ endif
 ifneq ($(findstring HAL_USE_PWM TRUE,$(HALCONF)),)
 HALSRC += $(CHIBIOS)/os/hal/src/hal_pwm.c
 endif
+ifneq ($(findstring HAL_USE_QEI TRUE,$(HALCONF)),)
+HALSRC += $(CHIBIOS)/os/hal/src/hal_qei.c
+endif
 ifneq ($(findstring HAL_USE_RTC TRUE,$(HALCONF)),)
 HALSRC += $(CHIBIOS)/os/hal/src/hal_rtc.c
 endif
@@ -111,6 +114,7 @@ HALSRC = $(CHIBIOS)/os/hal/src/hal.c \
          $(CHIBIOS)/os/hal/src/hal_mmc_spi.c \
          $(CHIBIOS)/os/hal/src/hal_pal.c \
          $(CHIBIOS)/os/hal/src/hal_pwm.c \
+         $(CHIBIOS)/os/hal/src/hal_qei.c \
          $(CHIBIOS)/os/hal/src/hal_rtc.c \
          $(CHIBIOS)/os/hal/src/hal_sdc.c \
          $(CHIBIOS)/os/hal/src/hal_serial.c \

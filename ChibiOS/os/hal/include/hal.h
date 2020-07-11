@@ -78,6 +78,10 @@
 #define HAL_USE_PWM                         FALSE
 #endif
 
+#if !defined(HAL_USE_QEI)
+#define HAL_USE_QEI                         FALSE
+#endif
+
 #if !defined(HAL_USE_RTC)
 #define HAL_USE_RTC                         FALSE
 #endif
@@ -148,6 +152,7 @@
 #include "hal_icu.h"
 #include "hal_mac.h"
 #include "hal_pwm.h"
+#include "hal_qei.h"
 #include "hal_rtc.h"
 #include "hal_serial.h"
 #include "hal_sdc.h"

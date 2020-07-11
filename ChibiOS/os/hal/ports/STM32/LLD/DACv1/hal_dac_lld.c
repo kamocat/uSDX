@@ -473,7 +473,7 @@ void dac_lld_stop(DACDriver *dacp) {
 
 #if STM32_DAC_USE_DAC1_CH1
     if (&DACD1 == dacp) {
-      if ((dacp->params->dac->CR & DAC_CR_EN2) == 0U) {
+      if ((dacp->params->dac->CR & DAC_CR_EN1) == 0U) {
         rccDisableDAC1();
       }
     }
