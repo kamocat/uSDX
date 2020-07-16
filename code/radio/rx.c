@@ -6,6 +6,7 @@
  */
 
 #include "rx.h"
+#include "ssb.h"
 
 /** Mailbox for received data */
 mailbox_t new_sample;
@@ -22,7 +23,11 @@ THD_FUNCTION(radio_rx, arg){
       data[i++] = c.real;
       data[i++] = c.imag;
     }
-    /** Here would be a good place to do a FFT or other processing */
+    /** Process the received data */
+    int16_t out[len];
+    ssb(out, data, len);
+    /** Fill buffer for audio out */
+    speaker_update(out, len);
   }
 }
 
@@ -109,5 +114,30 @@ void adc_rx_init(void){
   // Start the continuous conversion
   adcStart(&ADCD1, NULL);
   adcStartConversion(&ADCD1, &qsd_in, samples, len);
+
+}
+
+/** Copies audio data to PWM
+ *
+ */
+void speaker_callback(PWMDriver * pwmp){
+//FIXME: Copy data into DMA buffer. Or interrupt every period.
+}
+
+static PWMConfig spkr = {
+  4096000,                                    /* 4MHz PWM clock frequency.   */
+  4096,                                      /* Initial PWM period 1ms.       */
+  speaker_callback,
+  {
+   {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+   {PWM_OUTPUT_DISABLED, NULL},
+   {PWM_OUTPUT_DISABLED, NULL},
+   {PWM_OUTPUT_DISABLED, NULL}
+  },
+  0,
+  0
+};
+
+void speaker_init(void){
 
 }
