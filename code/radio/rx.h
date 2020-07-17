@@ -11,12 +11,22 @@
 #include "hal.h"
 #include "ch.h"
 
+/** List of radio modes.
+ *
+ * This list will be expanded as more modes are supported
+ */
+enum radio_mode {
+  CW, //< Continuous wave, also known as morse code
+  USB,//< Upper Sideband, for frequencies above 10MHz
+  LSB,//< Lower sideband, for frequencies below 10MHz
+};
+
 /** Starts radio reception and demodulation
  *
  */
-void rxStart(uint8_t mode);
+void rxStart(enum radio_mode mode, float frequency);
 
-/* Pauses radio reception and demodulation
+/* Stops radio reception and demodulation
  *
  */
 void rxStop(void);
@@ -57,9 +67,5 @@ static void adccallback(ADCDriver *adcp);
  * Configures the ADC for radio reception
  */
 void adc_rx_init(void);
-
-void speaker_init(void);
-
-void speaker_update(int16_t data, int len);
 
 #endif /* RX_H_ */
