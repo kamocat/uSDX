@@ -4,6 +4,8 @@
  *  Created on: Jul 9, 2020
  *      Author: marshal
  */
+#include <stdint.h>
+#include <stddef.h>
 
 /** Single sideband decoder
  *

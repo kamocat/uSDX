@@ -17,20 +17,67 @@
  * advantages like increased dynamic range and noise rejection.
  */
 
-uint16_t spkr_dma_buf[spkr_buffer_len];
+objects_fifo_t spkr_fifo;
 
-void speakerUpdate(int16_t data, int len);
+void speakerInit(void){
+  size_t objsize = spkr_buffer_len*sizeof(int16_t);
+  msg_t * msg_buf = chCoreAllocFromBase(spkr_fifo_len*sizeof(msg_t), sizeof(msg_t), 0);
+  void * obj_buf = chCoreAllocFromBase(objsize*spkr_fifo_len, 4, 0);
+  chFifoObjectInit(&spkr_fifo, objsize, spkr_fifo_len, obj_buf, msg_buf);
+}
+
+msg_t speakerUpdate(int16_t * data, int len){
+  static int16_t * buf = 0;
+  static size_t i = 0;
+  for(int n = 0; n < len; ++n){
+    if(!buf){
+      i = 0;
+      buf = (int16_t *)chFifoTakeObjectTimeout(&spkr_fifo, TIME_IMMEDIATE);
+      if(!buf)
+        return MSG_TIMEOUT;
+    }
+    buf[i]=data[n];
+    ++i;
+    if(i>=spkr_buffer_len){
+      chFifoSendObject(&spkr_fifo, (void*)buf);
+      buf=0;
+    }
+  }
+  return MSG_OK;
+}
 
 /** Copies audio data to PWM
  *
  */
-void speaker_callback(PWMDriver * pwmp){
-//FIXME: Copy data into DMA buffer. Or interrupt every period.
+void speaker_callback(GPTDriver * gptp){
+  static size_t i=0;
+  static uint16_t * buf = 0;
+  (void)gptp;   // We don't use the gpt driver info
+  if(!buf){
+    //get next buffer
+    msg_t result = chFifoReceiveObjectTimeout(&spkr_fifo, (void**)&buf, TIME_IMMEDIATE);
+    //If fifo is empty, return.
+    if(MSG_TIMEOUT == result)
+      return;
+  }
+  // Convert signed integer to unsigned with offset
+  buf[i] += 0x8000;
+  // Scale to 11 bits
+  buf[i]>>=(16-11);
+  // Update PWM
+  pwmEnableChannel(&PWMD3, 0, buf[i]);
+  // increment to next sample
+  ++i;
+  if(i >= spkr_buffer_len){
+    //Free this buffer
+    chFifoReturnObject(&spkr_fifo, buf);
+    buf = NULL;
+  }
 }
 
 static PWMConfig spkr = {
-  .frequency = 4096000,                                    /* 4MHz PWM clock frequency.   */
-  .period = 4096,                                      /* Initial PWM period 1ms.       */
+  .frequency = 32e6, // Run at full processor speed
+  .period = (1<<10), // 11 bits of data to give a 16 kHz update rate
   .callback = NULL,
   .channels = {
    {PWM_OUTPUT_ACTIVE_HIGH, NULL},
@@ -39,32 +86,22 @@ static PWMConfig spkr = {
    {PWM_OUTPUT_DISABLED, NULL}
   },
   .cr2 = 0,
-  .dier = STM32_TIM_DIER_CC1DE,   // DMA request on channel 1 compare match
+  .dier = 0,
 };
 
-const uint32_t dma_config = 0
-    | STM32_DMA_CR_DIR_M2P      // Memory to peripheral
-    | STM32_DMA_CR_CIRC         // Circular buffer
-    | STM32_DMA_CR_MINC         // Memory Increment Mode
-    | STM32_DMA_CR_PSIZE_WORD   // 16-bit peripheral space
-    | STM32_DMA_CR_MSIZE_WORD   // 16-bit buffer width in RAM
-    | STM32_DMA_CR_PL(3)        // High priority
-    | STM32_DMA_CR_TCIE         // Transfer Complete Interrupt
-    | STM32_DMA_CR_HTIE         // Half-transfer Interrupt
-    ;
+static GPTConfig gpt_config = {
+   .callback = speaker_callback,
+};
 
-void speakerStart(void){
-  static stm32_dma_stream_t * stream =
-      dmaStreamAlloc(STM32_PWM_TIM3_DMA_STREAM, 2, speaker_callback, NULL);
-  dmaStreamSetPeripheral(stream, &TIM3->DMAR);
-  dmaStreamSetMemory0(stream, spkr_dma_buf);
-  dmaStreamSetTransactionSize(stream, spkr_buffer_len);
-  dmaStreamSetMode(stream, dma_config);
-  dmaStreamEnable(stream);
+void speakerStart(float sample_rate){
   pwmStart(&PWMD3, &spkr);
+  gpt_config.frequency = sample_rate;
+  gptStart(&GPTD14, &gpt_config);
+  gptStartContinuous(&GPTD14, 1);
 }
 
 void speakerStop(void){
   pwmStop(&PWMD3);
-  dmaStreamDisable(stream);
+  gptStopTimer(&GPTD14);
+  gptStop(&GPTD14);
 }

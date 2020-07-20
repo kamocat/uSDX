@@ -29,7 +29,13 @@ void synthStart(struct synth * cfg);
 void synthSetCarrier(struct synth * cfg, float carrier);
 void synthSetBaseband(struct synth * cfg, int32_t baseband);
 void synthWriteParam(uint8_t reg, uint64_t val, uint8_t div);
-void synthSetPhase(struct synth * cfg, uint8_t phase);
+void synthWriteConfig(struct synth * cfg);
+/* Sets the initial phase offset
+ *
+ * Note that this has limited resolution and range. The maximum delay is 31.75x the PLL clock period,
+ * which means you will have a difficult time getting a 90-degree phase shift on the 80m band.
+ */
+void synthSetPhase(struct synth * cfg, float degrees);
 void synthStop(struct synth * cfg);
 
 

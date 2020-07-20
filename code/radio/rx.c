@@ -8,9 +8,15 @@
 #include "rx.h"
 #include "ssb.h"
 #include "../drivers/speaker.h"
+#include "../drivers/si5351.h"
 
 /** Mailbox for received data */
 mailbox_t new_sample;
+
+struct{
+  float frequency;
+  enum radio_mode mode;
+}rx_cfg;
 
 THD_WORKING_AREA(waradio_rx, 128);
 THD_FUNCTION(radio_rx, arg){
@@ -26,9 +32,9 @@ THD_FUNCTION(radio_rx, arg){
     }
     /** Process the received data */
     int16_t out[len];
-    ssb(out, data, len);
+    ssb_rx(out, data, len);
     /** Fill buffer for audio out */
-    speaker_update(out, len);
+    speakerUpdate(out, len);
   }
 }
 
@@ -116,4 +122,28 @@ void adc_rx_init(void){
   adcStart(&ADCD1, NULL);
   adcStartConversion(&ADCD1, &qsd_in, samples, len);
 
+}
+
+void rxStart(enum radio_mode mode, float frequency){
+  rx_cfg.mode = mode;
+  rx_cfg.frequency = frequency;
+
+  // Set up the clocks with 90-degree phase offset
+  struct synth clk1;
+  synthInit(&clk1, 0, 0);
+  synthSetCarrier(&clk1, frequency);
+  synthStart(&clk1);
+  struct synth clk2 = clk1;  // Re-use the frequency calculation
+  synthInit(&clk2, 1, 0);
+  synthWriteConfig(&clk2);
+  synthSetPhase(&clk2, 90);
+  synthStart(&clk2);
+
+  adc_rx_init();
+  speakerStart(5e3); // 5kHz audo sample rate
+}
+
+void rxStop(void){
+  adcStop(&ADCD1);
+  speakerStop();
 }

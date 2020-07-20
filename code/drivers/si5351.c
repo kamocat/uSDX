@@ -31,11 +31,16 @@ void synthStop(struct synth * cfg){
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
 }
 
-void synthSetPhase(struct synth * cfg, uint8_t phase){
-  cfg->phase = phase;
+void synthSetPhase(struct synth * cfg, float degrees){
+  if(degrees < 0)
+    degrees += 360; // Only allow positive delay
+  //FIXME: If more than 180 degrees, we should use the clock invert feature
+  // Since the delay is before the divider, we scale by the divide ratio
+  degrees *= ((1./360)*(cfg->reg.synth))/(1<<25);
+  cfg->phase = degrees > 127 ? 127 : degrees;
   uint8_t buf[2];
   buf[0]=cfg->channel+165;
-  buf[1]=phase;
+  buf[1]=cfg->phase;
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 2, NULL, 0, TIME_MS2I(100));
   pll_reset(cfg->PLLx);
 }
@@ -53,6 +58,11 @@ void synthWriteParam(uint8_t reg, uint64_t val, uint8_t div){
   buf[7]=val>>8;
   buf[8]=val;
   i2cMasterTransmitTimeout(&I2CD1, si5351, buf, 9, NULL, 0, TIME_MS2I(100));
+}
+
+void synthWriteConfig(struct synth * cfg){
+  synthWriteParam(cfg->PLLx, cfg->reg.pll, 0);
+  synthWriteParam(cfg->channel+2, cfg->reg.synth, cfg->reg.divide);
 }
 
 void synthSetCarrier(struct synth * cfg, float carrier){
@@ -81,9 +91,7 @@ void synthSetCarrier(struct synth * cfg, float carrier){
   cfg->reg.shift = delta_shift;
   cfg->reg.divide = div2;
 
-  // Write changes to chip
-  synthWriteParam(cfg->PLLx, cfg->reg.pll, 0);
-  synthWriteParam(cfg->channel+2, cfg->reg.synth, cfg->reg.divide);
+  synthWriteConfig(cfg);
 }
 
 void synthSetBaseband(struct synth * cfg, int32_t baseband){

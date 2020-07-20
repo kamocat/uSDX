@@ -4,7 +4,6 @@
  *  Created on: Jul 9, 2020
  *      Author: marshal
  */
-#include <stdint.h>
 #include "ssb.h"
 
 void ssb_rx(int16_t * dest, int16_t * src, size_t qty){
