@@ -121,7 +121,9 @@ CSRC = $(ALLCSRC) \
        radio/ssb.c \
        drivers/si5351.c \
        drivers/speaker.c \
-       trig.c
+       trig.c \
+       test.c \
+       num2string.c
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
