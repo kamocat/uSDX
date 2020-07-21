@@ -6,11 +6,12 @@
  */
 #include <stdint.h>
 #include <stddef.h>
+#include "rx.h"
 
 /** Single sideband decoder
  *
  */
-void ssb_rx(int16_t * dest, int16_t * src, size_t qty);
+msg_t ssb_rx(mailbox_t * inbox, enum radio_mode * mode);
 
 /** Singgle sideband encoder
  *

@@ -16,6 +16,7 @@
  * This list will be expanded as more modes are supported
  */
 enum radio_mode {
+  STOPPED, //< Receiver is stopped
   CW, //< Continuous wave, also known as morse code
   USB,//< Upper Sideband, for frequencies above 10MHz
   LSB,//< Lower sideband, for frequencies below 10MHz
@@ -60,7 +61,7 @@ THD_FUNCTION(radio_rx, arg);
  * Performs initial low-pass filter and downsamples to 5kHz
  * Passes data to the Radio RX thread
  */
-static void adccallback(ADCDriver *adcp);
+void adccallback(ADCDriver *adcp);
 
 /** ADC init
  *

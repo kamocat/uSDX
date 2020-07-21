@@ -16,8 +16,6 @@
 
 #include "hal.h"
 #include "ch.h"
-#include "nil_test_root.h"
-#include "oslib_test_root.h"
 #include "drivers/si5351.h"
 
 static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
@@ -133,12 +131,7 @@ THD_FUNCTION(Thread3, arg) {
   /* Welcome message.*/
   chnWrite(&SD1, (const uint8_t *)"Hello World!\r\n", 14);
 
-  /* Waiting for encoder turn and activation of the test suite.*/
   while (true) {
-    if (palReadLine(LINE_ENC0)) {
-      test_execute((BaseSequentialStream *)&SD1, &nil_test_suite);
-      test_execute((BaseSequentialStream *)&SD1, &oslib_test_suite);
-    }
     chThdSleepMilliseconds(500);
   }
 }

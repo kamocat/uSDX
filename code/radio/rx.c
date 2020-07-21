@@ -7,8 +7,8 @@
 
 #include "rx.h"
 #include "ssb.h"
-#include "../drivers/speaker.h"
 #include "../drivers/si5351.h"
+#include "../drivers/speaker.h"
 
 /** Mailbox for received data */
 mailbox_t new_sample;
@@ -18,23 +18,16 @@ struct{
   enum radio_mode mode;
 }rx_cfg;
 
-THD_WORKING_AREA(waradio_rx, 128);
+THD_WORKING_AREA(waradio_rx, 512);
 THD_FUNCTION(radio_rx, arg){
   (void)arg;
-  const int len = 256;
-  int16_t * data = chCoreAllocFromBase(len*sizeof(int16_t), sizeof(int16_t), 0);
   while(1){
-    union complex c;
-    for( int i=0; i<len;){
-      chMBFetchTimeout(&new_sample, &c.msg, TIME_INFINITE);
-      data[i++] = c.real;
-      data[i++] = c.imag;
-    }
-    /** Process the received data */
-    int16_t out[len];
-    ssb_rx(out, data, len);
-    /** Fill buffer for audio out */
-    speakerUpdate(out, len);
+    if((USB==rx_cfg.mode) || (LSB==rx_cfg.mode))
+      ssb_rx(&new_sample, &(rx_cfg.mode));
+    else if(CW==rx_cfg.mode) // Currently use SSB for CW decoding
+      ssb_rx(&new_sample, &(rx_cfg.mode));
+    else
+      chThdSleepMilliseconds(50); // Don't hog all the CPU
   }
 }
 
@@ -46,7 +39,7 @@ THD_FUNCTION(radio_rx, arg){
  * We use a second-order IIR filter to prevent aliasing, followed
  * by an accumulate for decimation
  */
-static void adccallback(ADCDriver *adcp) {
+void adccallback(ADCDriver *adcp) {
   adcsample_t * ptr = adcp->samples;
   size_t len = adcp->depth/2; // This also determines downsample ratio
   // These are persistent variables for filter history
@@ -77,7 +70,7 @@ static void adccallback(ADCDriver *adcp) {
   chMBPostTimeout(&new_sample, c.msg, TIME_IMMEDIATE);
 }
 
-static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
+void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {
 
   (void)adcp;
   (void)err;
@@ -144,6 +137,7 @@ void rxStart(enum radio_mode mode, float frequency){
 }
 
 void rxStop(void){
+  rx_cfg.mode = STOPPED;
   adcStop(&ADCD1);
   speakerStop();
 }
