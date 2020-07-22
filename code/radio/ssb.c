@@ -7,6 +7,7 @@
 #include "ssb.h"
 #include "hilbert.h"
 #include "../drivers/speaker.h"
+#include "../trig.h"
 
 msg_t ssb_rx(mailbox_t * inbox, enum radio_mode * mode){
   union complex c;
@@ -14,7 +15,7 @@ msg_t ssb_rx(mailbox_t * inbox, enum radio_mode * mode){
   int16_t real[len];
   int16_t imag[len];
   while((USB==*mode) || (LSB==*mode)){
-    for( int i=0; i<len;){
+    for( int i=0; i<len; ++i){
       /** Fetch new data */
       msg_t m = chMBFetchTimeout(inbox, &c.msg, TIME_MS2I(10));
       if(MSG_OK != m)
@@ -41,16 +42,36 @@ msg_t ssb_rx(mailbox_t * inbox, enum radio_mode * mode){
   return MSG_OK;
 }
 
-const int32_t fscale = 1; //FIXME
-
-void ssb_tx(int16_t * amp, int32_t * freq, int16_t * src, size_t qty){
-  // Source data is single-channel audio
-  int32_t f = freq[0];
-  for(size_t i = 0; i < (qty-18); ++i){
-    amp[i]=src[i+9];
-    // FIXME: Subtraction is not a differentiator
-    // Maybe the differentiation can be combined with the hilbert?
-    f -= hilbert19(src+i) * fscale;
-    freq[i]=f;
+msg_t ssb_tx(mailbox_t * inbox, enum radio_mode * mode, struct synth * txclk){
+  union complex c;
+  const int len = 32;
+  const int sample_rate = 5000;
+  int16_t raw[len];
+  int16_t phase[len];
+  while((USB==*mode) || (LSB==*mode)){
+    for( int i=0; i<len; ++i){
+      /** Fetch new data */
+      msg_t m = chMBFetchTimeout(inbox, &c.msg, TIME_MS2I(10));
+      if(MSG_OK != m)
+        return m;
+      raw[i] = c.real;
+      /** Process the received data */
+      int16_t imag = hilbert32(raw, i)>>16;
+      if(LSB==*mode)
+        imag=-imag;
+      uint8_t j = (i-16)&31; // Match group delay of Hilbert transform
+      int16_t real = raw[j]; //TODO: Match frequency response of Hilbert transform
+      phase[i]=arctan3(imag, real);
+      int16_t amp=magn(imag, real);
+      int32_t freq = diff32(phase,i);
+      freq *= sample_rate;
+      /** Update the outputs
+       * TODO: Fix amplitude based on frequency
+       * TODO: Update DAC more frequently than si5351. Use DMA
+       */
+      synthSetBaseband(txclk, freq);
+      dacPutChannelX(&DACD1, 1, amp);
+    }
   }
+  return MSG_OK;
 }
