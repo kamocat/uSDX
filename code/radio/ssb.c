@@ -49,6 +49,7 @@ msg_t ssb_tx(mailbox_t * inbox, enum radio_mode * mode, struct synth * txclk){
   const int sample_rate = 5000;
   int16_t raw[len];
   int16_t phase[len];
+  int16_t tmp_phase=0;
   while((USB==*mode) || (LSB==*mode)){
     for( int i=0; i<len; ++i){
       /** Fetch new data */
@@ -62,13 +63,12 @@ msg_t ssb_tx(mailbox_t * inbox, enum radio_mode * mode, struct synth * txclk){
         imag=-imag;
       uint8_t j = (i-16)&mask; // Match group delay of Hilbert transform
       int16_t real = raw[j]; //TODO: Match frequency response of Hilbert transform
-      phase[i]=arctan3(imag, real);
       // Unwrap the phase
-      j = (i-1)&mask;
-      if( (phase[i]-phase[j]) > 180 )
-        phase[i] -=360;
-      else if( (phase[i]-phase[j]) < 180 )
-        phase[i] +=360;
+      int16_t diff  = arctan3(imag, real) - tmp_phase;
+      if( diff > 180 )
+        diff -=360;
+      tmp_phase += diff;
+      phase[i]=tmp_phase;
       // Calculate outputs
       int16_t amp=magn(imag, real);
       int32_t freq = diff32(phase,i);
@@ -80,6 +80,11 @@ msg_t ssb_tx(mailbox_t * inbox, enum radio_mode * mode, struct synth * txclk){
       synthSetBaseband(txclk, freq);
       dacPutChannelX(&DACD1, 1, amp);
     }
+    /** Prevent rollover of phase */
+    for(int i=0; i<len; ++i){
+      phase[i]-=tmp_phase;
+    }
+    tmp_phase=0;
   }
   return MSG_OK;
 }
