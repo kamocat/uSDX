@@ -44,7 +44,8 @@ msg_t ssb_rx(mailbox_t * inbox, enum radio_mode * mode){
 
 msg_t ssb_tx(mailbox_t * inbox, enum radio_mode * mode, struct synth * txclk){
   union complex c;
-  const int len = 32;
+  const uint8_t len = 32;
+  const uint8_t mask = len-1;
   const int sample_rate = 5000;
   int16_t raw[len];
   int16_t phase[len];
@@ -59,9 +60,16 @@ msg_t ssb_tx(mailbox_t * inbox, enum radio_mode * mode, struct synth * txclk){
       int16_t imag = hilbert32(raw, i)>>16;
       if(LSB==*mode)
         imag=-imag;
-      uint8_t j = (i-16)&31; // Match group delay of Hilbert transform
+      uint8_t j = (i-16)&mask; // Match group delay of Hilbert transform
       int16_t real = raw[j]; //TODO: Match frequency response of Hilbert transform
       phase[i]=arctan3(imag, real);
+      // Unwrap the phase
+      j = (i-1)&mask;
+      if( (phase[i]-phase[j]) > 180 )
+        phase[i] -=360;
+      else if( (phase[i]-phase[j]) < 180 )
+        phase[i] +=360;
+      // Calculate outputs
       int16_t amp=magn(imag, real);
       int32_t freq = diff32(phase,i);
       freq *= sample_rate;
