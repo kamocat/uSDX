@@ -27,3 +27,7 @@ fp-info-cache
 
 # Hardware Datasheets
 datasheets/
+
+# Compiled files
+**/build/
+**/.dep/
