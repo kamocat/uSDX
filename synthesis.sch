@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 4
+Sheet 3 4
 Title ""
 Date ""
 Rev ""
@@ -98,7 +98,7 @@ P 2700 5050
 AR Path="/5ED6119E/5F327351" Ref="R?"  Part="1" 
 AR Path="/5F5D026F/5F327351" Ref="R?"  Part="1" 
 F 0 "R?" H 2632 5004 50  0000 R CNN
-F 1 "10k" H 2632 5095 50  0000 R CNN
+F 1 "2k" H 2632 5095 50  0000 R CNN
 F 2 "Resistors_SMD:R_0805" V 2740 5040 50  0001 C CNN
 F 3 "~" H 2700 5050 50  0001 C CNN
 	1    2700 5050
@@ -106,19 +106,6 @@ F 3 "~" H 2700 5050 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2600 5450 2700 5450
-$Comp
-L power:+5V #PWR?
-U 1 1 5F327358
-P 3400 4150
-AR Path="/5ED6119E/5F327358" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F327358" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 3400 4000 50  0001 C CNN
-F 1 "+5V" H 3415 4323 50  0000 C CNN
-F 2 "" H 3400 4150 50  0001 C CNN
-F 3 "" H 3400 4150 50  0001 C CNN
-	1    3400 4150
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 5F32735E
@@ -487,7 +474,7 @@ P 3600 4950
 AR Path="/5ED6119E/5F3274F2" Ref="U?"  Part="1" 
 AR Path="/5F5D026F/5F3274F2" Ref="U?"  Part="1" 
 F 0 "U?" H 3600 5931 50  0000 C CNN
-F 1 "74ACT00" H 3600 5840 50  0000 C CNN
+F 1 "74ACT00" H 3550 5800 50  0000 C CNN
 F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 3850 4100 50  0001 L CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 3610 4950 50  0001 C CNN
 	1    3600 4950
@@ -539,101 +526,6 @@ AVCC
 Connection ~ 2700 5450
 Wire Wire Line
 	2700 5200 2700 5450
-Text HLabel 9450 3000 1    50   Input ~ 0
-12v
-Wire Wire Line
-	4650 6550 4800 6550
-Wire Wire Line
-	6950 6150 7100 6150
-$Comp
-L power:GNDA #PWR?
-U 1 1 5F327544
-P 4800 6550
-AR Path="/5ED6119E/5F327544" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F327544" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 4800 6300 50  0001 C CNN
-F 1 "GNDA" H 4805 6377 50  0000 C CNN
-F 2 "" H 4800 6550 50  0001 C CNN
-F 3 "" H 4800 6550 50  0001 C CNN
-	1    4800 6550
-	1    0    0    -1  
-$EndComp
-Connection ~ 4800 6550
-Wire Wire Line
-	4800 6550 4900 6550
-$Comp
-L power:GNDA #PWR?
-U 1 1 5F32754C
-P 7100 6150
-AR Path="/5ED6119E/5F32754C" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F32754C" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7100 5900 50  0001 C CNN
-F 1 "GNDA" H 7105 5977 50  0000 C CNN
-F 2 "" H 7100 6150 50  0001 C CNN
-F 3 "" H 7100 6150 50  0001 C CNN
-	1    7100 6150
-	1    0    0    -1  
-$EndComp
-Connection ~ 7100 6150
-Wire Wire Line
-	7100 6150 7200 6150
-Wire Wire Line
-	9000 3900 9250 3900
-$Comp
-L power:GNDA #PWR?
-U 1 1 5F32755B
-P 9250 3900
-AR Path="/5ED6119E/5F32755B" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F32755B" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9250 3650 50  0001 C CNN
-F 1 "GNDA" H 9255 3727 50  0000 C CNN
-F 2 "" H 9250 3900 50  0001 C CNN
-F 3 "" H 9250 3900 50  0001 C CNN
-	1    9250 3900
-	1    0    0    -1  
-$EndComp
-Connection ~ 9250 3900
-Wire Wire Line
-	9250 3900 9450 3900
-$Comp
-L Device:Ferrite_Bead FB?
-U 1 1 5F32756A
-P 9000 2550
-AR Path="/5ED6119E/5F32756A" Ref="FB?"  Part="1" 
-AR Path="/5F5D026F/5F32756A" Ref="FB?"  Part="1" 
-F 0 "FB?" H 8863 2504 50  0000 R CNN
-F 1 "Ferrite_Bead" H 8863 2595 50  0000 R CNN
-F 2 "Resistors_SMD:R_0805" V 8930 2550 50  0001 C CNN
-F 3 "~" H 9000 2550 50  0001 C CNN
-	1    9000 2550
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F327570
-P 9000 2700
-AR Path="/5ED6119E/5F327570" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F327570" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9000 2450 50  0001 C CNN
-F 1 "GND" H 9005 2527 50  0000 C CNN
-F 2 "" H 9000 2700 50  0001 C CNN
-F 3 "" H 9000 2700 50  0001 C CNN
-	1    9000 2700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 5F327576
-P 9000 2400
-AR Path="/5ED6119E/5F327576" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F327576" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9000 2150 50  0001 C CNN
-F 1 "GNDA" H 9005 2227 50  0000 C CNN
-F 2 "" H 9000 2400 50  0001 C CNN
-F 3 "" H 9000 2400 50  0001 C CNN
-	1    9000 2400
-	-1   0    0    1   
-$EndComp
 $Comp
 L 74xx:74LS00 U?
 U 1 1 5F32758B
@@ -783,14 +675,6 @@ F 3 "" H 10200 3050 50  0001 C CNN
 	1    10200 3050
 	1    0    0    -1  
 $EndComp
-Text HLabel 6850 4750 2    50   Input ~ 0
-Qin
-Text HLabel 6800 3800 2    50   Input ~ 0
-Iin
-Text HLabel 6250 5800 2    50   Output ~ 0
-Qout
-Text HLabel 8550 5300 2    50   Output ~ 0
-Iout
 Wire Wire Line
 	6850 4750 6700 4750
 Wire Wire Line
@@ -1047,55 +931,328 @@ Wire Wire Line
 $Comp
 L Device:R_US R?
 U 1 1 5F514E81
-P 3050 3900
+P 3050 4650
 AR Path="/5ED6119E/5F514E81" Ref="R?"  Part="1" 
 AR Path="/5F5D026F/5F514E81" Ref="R?"  Part="1" 
-F 0 "R?" V 2845 3900 50  0000 C CNN
-F 1 "1k" V 2936 3900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805" V 3090 3890 50  0001 C CNN
-F 3 "~" H 3050 3900 50  0001 C CNN
-	1    3050 3900
+F 0 "R?" V 2845 4650 50  0000 C CNN
+F 1 "1k" V 2936 4650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 3090 4640 50  0001 C CNN
+F 3 "~" H 3050 4650 50  0001 C CNN
+	1    3050 4650
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:GNDA #PWR?
-U 1 1 5F51BE3B
-P 2400 3500
-AR Path="/5ED6119E/5F51BE3B" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F51BE3B" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 2400 3250 50  0001 C CNN
-F 1 "GNDA" H 2405 3327 50  0000 C CNN
-F 2 "" H 2400 3500 50  0001 C CNN
-F 3 "" H 2400 3500 50  0001 C CNN
-	1    2400 3500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	2400 3400 2400 3500
+	2750 4350 2650 4350
 Wire Wire Line
 	3050 4950 3200 4950
 Wire Wire Line
 	2700 5450 3200 5450
-Wire Wire Line
-	3050 4050 3050 4950
 $Comp
 L Device:C C?
 U 1 1 5F5156C5
-P 2400 3250
+P 2900 4350
 AR Path="/5ED6119E/5F5156C5" Ref="C?"  Part="1" 
 AR Path="/5F5D026F/5F5156C5" Ref="C?"  Part="1" 
-F 0 "C?" H 2285 3204 50  0000 R CNN
-F 1 "150p" H 2285 3295 50  0000 R CNN
-F 2 "Capacitors_SMD:C_0805" H 2438 3100 50  0001 C CNN
-F 3 "~" H 2400 3250 50  0001 C CNN
-	1    2400 3250
+F 0 "C?" H 2785 4304 50  0000 R CNN
+F 1 "150p" H 2785 4395 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0805" H 2938 4200 50  0001 C CNN
+F 3 "~" H 2900 4350 50  0001 C CNN
+	1    2900 4350
+	0    1    1    0   
+$EndComp
+$Comp
+L 74xGxx:74AHC1G14 U?
+U 1 1 5F5F97CE
+P 3050 3600
+F 0 "U?" V 3071 3470 50  0000 R CNN
+F 1 "74AHC1G14" V 2980 3470 50  0000 R CNN
+F 2 "" H 3050 3600 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/symlink/sn74lvc1g14.pdf" H 3050 3600 50  0001 C CNN
+	1    3050 3600
+	0    -1   -1   0   
+$EndComp
+Connection ~ 3050 4350
+Wire Wire Line
+	3050 4350 3050 4500
+Wire Wire Line
+	3050 4800 3050 4950
+Wire Wire Line
+	3050 3100 3050 3350
+Wire Wire Line
+	3050 3900 3050 4350
+Wire Wire Line
+	2150 3100 3050 3100
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5F62056D
+P 3400 3500
+AR Path="/5ED6119E/5F62056D" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F62056D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3400 3350 50  0001 C CNN
+F 1 "+3.3V" H 3415 3673 50  0000 C CNN
+F 2 "" H 3400 3500 50  0001 C CNN
+F 3 "" H 3400 3500 50  0001 C CNN
+	1    3400 3500
 	1    0    0    -1  
 $EndComp
-Connection ~ 2400 3100
 Wire Wire Line
-	2400 3100 2150 3100
+	3150 3600 3400 3600
 Wire Wire Line
-	3050 3100 3050 3750
+	3400 3600 3400 3500
 Wire Wire Line
-	2400 3100 3050 3100
+	3400 3600 3400 4150
+Connection ~ 3400 3600
+$Comp
+L power:GND #PWR?
+U 1 1 5F62E2BB
+P 2650 3700
+AR Path="/5ED6119E/5F62E2BB" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F62E2BB" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2650 3450 50  0001 C CNN
+F 1 "GND" H 2655 3527 50  0000 C CNN
+F 2 "" H 2650 3700 50  0001 C CNN
+F 3 "" H 2650 3700 50  0001 C CNN
+	1    2650 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 3600 2650 3600
+Wire Wire Line
+	2650 3600 2650 3700
+$Comp
+L Device:R_US R?
+U 1 1 5F636131
+P 2700 5750
+AR Path="/5ED6119E/5F636131" Ref="R?"  Part="1" 
+AR Path="/5F5D026F/5F636131" Ref="R?"  Part="1" 
+F 0 "R?" H 2632 5704 50  0000 R CNN
+F 1 "2k" H 2632 5795 50  0000 R CNN
+F 2 "Resistors_SMD:R_0805" V 2740 5740 50  0001 C CNN
+F 3 "~" H 2700 5750 50  0001 C CNN
+	1    2700 5750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2700 5600 2700 5450
+$Comp
+L power:+12V #PWR?
+U 1 1 5F65E321
+P 9450 3000
+F 0 "#PWR?" H 9450 2850 50  0001 C CNN
+F 1 "+12V" H 9465 3173 50  0000 C CNN
+F 2 "" H 9450 3000 50  0001 C CNN
+F 3 "" H 9450 3000 50  0001 C CNN
+	1    9450 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5F6544AE
+P 9750 4850
+AR Path="/5ED6119E/5F6544AE" Ref="C?"  Part="1" 
+AR Path="/5F5D026F/5F6544AE" Ref="C?"  Part="1" 
+AR Path="/5F6544AE" Ref="C?"  Part="1" 
+F 0 "C?" V 9498 4850 50  0000 C CNN
+F 1 "10n" V 9589 4850 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805" H 9788 4700 50  0001 C CNN
+F 3 "~" H 9750 4850 50  0001 C CNN
+	1    9750 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	10050 4850 9900 4850
+$Comp
+L Device:R_US R?
+U 1 1 5F6544B5
+P 9500 5100
+AR Path="/5ED6119E/5F6544B5" Ref="R?"  Part="1" 
+AR Path="/5F5D026F/5F6544B5" Ref="R?"  Part="1" 
+AR Path="/5F6544B5" Ref="R?"  Part="1" 
+F 0 "R?" H 9568 5146 50  0000 L CNN
+F 1 "10k" H 9568 5055 50  0000 L CNN
+F 2 "Resistors_SMD:R_0805" V 9540 5090 50  0001 C CNN
+F 3 "~" H 9500 5100 50  0001 C CNN
+	1    9500 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9600 4850 9500 4850
+Wire Wire Line
+	9500 4850 9500 4950
+Wire Wire Line
+	9500 5250 9500 5350
+Wire Wire Line
+	9400 4850 9500 4850
+Connection ~ 9500 4850
+$Comp
+L Device:C C?
+U 1 1 5F6544C0
+P 9500 5600
+AR Path="/5ED6119E/5F6544C0" Ref="C?"  Part="1" 
+AR Path="/5F5D026F/5F6544C0" Ref="C?"  Part="1" 
+AR Path="/5F6544C0" Ref="C?"  Part="1" 
+F 0 "C?" H 9385 5554 50  0000 R CNN
+F 1 "10n" H 9385 5645 50  0000 R CNN
+F 2 "Capacitors_SMD:C_0805" H 9538 5450 50  0001 C CNN
+F 3 "~" H 9500 5600 50  0001 C CNN
+	1    9500 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F6544C6
+P 9500 5750
+AR Path="/5ED6119E/5F6544C6" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F6544C6" Ref="#PWR?"  Part="1" 
+AR Path="/5F6544C6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9500 5500 50  0001 C CNN
+F 1 "GND" H 9505 5577 50  0000 C CNN
+F 2 "" H 9500 5750 50  0001 C CNN
+F 3 "" H 9500 5750 50  0001 C CNN
+	1    9500 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_US R?
+U 1 1 5F6544CC
+P 9850 5350
+AR Path="/5ED6119E/5F6544CC" Ref="R?"  Part="1" 
+AR Path="/5F5D026F/5F6544CC" Ref="R?"  Part="1" 
+AR Path="/5F6544CC" Ref="R?"  Part="1" 
+F 0 "R?" V 9645 5350 50  0000 C CNN
+F 1 "10k" V 9736 5350 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 9890 5340 50  0001 C CNN
+F 3 "~" H 9850 5350 50  0001 C CNN
+	1    9850 5350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9700 5350 9500 5350
+Connection ~ 9500 5350
+Wire Wire Line
+	9500 5350 9500 5450
+Text HLabel 8200 3200 2    50   BiDi ~ 0
+ctrl
+Text Label 6800 3800 0    50   ~ 0
+Iin
+Text Label 6850 4750 0    50   ~ 0
+Qin
+Text Label 6250 5800 0    50   ~ 0
+Qout
+Text Label 8550 5300 0    50   ~ 0
+Iout
+Text Label 10000 5350 0    50   ~ 0
+Vbias
+Wire Wire Line
+	9000 3900 9200 3900
+$Comp
+L power:GND #PWR?
+U 1 1 5F6628E4
+P 9200 3900
+AR Path="/5ED6119E/5F6628E4" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F6628E4" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9200 3650 50  0001 C CNN
+F 1 "GND" H 9205 3727 50  0000 C CNN
+F 2 "" H 9200 3900 50  0001 C CNN
+F 3 "" H 9200 3900 50  0001 C CNN
+	1    9200 3900
+	1    0    0    -1  
+$EndComp
+Connection ~ 9200 3900
+Wire Wire Line
+	9200 3900 9450 3900
+$Comp
+L power:GNDA #PWR?
+U 1 1 5F51BE3B
+P 2650 4350
+AR Path="/5ED6119E/5F51BE3B" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F51BE3B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2650 4100 50  0001 C CNN
+F 1 "GNDA" H 2655 4177 50  0000 C CNN
+F 2 "" H 2650 4350 50  0001 C CNN
+F 3 "" H 2650 4350 50  0001 C CNN
+	1    2650 4350
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 5F643F9F
+P 2700 5900
+AR Path="/5ED6119E/5F643F9F" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F643F9F" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2700 5650 50  0001 C CNN
+F 1 "GNDA" H 2705 5727 50  0000 C CNN
+F 2 "" H 2700 5900 50  0001 C CNN
+F 3 "" H 2700 5900 50  0001 C CNN
+	1    2700 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 6550 4900 6550
+Wire Wire Line
+	4650 6550 4800 6550
+Connection ~ 4800 6550
+$Comp
+L power:GNDA #PWR?
+U 1 1 5F327544
+P 4800 6550
+AR Path="/5ED6119E/5F327544" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F327544" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4800 6300 50  0001 C CNN
+F 1 "GNDA" H 4805 6377 50  0000 C CNN
+F 2 "" H 4800 6550 50  0001 C CNN
+F 3 "" H 4800 6550 50  0001 C CNN
+	1    4800 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7100 6150 7200 6150
+Wire Wire Line
+	6950 6150 7100 6150
+Connection ~ 7100 6150
+$Comp
+L power:GNDA #PWR?
+U 1 1 5F32754C
+P 7100 6150
+AR Path="/5ED6119E/5F32754C" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F32754C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7100 5900 50  0001 C CNN
+F 1 "GNDA" H 7105 5977 50  0000 C CNN
+F 2 "" H 7100 6150 50  0001 C CNN
+F 3 "" H 7100 6150 50  0001 C CNN
+	1    7100 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR?
+U 1 1 5F327576
+P 9000 2400
+AR Path="/5ED6119E/5F327576" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F327576" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9000 2150 50  0001 C CNN
+F 1 "GNDA" H 9005 2227 50  0000 C CNN
+F 2 "" H 9000 2400 50  0001 C CNN
+F 3 "" H 9000 2400 50  0001 C CNN
+	1    9000 2400
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F327570
+P 9000 2700
+AR Path="/5ED6119E/5F327570" Ref="#PWR?"  Part="1" 
+AR Path="/5F5D026F/5F327570" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9000 2450 50  0001 C CNN
+F 1 "GND" H 9005 2527 50  0000 C CNN
+F 2 "" H 9000 2700 50  0001 C CNN
+F 3 "" H 9000 2700 50  0001 C CNN
+	1    9000 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 2400 9000 2700
+Text Notes 9050 2600 0    50   ~ 0
+Since the Black Pill doesn't have \nseperate analog ground and power,\nwe're merging the two ground planes.
+Wire Bus Line
+	7400 3200 8200 3200
 $EndSCHEMATC
