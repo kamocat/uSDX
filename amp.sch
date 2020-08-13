@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 4
+Sheet 4 4
 Title "uSDX SMD"
 Date "2020-07-02"
 Rev "1.1.1"
@@ -15,25 +15,6 @@ Comment4 ""
 $EndDescr
 Text HLabel 1900 3350 0    50   Input ~ 0
 Tx
-Text HLabel 3100 1950 0    50   Input ~ 0
-12v
-Text HLabel 4000 3550 0    50   Input ~ 0
-Gnd
-$Comp
-L power:GND #PWR0103
-U 1 1 5ED64CC0
-P 4150 3650
-F 0 "#PWR0103" H 4150 3400 50  0001 C CNN
-F 1 "GND" H 4155 3477 50  0000 C CNN
-F 2 "" H 4150 3650 50  0001 C CNN
-F 3 "" H 4150 3650 50  0001 C CNN
-	1    4150 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4150 3650 4150 3550
-Wire Wire Line
-	4150 3550 4000 3550
 $Comp
 L power:GND #PWR0104
 U 1 1 5ED65175
@@ -56,8 +37,6 @@ F 3 "~" H 3450 2150 50  0001 C CNN
 	1    3450 2150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3100 1950 3450 1950
 Wire Wire Line
 	3450 1950 3450 2000
 $Comp
@@ -459,8 +438,6 @@ F 3 "http://www.diodes.com/assets/Datasheets/BS170F.pdf" H 4600 1800 50  0001 L 
 	1    4600 1800
 	1    0    0    -1  
 $EndComp
-Text HLabel 2450 4150 0    50   Input ~ 0
-12v
 $Comp
 L Device:C C38
 U 1 1 5F215E00
@@ -646,4 +623,30 @@ Wire Wire Line
 Connection ~ 3950 4150
 Text Notes 4500 3300 0    50   ~ 0
 Inductor and capacitor values are chosen for \nperformance on the 40m band. Please adjust as necessary.
+$Comp
+L power:+12V #PWR0158
+U 1 1 5F3F5EB6
+P 3450 1950
+F 0 "#PWR0158" H 3450 1800 50  0001 C CNN
+F 1 "+12V" H 3465 2123 50  0000 C CNN
+F 2 "" H 3450 1950 50  0001 C CNN
+F 3 "" H 3450 1950 50  0001 C CNN
+	1    3450 1950
+	1    0    0    -1  
+$EndComp
+Text HLabel 6050 3750 0    50   Output ~ 0
+SWR1
+Text HLabel 6050 3900 0    50   Output ~ 0
+SWR2
+$Comp
+L power:+12V #PWR0159
+U 1 1 5F3F8B29
+P 2450 4150
+F 0 "#PWR0159" H 2450 4000 50  0001 C CNN
+F 1 "+12V" H 2465 4323 50  0000 C CNN
+F 2 "" H 2450 4150 50  0001 C CNN
+F 3 "" H 2450 4150 50  0001 C CNN
+	1    2450 4150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
