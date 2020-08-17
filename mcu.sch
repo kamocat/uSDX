@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 5
 Title "uSDX SMD"
-Date "2020-07-02"
-Rev "1.1.1"
+Date "2020-08-17"
+Rev "2.0.0"
 Comp ""
 Comment1 ""
 Comment2 ""
