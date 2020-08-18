@@ -141,35 +141,35 @@ $EndComp
 $Comp
 L Device:R_US R?
 U 1 1 5F3273A0
-P 5800 7150
+P 6150 7150
 AR Path="/5ED6119E/5F3273A0" Ref="R?"  Part="1" 
 AR Path="/5F5D026F/5F3273A0" Ref="R312"  Part="1" 
-F 0 "R312" V 5595 7150 50  0000 C CNN
-F 1 "82k" V 5686 7150 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805" V 5840 7140 50  0001 C CNN
-F 3 "~" H 5800 7150 50  0001 C CNN
-	1    5800 7150
+F 0 "R312" V 5945 7150 50  0000 C CNN
+F 1 "82k" V 6036 7150 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 6190 7140 50  0001 C CNN
+F 3 "~" H 6150 7150 50  0001 C CNN
+	1    6150 7150
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 5F3273A6
-P 5650 7400
+P 6000 7400
 AR Path="/5ED6119E/5F3273A6" Ref="C?"  Part="1" 
 AR Path="/5F5D026F/5F3273A6" Ref="C312"  Part="1" 
-F 0 "C312" V 5398 7400 50  0000 C CNN
-F 1 "470p" V 5489 7400 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0805" H 5688 7250 50  0001 C CNN
-F 3 "~" H 5650 7400 50  0001 C CNN
-	1    5650 7400
+F 0 "C312" V 5748 7400 50  0000 C CNN
+F 1 "470p" V 5839 7400 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805" H 6038 7250 50  0001 C CNN
+F 3 "~" H 6000 7400 50  0001 C CNN
+	1    6000 7400
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	5500 7400 5200 7400
+	5850 7400 5550 7400
 Wire Wire Line
-	5800 7400 6050 7400
+	6150 7400 6400 7400
 Wire Wire Line
-	6150 6850 6050 6850
+	6500 6850 6400 6850
 $Comp
 L Device:C C?
 U 1 1 5F327410
@@ -956,9 +956,9 @@ Text HLabel 6100 3350 2    50   Input ~ 0
 TX_I
 Wire Wire Line
 	6100 3350 5950 3350
-Text HLabel 6350 5500 2    50   Output ~ 0
+Text HLabel 6600 5500 2    50   Output ~ 0
 RX_I
-Text HLabel 6150 6850 2    50   Output ~ 0
+Text HLabel 6500 6850 2    50   Output ~ 0
 RX_Q
 Text Label 7700 1700 0    50   ~ 0
 CLK2
@@ -1059,8 +1059,6 @@ F 3 "~" H 4750 5700 50  0001 C CNN
 	1    4750 5700
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	5200 6950 5200 7050
 $Comp
 L Device:C C?
 U 1 1 5F5A169C
@@ -1078,7 +1076,6 @@ Wire Wire Line
 	4700 6750 4800 6750
 Wire Wire Line
 	4700 7050 4800 7050
-Connection ~ 5200 7050
 $Comp
 L Device:C C?
 U 1 1 5F5BE254
@@ -1198,12 +1195,12 @@ Wire Wire Line
 $Comp
 L Connector:TestPoint TP313
 U 1 1 5F864FC1
-P 6050 7400
-F 0 "TP313" H 5992 7426 50  0000 R CNN
-F 1 "TestPoint" H 5992 7517 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6250 7400 50  0001 C CNN
-F 3 "~" H 6250 7400 50  0001 C CNN
-	1    6050 7400
+P 6400 7400
+F 0 "TP313" H 6342 7426 50  0000 R CNN
+F 1 "TestPoint" H 6342 7517 50  0000 R CNN
+F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6600 7400 50  0001 C CNN
+F 3 "~" H 6600 7400 50  0001 C CNN
+	1    6400 7400
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -1267,7 +1264,7 @@ F 3 "~" H 8550 3750 50  0001 C CNN
 $EndComp
 Connection ~ 8350 3750
 Wire Wire Line
-	6050 6850 6050 7150
+	6400 6850 6400 7150
 Wire Wire Line
 	3300 5300 3300 7050
 Wire Wire Line
@@ -1276,11 +1273,11 @@ Wire Wire Line
 	3400 6750 3600 6750
 Wire Wire Line
 	3400 5200 3400 6750
-Connection ~ 6050 6850
-Connection ~ 6050 7150
+Connection ~ 6400 6850
+Connection ~ 6400 7150
 Wire Wire Line
-	6050 7150 6050 7400
-Connection ~ 6050 7400
+	6400 7150 6400 7400
+Connection ~ 6400 7400
 Wire Wire Line
 	3300 5100 3500 5100
 Wire Wire Line
@@ -1444,10 +1441,6 @@ F 3 "http://www.ti.com/lit/gpn/74act00" H 5950 1800 50  0001 C CNN
 	2    5950 1800
 	-1   0    0    -1  
 $EndComp
-Connection ~ 4800 6750
-Wire Wire Line
-	4800 7050 5200 7050
-Connection ~ 4800 7050
 Wire Wire Line
 	4700 1550 5100 1550
 Wire Wire Line
@@ -1472,112 +1465,149 @@ Connection ~ 7050 2400
 Wire Wire Line
 	7150 2400 7050 2400
 Wire Wire Line
-	4800 6750 5200 6750
-Wire Wire Line
-	6050 6850 5800 6850
+	6400 6850 6150 6850
 $Comp
 L Amplifier_Operational:LM4562 U?
 U 1 1 5F327310
-P 5500 6850
+P 5850 6850
 AR Path="/5ED6119E/5F327310" Ref="U?"  Part="1" 
 AR Path="/5F5D026F/5F327310" Ref="U305"  Part="1" 
-F 0 "U305" H 5500 7217 50  0000 C CNN
-F 1 "LM4562" H 5500 7126 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5500 6850 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5500 6850 50  0001 C CNN
-	1    5500 6850
+F 0 "U305" H 5850 7217 50  0000 C CNN
+F 1 "LM4562" H 5850 7126 50  0000 C CNN
+F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5850 6850 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5850 6850 50  0001 C CNN
+	1    5850 6850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5950 7150 6050 7150
+	6300 7150 6400 7150
 Wire Wire Line
-	5200 7050 5200 7150
+	5550 7150 6000 7150
+Connection ~ 5550 7150
 Wire Wire Line
-	5200 7150 5650 7150
-Connection ~ 5200 7150
-Wire Wire Line
-	5200 7150 5200 7400
+	5550 7150 5550 7400
 $Comp
 L Device:R_US R?
 U 1 1 5F7FB33D
-P 6000 5800
+P 6250 5800
 AR Path="/5ED6119E/5F7FB33D" Ref="R?"  Part="1" 
 AR Path="/5F5D026F/5F7FB33D" Ref="R317"  Part="1" 
-F 0 "R317" V 5795 5800 50  0000 C CNN
-F 1 "82k" V 5886 5800 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805" V 6040 5790 50  0001 C CNN
-F 3 "~" H 6000 5800 50  0001 C CNN
-	1    6000 5800
+F 0 "R317" V 6045 5800 50  0000 C CNN
+F 1 "82k" V 6136 5800 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 6290 5790 50  0001 C CNN
+F 3 "~" H 6250 5800 50  0001 C CNN
+	1    6250 5800
 	0    1    1    0   
 $EndComp
 $Comp
 L Device:C C?
 U 1 1 5F7FB347
-P 5850 6050
+P 6100 6050
 AR Path="/5ED6119E/5F7FB347" Ref="C?"  Part="1" 
 AR Path="/5F5D026F/5F7FB347" Ref="C317"  Part="1" 
-F 0 "C317" V 5598 6050 50  0000 C CNN
-F 1 "470p" V 5689 6050 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0805" H 5888 5900 50  0001 C CNN
-F 3 "~" H 5850 6050 50  0001 C CNN
-	1    5850 6050
+F 0 "C317" V 5848 6050 50  0000 C CNN
+F 1 "470p" V 5939 6050 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805" H 6138 5900 50  0001 C CNN
+F 3 "~" H 6100 6050 50  0001 C CNN
+	1    6100 6050
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	5700 6050 5400 6050
+	5950 6050 5650 6050
 Wire Wire Line
-	6000 6050 6250 6050
+	6250 6050 6500 6050
 Wire Wire Line
-	6350 5500 6250 5500
-Wire Wire Line
-	5400 5600 5400 5700
-Connection ~ 5400 5700
+	6600 5500 6500 5500
 $Comp
 L Connector:TestPoint TP317
 U 1 1 5F7FB357
-P 6250 6050
-F 0 "TP317" H 6192 6076 50  0000 R CNN
-F 1 "TestPoint" H 6192 6167 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6450 6050 50  0001 C CNN
-F 3 "~" H 6450 6050 50  0001 C CNN
-	1    6250 6050
+P 6500 6050
+F 0 "TP317" H 6442 6076 50  0000 R CNN
+F 1 "TestPoint" H 6442 6167 50  0000 R CNN
+F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6700 6050 50  0001 C CNN
+F 3 "~" H 6700 6050 50  0001 C CNN
+	1    6500 6050
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	6250 5500 6250 5800
-Connection ~ 6250 5500
-Connection ~ 6250 5800
+	6500 5500 6500 5800
+Connection ~ 6500 5500
+Connection ~ 6500 5800
 Wire Wire Line
-	6250 5800 6250 6050
-Connection ~ 6250 6050
+	6500 5800 6500 6050
+Connection ~ 6500 6050
 Wire Wire Line
-	5000 5700 5400 5700
-Wire Wire Line
-	5000 5400 5400 5400
-Wire Wire Line
-	6250 5500 6000 5500
+	6500 5500 6250 5500
 $Comp
 L Amplifier_Operational:LM4562 U?
 U 2 1 5F7FB369
-P 5700 5500
+P 5950 5500
 AR Path="/5ED6119E/5F7FB369" Ref="U?"  Part="1" 
 AR Path="/5F5D026F/5F7FB369" Ref="U305"  Part="2" 
-F 0 "U305" H 5700 5867 50  0000 C CNN
-F 1 "LM4562" H 5700 5776 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5700 5500 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5700 5500 50  0001 C CNN
-	2    5700 5500
+F 0 "U305" H 5950 5867 50  0000 C CNN
+F 1 "LM4562" H 5950 5776 50  0000 C CNN
+F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5950 5500 50  0001 C CNN
+F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5950 5500 50  0001 C CNN
+	2    5950 5500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6150 5800 6250 5800
+	6400 5800 6500 5800
 Wire Wire Line
-	5400 5700 5400 5800
+	5650 5800 6100 5800
+Connection ~ 5650 5800
 Wire Wire Line
-	5400 5800 5850 5800
-Connection ~ 5400 5800
+	5650 5800 5650 6050
 Wire Wire Line
-	5400 5800 5400 6050
+	5000 5400 5650 5400
 Connection ~ 5000 5400
+Wire Wire Line
+	5650 5600 5650 5700
+$Comp
+L Device:R_US R?
+U 1 1 5F9F79EF
+P 5350 5700
+AR Path="/5ED6119E/5F9F79EF" Ref="R?"  Part="1" 
+AR Path="/5F5D026F/5F9F79EF" Ref="R319"  Part="1" 
+F 0 "R319" V 5145 5700 50  0000 C CNN
+F 1 "100" V 5236 5700 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 5390 5690 50  0001 C CNN
+F 3 "~" H 5350 5700 50  0001 C CNN
+	1    5350 5700
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5200 5700 5000 5700
 Connection ~ 5000 5700
+Wire Wire Line
+	5500 5700 5650 5700
+Connection ~ 5650 5700
+Wire Wire Line
+	5650 5700 5650 5800
+Wire Wire Line
+	4800 6750 5550 6750
+Connection ~ 4800 6750
+Wire Wire Line
+	5550 6950 5550 7050
+$Comp
+L Device:R_US R?
+U 1 1 5FA2BB48
+P 5150 7050
+AR Path="/5ED6119E/5FA2BB48" Ref="R?"  Part="1" 
+AR Path="/5F5D026F/5FA2BB48" Ref="R318"  Part="1" 
+F 0 "R318" V 4945 7050 50  0000 C CNN
+F 1 "100" V 5036 7050 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805" V 5190 7040 50  0001 C CNN
+F 3 "~" H 5150 7050 50  0001 C CNN
+	1    5150 7050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5000 7050 4800 7050
+Connection ~ 4800 7050
+Wire Wire Line
+	5300 7050 5550 7050
+Connection ~ 5550 7050
+Wire Wire Line
+	5550 7050 5550 7150
 $EndSCHEMATC
