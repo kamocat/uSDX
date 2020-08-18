@@ -137,17 +137,6 @@ Wire Wire Line
 Wire Wire Line
 	7150 4900 7300 4900
 $Comp
-L power:+3V3 #PWR0530
-U 1 1 5F5EDF2D
-P 6850 5100
-F 0 "#PWR0530" H 6850 4950 50  0001 C CNN
-F 1 "+3V3" V 6865 5228 50  0000 L CNN
-F 2 "" H 6850 5100 50  0001 C CNN
-F 3 "" H 6850 5100 50  0001 C CNN
-	1    6850 5100
-	0    -1   -1   0   
-$EndComp
-$Comp
 L power:GND #PWR0529
 U 1 1 5F5EE6A5
 P 6850 4800
@@ -309,17 +298,6 @@ Wire Wire Line
 	8600 5200 8800 5200
 Wire Wire Line
 	9950 5300 8800 5300
-$Comp
-L power:+3V3 #PWR0535
-U 1 1 5F60196D
-P 8800 5200
-F 0 "#PWR0535" H 8800 5050 50  0001 C CNN
-F 1 "+3V3" H 8815 5373 50  0000 C CNN
-F 2 "" H 8800 5200 50  0001 C CNN
-F 3 "" H 8800 5200 50  0001 C CNN
-	1    8800 5200
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8800 5400 8600 5400
 Wire Wire Line
@@ -387,17 +365,6 @@ F 3 "~" H 9050 4750 50  0001 C CNN
 	1    9050 4750
 	-1   0    0    1   
 $EndComp
-$Comp
-L power:+3V3 #PWR0536
-U 1 1 5F60DF0D
-P 9100 4500
-F 0 "#PWR0536" H 9100 4350 50  0001 C CNN
-F 1 "+3V3" V 9115 4628 50  0000 L CNN
-F 2 "" H 9100 4500 50  0001 C CNN
-F 3 "" H 9100 4500 50  0001 C CNN
-	1    9100 4500
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	8800 4500 9050 4500
 Wire Wire Line
@@ -411,17 +378,6 @@ Wire Wire Line
 	8800 4800 8600 4800
 Wire Wire Line
 	8600 4200 8800 4200
-$Comp
-L power:+3V3 #PWR0534
-U 1 1 5F61380C
-P 8800 3800
-F 0 "#PWR0534" H 8800 3650 50  0001 C CNN
-F 1 "+3V3" H 8815 3973 50  0000 C CNN
-F 2 "" H 8800 3800 50  0001 C CNN
-F 3 "" H 8800 3800 50  0001 C CNN
-	1    8800 3800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8800 3800 8800 3850
 Wire Wire Line
@@ -462,7 +418,7 @@ U 1 1 5F622234
 P 2750 2900
 F 0 "U501" H 2750 2211 50  0000 C CNN
 F 1 "MCP2221AxSL" H 2750 2120 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 2750 3900 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 2750 3900 50  0001 C CNN
 F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005565B.pdf" H 2750 3600 50  0001 C CNN
 	1    2750 2900
 	1    0    0    -1  
@@ -513,17 +469,6 @@ Wire Wire Line
 Connection ~ 2850 2150
 Wire Wire Line
 	2850 2150 2750 2150
-$Comp
-L power:+3V3 #PWR0512
-U 1 1 5F62938F
-P 2850 2000
-F 0 "#PWR0512" H 2850 1850 50  0001 C CNN
-F 1 "+3V3" H 2865 2173 50  0000 C CNN
-F 2 "" H 2850 2000 50  0001 C CNN
-F 3 "" H 2850 2000 50  0001 C CNN
-	1    2850 2000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2850 2000 2850 2150
 $Comp
@@ -581,17 +526,6 @@ F 3 "" H 3600 5650 50  0001 C CNN
 	1    3600 5650
 	0    -1   -1   0   
 $EndComp
-$Comp
-L power:+3V3 #PWR0518
-U 1 1 5F646502
-P 3800 5150
-F 0 "#PWR0518" H 3800 5000 50  0001 C CNN
-F 1 "+3V3" H 3815 5323 50  0000 C CNN
-F 2 "" H 3800 5150 50  0001 C CNN
-F 3 "" H 3800 5150 50  0001 C CNN
-	1    3800 5150
-	1    0    0    -1  
-$EndComp
 Text Label 2500 4550 2    50   ~ 0
 +D2
 Text Label 2350 4400 2    50   ~ 0
@@ -604,17 +538,6 @@ Text Label 6700 3900 2    50   ~ 0
 Vbus
 Text Label 2500 5450 2    50   ~ 0
 Vbus
-$Comp
-L power:+3V3 #PWR0501
-U 1 1 5F654B0C
-P 1200 6200
-F 0 "#PWR0501" H 1200 6050 50  0001 C CNN
-F 1 "+3V3" H 1215 6373 50  0000 C CNN
-F 2 "" H 1200 6200 50  0001 C CNN
-F 3 "" H 1200 6200 50  0001 C CNN
-	1    1200 6200
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:R_US R501
 U 1 1 5F65584E
@@ -719,11 +642,6 @@ F 3 "" H 3600 5250 50  0001 C CNN
 	1    3600 5250
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	3600 5150 3800 5150
-Connection ~ 3800 5150
-Wire Wire Line
-	3800 5150 3850 5150
 $Comp
 L power:GND #PWR0521
 U 1 1 5F687295
@@ -733,17 +651,6 @@ F 1 "GND" H 4155 4977 50  0000 C CNN
 F 2 "" H 4150 5150 50  0001 C CNN
 F 3 "" H 4150 5150 50  0001 C CNN
 	1    4150 5150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0517
-U 1 1 5F688225
-P 3800 4750
-F 0 "#PWR0517" H 3800 4600 50  0001 C CNN
-F 1 "+3V3" H 3815 4923 50  0000 C CNN
-F 2 "" H 3800 4750 50  0001 C CNN
-F 3 "" H 3800 4750 50  0001 C CNN
-	1    3800 4750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -768,11 +675,6 @@ F 3 "" H 3600 4850 50  0001 C CNN
 	1    3600 4850
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	3600 4750 3800 4750
-Connection ~ 3800 4750
-Wire Wire Line
-	3800 4750 3850 4750
 $Comp
 L power:GND #PWR0520
 U 1 1 5F688246
@@ -783,17 +685,6 @@ F 2 "" H 4150 4750 50  0001 C CNN
 F 3 "" H 4150 4750 50  0001 C CNN
 	1    4150 4750
 	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0522
-U 1 1 5F69708E
-P 4150 5750
-F 0 "#PWR0522" H 4150 5600 50  0001 C CNN
-F 1 "+3V3" V 4165 5878 50  0000 L CNN
-F 2 "" H 4150 5750 50  0001 C CNN
-F 3 "" H 4150 5750 50  0001 C CNN
-	1    4150 5750
-	0    1    1    0   
 $EndComp
 $Comp
 L Device:C C511
@@ -818,17 +709,6 @@ F 3 "" H 4150 6200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+3V3 #PWR0506
-U 1 1 5F6AFA37
-P 2200 4850
-F 0 "#PWR0506" H 2200 4700 50  0001 C CNN
-F 1 "+3V3" H 2215 5023 50  0000 C CNN
-F 2 "" H 2200 4850 50  0001 C CNN
-F 3 "" H 2200 4850 50  0001 C CNN
-	1    2200 4850
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C C504
 U 1 1 5F6AFA41
 P 2000 4850
@@ -850,9 +730,6 @@ F 3 "" H 2500 4950 50  0001 C CNN
 	1    2500 4950
 	0    1    -1   0   
 $EndComp
-Connection ~ 2200 4850
-Wire Wire Line
-	2200 4850 2150 4850
 $Comp
 L power:GND #PWR0504
 U 1 1 5F6AFA58
@@ -864,22 +741,6 @@ F 3 "" H 1850 4850 50  0001 C CNN
 	1    1850 4850
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	2200 4850 2500 4850
-$Comp
-L power:+3V3 #PWR0508
-U 1 1 5F6C0A3C
-P 2200 5550
-F 0 "#PWR0508" H 2200 5400 50  0001 C CNN
-F 1 "+3V3" H 2215 5723 50  0000 C CNN
-F 2 "" H 2200 5550 50  0001 C CNN
-F 3 "" H 2200 5550 50  0001 C CNN
-	1    2200 5550
-	-1   0    0    -1  
-$EndComp
-Connection ~ 2200 5550
-Wire Wire Line
-	2200 5550 1700 5550
 $Comp
 L power:GND #PWR0502
 U 1 1 5F6C0A52
@@ -892,17 +753,6 @@ F 3 "" H 1400 5550 50  0001 C CNN
 	0    1    -1   0   
 $EndComp
 $Comp
-L power:+3V3 #PWR0507
-U 1 1 5F6CA627
-P 2200 5300
-F 0 "#PWR0507" H 2200 5150 50  0001 C CNN
-F 1 "+3V3" H 2215 5473 50  0000 C CNN
-F 2 "" H 2200 5300 50  0001 C CNN
-F 3 "" H 2200 5300 50  0001 C CNN
-	1    2200 5300
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Device:C C505
 U 1 1 5F6CA631
 P 2000 5300
@@ -913,9 +763,6 @@ F 3 "~" H 2000 5300 50  0001 C CNN
 	1    2000 5300
 	0    1    -1   0   
 $EndComp
-Connection ~ 2200 5300
-Wire Wire Line
-	2200 5300 2150 5300
 $Comp
 L power:GND #PWR0505
 U 1 1 5F6CA63D
@@ -928,13 +775,9 @@ F 3 "" H 1850 5300 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	2200 5300 2400 5300
-Wire Wire Line
 	2400 5300 2400 5350
 Wire Wire Line
 	2400 5350 2500 5350
-Wire Wire Line
-	2200 5550 2500 5550
 $Comp
 L Device:C C501
 U 1 1 5F6C0A46
@@ -960,17 +803,6 @@ $EndComp
 Wire Wire Line
 	3600 5750 4150 5750
 $Comp
-L power:+3V3 #PWR0524
-U 1 1 5F71AC81
-P 4600 5550
-F 0 "#PWR0524" H 4600 5400 50  0001 C CNN
-F 1 "+3V3" V 4615 5678 50  0000 L CNN
-F 2 "" H 4600 5550 50  0001 C CNN
-F 3 "" H 4600 5550 50  0001 C CNN
-	1    4600 5550
-	0    1    1    0   
-$EndComp
-$Comp
 L Device:C C512
 U 1 1 5F71AC8B
 P 4600 6050
@@ -994,10 +826,8 @@ F 3 "" H 4600 6200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3600 5550 4600 5550
-Connection ~ 4600 5550
 Wire Wire Line
 	4150 5750 4150 5900
-Connection ~ 4150 5750
 Wire Wire Line
 	4600 5550 4600 5900
 Wire Wire Line
@@ -1105,17 +935,6 @@ Wire Wire Line
 	3800 4350 3600 4350
 Wire Wire Line
 	3600 4350 3600 4650
-$Comp
-L power:+3V3 #PWR0519
-U 1 1 5F7702C8
-P 4150 4350
-F 0 "#PWR0519" H 4150 4200 50  0001 C CNN
-F 1 "+3V3" H 4165 4523 50  0000 C CNN
-F 2 "" H 4150 4350 50  0001 C CNN
-F 3 "" H 4150 4350 50  0001 C CNN
-	1    4150 4350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4100 4350 4150 4350
 Text Notes 3600 6200 2    50   ~ 0
@@ -1139,7 +958,7 @@ U 1 1 5F7C09F5
 P 2150 2800
 F 0 "TP503" V 2345 2872 50  0000 C CNN
 F 1 "TestPoint" V 2254 2872 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2350 2800 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2350 2800 50  0001 C CNN
 F 3 "~" H 2350 2800 50  0001 C CNN
 	1    2150 2800
 	0    -1   -1   0   
@@ -1150,7 +969,7 @@ U 1 1 5F7C10BC
 P 1850 2900
 F 0 "TP502" V 2045 2972 50  0000 C CNN
 F 1 "TestPoint" V 1954 2972 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2050 2900 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2050 2900 50  0001 C CNN
 F 3 "~" H 2050 2900 50  0001 C CNN
 	1    1850 2900
 	0    -1   -1   0   
@@ -1165,7 +984,7 @@ U 1 1 5F7CA828
 P 2500 4500
 F 0 "TP507" H 2558 4618 50  0000 L CNN
 F 1 "TestPoint" H 2558 4527 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2700 4500 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2700 4500 50  0001 C CNN
 F 3 "~" H 2700 4500 50  0001 C CNN
 	1    2500 4500
 	1    0    0    -1  
@@ -1176,7 +995,7 @@ U 1 1 5F7CB027
 P 2350 4300
 F 0 "TP505" H 2408 4418 50  0000 L CNN
 F 1 "TestPoint" H 2408 4327 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2550 4300 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2550 4300 50  0001 C CNN
 F 3 "~" H 2550 4300 50  0001 C CNN
 	1    2350 4300
 	1    0    0    -1  
@@ -1193,7 +1012,7 @@ U 1 1 5F7D6A77
 P 1600 6200
 F 0 "TP501" H 1658 6318 50  0000 L CNN
 F 1 "TestPoint" H 1658 6227 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 1800 6200 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1800 6200 50  0001 C CNN
 F 3 "~" H 1800 6200 50  0001 C CNN
 	1    1600 6200
 	1    0    0    -1  
@@ -1204,7 +1023,7 @@ U 1 1 5F7D7C1F
 P 2400 6250
 F 0 "TP506" H 2342 6276 50  0000 R CNN
 F 1 "TestPoint" H 2342 6367 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2600 6250 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 6250 50  0001 C CNN
 F 3 "~" H 2600 6250 50  0001 C CNN
 	1    2400 6250
 	-1   0    0    1   
@@ -1215,7 +1034,7 @@ U 1 1 5F7D8401
 P 2300 6450
 F 0 "TP504" H 2242 6476 50  0000 R CNN
 F 1 "TestPoint" H 2242 6567 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2500 6450 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 6450 50  0001 C CNN
 F 3 "~" H 2500 6450 50  0001 C CNN
 	1    2300 6450
 	-1   0    0    1   
@@ -1236,7 +1055,7 @@ U 1 1 5F7E1D99
 P 3750 5850
 F 0 "TP509" V 3704 6038 50  0000 L CNN
 F 1 "TestPoint" V 3795 6038 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 3950 5850 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3950 5850 50  0001 C CNN
 F 3 "~" H 3950 5850 50  0001 C CNN
 	1    3750 5850
 	0    1    1    0   
@@ -1250,7 +1069,7 @@ U 1 1 5F7E832E
 P 3600 4100
 F 0 "TP508" H 3542 4218 50  0000 R CNN
 F 1 "TestPoint" H 3542 4127 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 3800 4100 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3800 4100 50  0001 C CNN
 F 3 "~" H 3800 4100 50  0001 C CNN
 	1    3600 4100
 	-1   0    0    -1  
@@ -1264,7 +1083,7 @@ U 1 1 5F7EDDAB
 P 6650 4100
 F 0 "TP511" H 6592 4218 50  0000 R CNN
 F 1 "TestPoint" H 6592 4127 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6850 4100 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6850 4100 50  0001 C CNN
 F 3 "~" H 6850 4100 50  0001 C CNN
 	1    6650 4100
 	-1   0    0    -1  
@@ -1278,7 +1097,7 @@ U 1 1 5F7EEB3A
 P 6850 4200
 F 0 "TP512" H 6793 4226 50  0000 R CNN
 F 1 "TestPoint" H 6793 4317 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 7050 4200 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7050 4200 50  0001 C CNN
 F 3 "~" H 7050 4200 50  0001 C CNN
 	1    6850 4200
 	1    0    0    1   
@@ -1299,7 +1118,7 @@ U 1 1 5F81258B
 P 6500 3650
 F 0 "TP510" H 6442 3768 50  0000 R CNN
 F 1 "TestPoint" H 6442 3677 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6700 3650 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6700 3650 50  0001 C CNN
 F 3 "~" H 6700 3650 50  0001 C CNN
 	1    6500 3650
 	-1   0    0    -1  
@@ -1309,4 +1128,204 @@ Wire Wire Line
 Connection ~ 6500 3900
 Wire Wire Line
 	6500 3900 6400 3900
+$Comp
+L power:+3.3V #PWR0118
+U 1 1 5FA9F1C7
+P 6850 5100
+F 0 "#PWR0118" H 6850 4950 50  0001 C CNN
+F 1 "+3.3V" V 6865 5228 50  0000 L CNN
+F 2 "" H 6850 5100 50  0001 C CNN
+F 3 "" H 6850 5100 50  0001 C CNN
+	1    6850 5100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0119
+U 1 1 5FA9FA38
+P 8800 5200
+F 0 "#PWR0119" H 8800 5050 50  0001 C CNN
+F 1 "+3.3V" H 8815 5373 50  0000 C CNN
+F 2 "" H 8800 5200 50  0001 C CNN
+F 3 "" H 8800 5200 50  0001 C CNN
+	1    8800 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0120
+U 1 1 5FA9FC25
+P 9100 4500
+F 0 "#PWR0120" H 9100 4350 50  0001 C CNN
+F 1 "+3.3V" V 9115 4628 50  0000 L CNN
+F 2 "" H 9100 4500 50  0001 C CNN
+F 3 "" H 9100 4500 50  0001 C CNN
+	1    9100 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR0121
+U 1 1 5FAA00CB
+P 8800 3800
+F 0 "#PWR0121" H 8800 3650 50  0001 C CNN
+F 1 "+3.3V" H 8815 3973 50  0000 C CNN
+F 2 "" H 8800 3800 50  0001 C CNN
+F 3 "" H 8800 3800 50  0001 C CNN
+	1    8800 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0122
+U 1 1 5FAA1469
+P 2850 2000
+F 0 "#PWR0122" H 2850 1850 50  0001 C CNN
+F 1 "+3.3V" H 2865 2173 50  0000 C CNN
+F 2 "" H 2850 2000 50  0001 C CNN
+F 3 "" H 2850 2000 50  0001 C CNN
+	1    2850 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0123
+U 1 1 5FAA2563
+P 3750 4750
+F 0 "#PWR0123" H 3750 4600 50  0001 C CNN
+F 1 "+3.3V" H 3765 4923 50  0000 C CNN
+F 2 "" H 3750 4750 50  0001 C CNN
+F 3 "" H 3750 4750 50  0001 C CNN
+	1    3750 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 4750 3750 4750
+Wire Wire Line
+	3600 5150 3750 5150
+Connection ~ 3750 4750
+Wire Wire Line
+	3750 4750 3850 4750
+$Comp
+L power:+3.3V #PWR0124
+U 1 1 5FAA2F9A
+P 3750 5150
+F 0 "#PWR0124" H 3750 5000 50  0001 C CNN
+F 1 "+3.3V" H 3765 5323 50  0000 C CNN
+F 2 "" H 3750 5150 50  0001 C CNN
+F 3 "" H 3750 5150 50  0001 C CNN
+	1    3750 5150
+	1    0    0    -1  
+$EndComp
+Connection ~ 3750 5150
+Wire Wire Line
+	3750 5150 3850 5150
+$Comp
+L power:+3.3V #PWR0125
+U 1 1 5FAA408B
+P 1200 6200
+F 0 "#PWR0125" H 1200 6050 50  0001 C CNN
+F 1 "+3.3V" H 1215 6373 50  0000 C CNN
+F 2 "" H 1200 6200 50  0001 C CNN
+F 3 "" H 1200 6200 50  0001 C CNN
+	1    1200 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0126
+U 1 1 5FAA4ADD
+P 4150 5750
+F 0 "#PWR0126" H 4150 5600 50  0001 C CNN
+F 1 "+3.3V" V 4165 5878 50  0000 L CNN
+F 2 "" H 4150 5750 50  0001 C CNN
+F 3 "" H 4150 5750 50  0001 C CNN
+	1    4150 5750
+	0    1    1    0   
+$EndComp
+Connection ~ 4150 5750
+Wire Wire Line
+	2150 4850 2200 4850
+Wire Wire Line
+	2150 5300 2200 5300
+$Comp
+L power:+3.3V #PWR0127
+U 1 1 5FAA57FD
+P 2200 4850
+F 0 "#PWR0127" H 2200 4700 50  0001 C CNN
+F 1 "+3.3V" H 2215 5023 50  0000 C CNN
+F 2 "" H 2200 4850 50  0001 C CNN
+F 3 "" H 2200 4850 50  0001 C CNN
+	1    2200 4850
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 4850
+Wire Wire Line
+	2200 4850 2500 4850
+$Comp
+L power:+3.3V #PWR0128
+U 1 1 5FAA5C5A
+P 2200 5300
+F 0 "#PWR0128" H 2200 5150 50  0001 C CNN
+F 1 "+3.3V" H 2215 5473 50  0000 C CNN
+F 2 "" H 2200 5300 50  0001 C CNN
+F 3 "" H 2200 5300 50  0001 C CNN
+	1    2200 5300
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 5300
+Wire Wire Line
+	2200 5300 2400 5300
+Wire Wire Line
+	1700 5550 2200 5550
+$Comp
+L power:+3.3V #PWR0129
+U 1 1 5FAA5F6E
+P 2200 5550
+F 0 "#PWR0129" H 2200 5400 50  0001 C CNN
+F 1 "+3.3V" H 2215 5723 50  0000 C CNN
+F 2 "" H 2200 5550 50  0001 C CNN
+F 3 "" H 2200 5550 50  0001 C CNN
+	1    2200 5550
+	1    0    0    -1  
+$EndComp
+Connection ~ 2200 5550
+Wire Wire Line
+	2200 5550 2500 5550
+$Comp
+L power:+3.3V #PWR0130
+U 1 1 5FAA686A
+P 4600 5550
+F 0 "#PWR0130" H 4600 5400 50  0001 C CNN
+F 1 "+3.3V" V 4615 5678 50  0000 L CNN
+F 2 "" H 4600 5550 50  0001 C CNN
+F 3 "" H 4600 5550 50  0001 C CNN
+	1    4600 5550
+	0    1    1    0   
+$EndComp
+Connection ~ 4600 5550
+$Comp
+L power:+3.3V #PWR0131
+U 1 1 5FAA6B86
+P 4150 4350
+F 0 "#PWR0131" H 4150 4200 50  0001 C CNN
+F 1 "+3.3V" H 4165 4523 50  0000 C CNN
+F 2 "" H 4150 4350 50  0001 C CNN
+F 3 "" H 4150 4350 50  0001 C CNN
+	1    4150 4350
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6400 4300
+NoConn ~ 8600 4000
+NoConn ~ 8600 4100
+NoConn ~ 8600 4600
+NoConn ~ 8600 4700
+NoConn ~ 2500 5050
+NoConn ~ 2500 5150
+NoConn ~ 2500 5250
+NoConn ~ 3150 3000
+NoConn ~ 3150 3100
+NoConn ~ 3150 3200
+NoConn ~ 3150 3300
+NoConn ~ 3150 2500
+NoConn ~ 3150 2400
+NoConn ~ 2350 2400
+NoConn ~ 3600 5950
+NoConn ~ 3600 5050
+NoConn ~ 3600 4950
+NoConn ~ 7300 4700
 $EndSCHEMATC

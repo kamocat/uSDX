@@ -786,7 +786,7 @@ U 1 1 5F87EA98
 P 6350 4250
 F 0 "TP402" V 6545 4322 50  0000 C CNN
 F 1 "TestPoint" V 6454 4322 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6550 4250 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6550 4250 50  0001 C CNN
 F 3 "~" H 6550 4250 50  0001 C CNN
 	1    6350 4250
 	0    -1   -1   0   
@@ -799,7 +799,7 @@ U 1 1 5F880C66
 P 5050 3250
 F 0 "TP401" V 5245 3322 50  0000 C CNN
 F 1 "TestPoint" V 5154 3322 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 5250 3250 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 5250 3250 50  0001 C CNN
 F 3 "~" H 5250 3250 50  0001 C CNN
 	1    5050 3250
 	0    -1   -1   0   
@@ -812,7 +812,7 @@ U 1 1 5F882FB0
 P 6900 1650
 F 0 "TP403" V 7095 1722 50  0000 C CNN
 F 1 "TestPoint" V 7004 1722 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 7100 1650 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7100 1650 50  0001 C CNN
 F 3 "~" H 7100 1650 50  0001 C CNN
 	1    6900 1650
 	0    -1   -1   0   
@@ -825,7 +825,7 @@ U 1 1 5F8855E4
 P 8200 1700
 F 0 "TP404" H 8142 1726 50  0000 R CNN
 F 1 "TestPoint" H 8142 1817 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 8400 1700 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8400 1700 50  0001 C CNN
 F 3 "~" H 8400 1700 50  0001 C CNN
 	1    8200 1700
 	-1   0    0    1   

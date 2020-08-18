@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 5
+Sheet 4 5
 Title "Black Pill uSDX"
 Date "2020-08-18"
 Rev "2.0.1"
@@ -198,7 +198,7 @@ F 3 "" H 10650 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 10250 1950 1    50   ~ 0
-BTN
+BUTTONS
 $Comp
 L power:GND #PWR0226
 U 1 1 5F325FF7
@@ -1295,7 +1295,7 @@ U 1 1 5F7B51D5
 P 8850 5050
 F 0 "TP201" V 8804 5238 50  0000 L CNN
 F 1 "TestPoint" V 8895 5238 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 9050 5050 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9050 5050 50  0001 C CNN
 F 3 "~" H 9050 5050 50  0001 C CNN
 	1    8850 5050
 	0    1    1    0   
@@ -1309,7 +1309,7 @@ U 1 1 5F7B5C2C
 P 9650 5100
 F 0 "TP202" V 9604 5288 50  0000 L CNN
 F 1 "TestPoint" V 9695 5288 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 9850 5100 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 9850 5100 50  0001 C CNN
 F 3 "~" H 9850 5100 50  0001 C CNN
 	1    9650 5100
 	0    1    1    0   
@@ -1501,7 +1501,7 @@ U 1 1 5F88EE79
 P 3900 3650
 F 0 "D211" V 3939 3532 50  0000 R CNN
 F 1 "LED" V 3848 3532 50  0000 R CNN
-F 2 "LEDs:LED_0603" H 3900 3650 50  0001 C CNN
+F 2 "LEDs:LED_0805" H 3900 3650 50  0001 C CNN
 F 3 "~" H 3900 3650 50  0001 C CNN
 	1    3900 3650
 	0    -1   -1   0   
@@ -1512,7 +1512,7 @@ U 1 1 5F88FDD1
 P 3400 3650
 F 0 "D210" V 3439 3532 50  0000 R CNN
 F 1 "LED" V 3348 3532 50  0000 R CNN
-F 2 "LEDs:LED_0603" H 3400 3650 50  0001 C CNN
+F 2 "LEDs:LED_0805" H 3400 3650 50  0001 C CNN
 F 3 "~" H 3400 3650 50  0001 C CNN
 	1    3400 3650
 	0    -1   -1   0   
@@ -1645,7 +1645,7 @@ Wire Wire Line
 	1250 1000 1250 1400
 Connection ~ 1250 1400
 Text Label 2050 2400 2    50   ~ 0
-THERM
+Therm
 $Comp
 L Device:R_US R226
 U 1 1 5F9590D5
@@ -1674,8 +1674,6 @@ F 3 "" H 3650 5450 50  0001 C CNN
 $EndComp
 Text HLabel 3850 5050 2    50   Input ~ 0
 Therm
-Text Label 3700 5050 2    50   ~ 0
-THERM
 Wire Wire Line
 	3850 5050 3800 5050
 Wire Wire Line
@@ -1705,4 +1703,10 @@ Wire Wire Line
 	3650 5450 3800 5450
 Text Notes 3350 4950 0    50   ~ 0
 Thermistor\nTemperature\nMeasurement
+NoConn ~ 2050 1600
+NoConn ~ 2050 1700
+NoConn ~ 2050 2000
+NoConn ~ 3300 1800
+NoConn ~ 2050 3500
+NoConn ~ 3300 2700
 $EndSCHEMATC

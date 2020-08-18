@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 5 5
 Title "Black Pill uSDX"
 Date "2020-08-18"
 Rev "2.0.1"
@@ -340,10 +340,6 @@ Wire Wire Line
 Wire Wire Line
 	8800 3550 8350 3550
 Connection ~ 8800 3550
-Wire Wire Line
-	2000 4750 1650 4750
-Text Label 1650 4750 0    50   ~ 0
-AVCC
 Connection ~ 2000 5100
 Wire Wire Line
 	2000 5050 2000 5100
@@ -760,43 +756,6 @@ Wire Wire Line
 Wire Wire Line
 	2350 3550 2350 3700
 $Comp
-L power:+3.3V #PWR?
-U 1 1 5F62056D
-P 2700 3150
-AR Path="/5ED6119E/5F62056D" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F62056D" Ref="#PWR0307"  Part="1" 
-F 0 "#PWR0307" H 2700 3000 50  0001 C CNN
-F 1 "+3.3V" H 2715 3323 50  0000 C CNN
-F 2 "" H 2700 3150 50  0001 C CNN
-F 3 "" H 2700 3150 50  0001 C CNN
-	1    2700 3150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2450 3250 2700 3250
-Wire Wire Line
-	2700 3250 2700 3150
-Wire Wire Line
-	2700 3250 2700 3800
-Connection ~ 2700 3250
-$Comp
-L power:GND #PWR?
-U 1 1 5F62E2BB
-P 1950 3350
-AR Path="/5ED6119E/5F62E2BB" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F62E2BB" Ref="#PWR0304"  Part="1" 
-F 0 "#PWR0304" H 1950 3100 50  0001 C CNN
-F 1 "GND" H 1955 3177 50  0000 C CNN
-F 2 "" H 1950 3350 50  0001 C CNN
-F 3 "" H 1950 3350 50  0001 C CNN
-	1    1950 3350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2250 3250 1950 3250
-Wire Wire Line
-	1950 3250 1950 3350
-$Comp
 L Device:R_US R?
 U 1 1 5F636131
 P 2000 5400
@@ -1099,7 +1058,7 @@ U 1 1 5F82643E
 P 2300 3700
 F 0 "TP305" V 2495 3772 50  0000 C CNN
 F 1 "TestPoint" V 2404 3772 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2500 3700 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 3700 50  0001 C CNN
 F 3 "~" H 2500 3700 50  0001 C CNN
 	1    2300 3700
 	0    -1   -1   0   
@@ -1115,7 +1074,7 @@ U 1 1 5F830B11
 P 2350 4600
 F 0 "TP306" V 2545 4672 50  0000 C CNN
 F 1 "TestPoint" V 2454 4672 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2550 4600 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2550 4600 50  0001 C CNN
 F 3 "~" H 2550 4600 50  0001 C CNN
 	1    2350 4600
 	0    -1   -1   0   
@@ -1129,7 +1088,7 @@ U 1 1 5F843469
 P 2150 5100
 F 0 "TP304" H 2092 5126 50  0000 R CNN
 F 1 "TestPoint" H 2092 5217 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 2350 5100 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2350 5100 50  0001 C CNN
 F 3 "~" H 2350 5100 50  0001 C CNN
 	1    2150 5100
 	-1   0    0    1   
@@ -1143,7 +1102,7 @@ U 1 1 5F860DA1
 P 3600 6750
 F 0 "TP307" H 3658 6868 50  0000 L CNN
 F 1 "TestPoint" H 3658 6777 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 3800 6750 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3800 6750 50  0001 C CNN
 F 3 "~" H 3800 6750 50  0001 C CNN
 	1    3600 6750
 	1    0    0    -1  
@@ -1154,7 +1113,7 @@ U 1 1 5F861E84
 P 3600 7050
 F 0 "TP308" H 3658 7168 50  0000 L CNN
 F 1 "TestPoint" H 3658 7077 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 3800 7050 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3800 7050 50  0001 C CNN
 F 3 "~" H 3800 7050 50  0001 C CNN
 	1    3600 7050
 	1    0    0    -1  
@@ -1171,7 +1130,7 @@ U 1 1 5F8645A7
 P 3800 5400
 F 0 "TP314" H 3858 5518 50  0000 L CNN
 F 1 "TestPoint" H 3858 5427 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 4000 5400 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4000 5400 50  0001 C CNN
 F 3 "~" H 4000 5400 50  0001 C CNN
 	1    3800 5400
 	1    0    0    -1  
@@ -1184,7 +1143,7 @@ U 1 1 5F864A5E
 P 3800 5700
 F 0 "TP315" H 3858 5818 50  0000 L CNN
 F 1 "TestPoint" H 3858 5727 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 4000 5700 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4000 5700 50  0001 C CNN
 F 3 "~" H 4000 5700 50  0001 C CNN
 	1    3800 5700
 	1    0    0    -1  
@@ -1198,7 +1157,7 @@ U 1 1 5F864FC1
 P 6400 7400
 F 0 "TP313" H 6342 7426 50  0000 R CNN
 F 1 "TestPoint" H 6342 7517 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6600 7400 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6600 7400 50  0001 C CNN
 F 3 "~" H 6600 7400 50  0001 C CNN
 	1    6400 7400
 	-1   0    0    1   
@@ -1209,7 +1168,7 @@ U 1 1 5F865854
 P 4200 4400
 F 0 "TP312" H 4258 4518 50  0000 L CNN
 F 1 "TestPoint" H 4258 4427 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 4400 4400 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4400 4400 50  0001 C CNN
 F 3 "~" H 4400 4400 50  0001 C CNN
 	1    4200 4400
 	1    0    0    -1  
@@ -1221,7 +1180,7 @@ U 1 1 5F865D6A
 P 4050 4100
 F 0 "TP311" H 4108 4218 50  0000 L CNN
 F 1 "TestPoint" H 4108 4127 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 4250 4100 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4250 4100 50  0001 C CNN
 F 3 "~" H 4250 4100 50  0001 C CNN
 	1    4050 4100
 	1    0    0    -1  
@@ -1233,7 +1192,7 @@ U 1 1 5F8660C9
 P 3950 3450
 F 0 "TP310" H 4008 3568 50  0000 L CNN
 F 1 "TestPoint" H 4008 3477 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 4150 3450 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4150 3450 50  0001 C CNN
 F 3 "~" H 4150 3450 50  0001 C CNN
 	1    3950 3450
 	1    0    0    -1  
@@ -1245,7 +1204,7 @@ U 1 1 5F866386
 P 3800 3150
 F 0 "TP309" H 3858 3268 50  0000 L CNN
 F 1 "TestPoint" H 3858 3177 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 4000 3150 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4000 3150 50  0001 C CNN
 F 3 "~" H 4000 3150 50  0001 C CNN
 	1    3800 3150
 	1    0    0    -1  
@@ -1257,7 +1216,7 @@ U 1 1 5F870899
 P 8350 3750
 F 0 "TP316" V 8545 3822 50  0000 C CNN
 F 1 "TestPoint" V 8454 3822 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 8550 3750 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8550 3750 50  0001 C CNN
 F 3 "~" H 8550 3750 50  0001 C CNN
 	1    8350 3750
 	0    -1   -1   0   
@@ -1299,7 +1258,7 @@ U 1 1 5F84DFB0
 P 7150 2400
 F 0 "TP303" H 7092 2426 50  0000 R CNN
 F 1 "TestPoint" H 7092 2517 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 7350 2400 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7350 2400 50  0001 C CNN
 F 3 "~" H 7350 2400 50  0001 C CNN
 	1    7150 2400
 	0    1    1    0   
@@ -1310,7 +1269,7 @@ U 1 1 5F84D6BF
 P 7100 1600
 F 0 "TP302" H 7158 1718 50  0000 L CNN
 F 1 "TestPoint" H 7158 1627 50  0000 L CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 7300 1600 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7300 1600 50  0001 C CNN
 F 3 "~" H 7300 1600 50  0001 C CNN
 	1    7100 1600
 	1    0    0    -1  
@@ -1323,7 +1282,7 @@ U 1 1 5F843EAC
 P 5100 1550
 F 0 "TP301" V 5295 1622 50  0000 C CNN
 F 1 "TestPoint" V 5204 1622 50  0000 C CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 5300 1550 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 5300 1550 50  0001 C CNN
 F 3 "~" H 5300 1550 50  0001 C CNN
 	1    5100 1550
 	0    1    1    0   
@@ -1524,7 +1483,7 @@ U 1 1 5F7FB357
 P 6500 6050
 F 0 "TP317" H 6442 6076 50  0000 R CNN
 F 1 "TestPoint" H 6442 6167 50  0000 R CNN
-F 2 "Measurement_Points:Test_Point_Keystone_5019_Minature" H 6700 6050 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6700 6050 50  0001 C CNN
 F 3 "~" H 6700 6050 50  0001 C CNN
 	1    6500 6050
 	-1   0    0    1   
@@ -1610,4 +1569,41 @@ Wire Wire Line
 Connection ~ 5550 7050
 Wire Wire Line
 	5550 7050 5550 7150
+$Comp
+L power:+3.3V #PWR0132
+U 1 1 5FB0AB73
+P 2000 4750
+F 0 "#PWR0132" H 2000 4600 50  0001 C CNN
+F 1 "+3.3V" H 2015 4923 50  0000 C CNN
+F 2 "" H 2000 4750 50  0001 C CNN
+F 3 "" H 2000 4750 50  0001 C CNN
+	1    2000 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0133
+U 1 1 5FB905BD
+P 2700 3150
+F 0 "#PWR0133" H 2700 3000 50  0001 C CNN
+F 1 "+3.3V" H 2715 3323 50  0000 C CNN
+F 2 "" H 2700 3150 50  0001 C CNN
+F 3 "" H 2700 3150 50  0001 C CNN
+	1    2700 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 3150 2700 3800
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5FB941C5
+P 2100 3250
+F 0 "#PWR?" H 2100 3100 50  0001 C CNN
+F 1 "+3.3V" H 2115 3423 50  0000 C CNN
+F 2 "" H 2100 3250 50  0001 C CNN
+F 3 "" H 2100 3250 50  0001 C CNN
+	1    2100 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 3250 2250 3250
 $EndSCHEMATC
