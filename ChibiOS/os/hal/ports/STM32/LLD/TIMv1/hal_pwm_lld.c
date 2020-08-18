@@ -364,7 +364,22 @@ OSAL_IRQ_HANDLER(STM32_TIM8_CC_HANDLER) {
 
 #if STM32_PWM_USE_TIM9 || defined(__DOXYGEN__)
 #if !defined(STM32_TIM9_SUPPRESS_ISR)
-#error "TIM9 ISR not defined by platform"
+#if !defined(STM32_TIM9_HANDLER)
+#error "STM32_TIM9_HANDLER not defined"
+#endif
+/**
+ * @brief   TIM9 interrupt handler.
+ *
+ * @isr
+ */
+OSAL_IRQ_HANDLER(STM32_TIM9_HANDLER) {
+
+  OSAL_IRQ_PROLOGUE();
+
+  pwm_lld_serve_interrupt(&PWMD9);
+
+  OSAL_IRQ_EPILOGUE();
+}
 #endif /* !defined(STM32_TIM9_SUPPRESS_ISR) */
 #endif /* STM32_PWM_USE_TIM9 */
 
