@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
-Title ""
-Date "2020-08-17"
-Rev "2.0.0"
+Title "Black Pill uSDX"
+Date "2020-08-18"
+Rev "2.0.1"
 Comp ""
 Comment1 ""
 Comment2 ""

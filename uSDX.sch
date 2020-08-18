@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Black Pill uSDX"
-Date "2020-08-17"
-Rev "2.0.0"
+Date "2020-08-18"
+Rev "2.0.1"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -34,6 +34,7 @@ F14 "UART1_TX" O R 6700 5000 50
 F15 "AUDIO_I" O R 6700 5100 50 
 F16 "AUDIO_Q" O R 6700 5200 50 
 F17 "USB_MIC" I R 6700 5300 50 
+F18 "Therm" I R 6700 3800 50 
 $EndSheet
 $Sheet
 S 7100 2200 700  1150
@@ -61,6 +62,8 @@ F3 "Rx" O L 8200 3050 50
 F4 "Rx_En" I L 8200 4100 50 
 F5 "SWR1" O L 8200 3900 50 
 F6 "SWR2" O L 8200 4000 50 
+F7 "ThermIn" U L 8200 3700 50 
+F8 "ThermOut" U L 8200 3800 50 
 $EndSheet
 Wire Wire Line
 	7800 2850 8200 2850
@@ -570,4 +573,21 @@ F 3 "" H 2425 4200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1850 3750 1850 4100
+$Comp
+L power:+3V3 #PWR0116
+U 1 1 5F959FB0
+P 8000 3600
+F 0 "#PWR0116" H 8000 3450 50  0001 C CNN
+F 1 "+3V3" H 8015 3773 50  0000 C CNN
+F 2 "" H 8000 3600 50  0001 C CNN
+F 3 "" H 8000 3600 50  0001 C CNN
+	1    8000 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 3600 8000 3700
+Wire Wire Line
+	8000 3700 8200 3700
+Wire Wire Line
+	6700 3800 8200 3800
 $EndSCHEMATC
