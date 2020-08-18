@@ -19,25 +19,21 @@
 #include "test.h"
 
 /*
- * Example Thread
+ * This is a periodic thread that does absolutely nothing except flashing
+ * a LED.
  */
-THD_WORKING_AREA(waThread1, 256);
-THD_FUNCTION(Thread1, arg) {
+static THD_WORKING_AREA(waThread1, 128);
+static THD_FUNCTION(Thread1, arg) {
 
   (void)arg;
-
+  chRegSetThreadName("blinker");
   while (true) {
-    serial_test("Hurray! Serial works\r\n");
+    palSetPad(GPIOB, GPIOB_RX_EN);
+    chThdSleepMilliseconds(500);
+    palClearPad(GPIOB, GPIOB_RX_EN);
     chThdSleepMilliseconds(500);
   }
 }
-
-/*
- * Threads creation table, one entry per thread.
- */
-THD_TABLE_BEGIN
-  THD_TABLE_THREAD(3, "demo",     waThread1,       Thread1,      NULL)
-THD_TABLE_END
 
 /*
  * Application entry point.
@@ -54,10 +50,22 @@ int main(void) {
   halInit();
   chSysInit();
 
-  /* This is now the idle thread loop, you may perform here a low priority
-     task but you must never try to sleep or wait in this loop. Note that
-     this tasks runs at the lowest priority level so any instruction added
-     here will be executed after all other tasks have been started.*/
+  /*
+   * Activates the serial driver 1 using the driver default configuration.
+   */
+  sdStart(&SD1, NULL);
+
+  /*
+   * Creates the example thread.
+   */
+  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+
+  /*
+   * Normal main() thread activity, in this demo it does nothing except
+   * sleeping in a loop and check the button state.
+   */
   while (true) {
+    serial_test("Hurray! Serial works\r\n");
+    chThdSleepMilliseconds(500);
   }
 }

@@ -20,15 +20,15 @@ void speaker_simple_test(float freq){
     .period = (1<<10), // 11 bits of data to give a 16 kHz update rate
     .callback = NULL,
     .channels = {
+     {PWM_OUTPUT_DISABLED, NULL},
+     {PWM_OUTPUT_DISABLED, NULL},
      {PWM_OUTPUT_ACTIVE_HIGH, NULL},
-     {PWM_OUTPUT_DISABLED, NULL},
-     {PWM_OUTPUT_DISABLED, NULL},
      {PWM_OUTPUT_DISABLED, NULL}
     },
     .cr2 = 0,
     .dier = 0,
   };
-  pwmStart(&PWMD3, &spkr);
+  pwmStart(&PWMD1, &spkr);
   const float tau = 6.2832;
   float step = freq * tau / 10e3;
   float x = 0;
@@ -37,7 +37,7 @@ void speaker_simple_test(float freq){
     if(x > tau)
       x -= tau;
     int16_t val = (1<<9)*(sin(x)+1);
-    pwmEnableChannel(&PWMD3, 0, val);
+    pwmEnableChannel(&PWMD1, 2, val);
     chThdSleepMicroseconds(100);
   }
 }
@@ -93,39 +93,16 @@ void encoder_test(void){
       .range      = 1000
   };
   sdStart(&SD1, &scfg);
-  qeiStart(&QEID1, &encoder);
-  qeiEnable(&QEID1);
+  qeiStart(&QEID3, &encoder);
+  qeiEnable(&QEID3);
   while(1){
-    int position = qeiGetPositionI(&QEID1);
+    int position = qeiGetPositionI(&QEID3);
     char msg[20];
     int digits = format_int(msg, position);
     memcpy2(msg+digits, "\r\n", 2);
     chnWrite(&SD1, (const uint8_t *)msg, digits+2);
     chThdSleepMilliseconds(100);
   }
-}
-void dac_simple_test(float freq){
-  const DACConfig dac1cfg1 = {
-    .init         = 2047U,
-    .datamode     = DAC_DHRM_12BIT_RIGHT,
-    .cr           = 0
-  };
-  dacStart(&DACD1, &dac1cfg1);
-  const float tau = 6.2832;
-  float step = freq * tau / 10e3;
-  float x = 0;
-  while(1){
-    x += step;
-    if(x > tau)
-      x -= tau;
-    int16_t val = (1<<9)*(sin(x)+1);
-    dacPutChannelX(&DACD1, 1, val);
-    chThdSleepMicroseconds(100);
-  }
-}
-void dac_streaming_test(float freq){
-  (void)freq;
-  //TODO: Make callback function to handle half-buffer fill
 }
 void i2c_simple_test(void){
   const I2CConfig i2c_cfg; // No configuration?

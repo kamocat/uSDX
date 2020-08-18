@@ -65,7 +65,7 @@
  * @brief   Enables the DAC subsystem.
  */
 #if !defined(HAL_USE_DAC) || defined(__DOXYGEN__)
-#define HAL_USE_DAC                         TRUE
+#define HAL_USE_DAC                         FALSE
 #endif
 
 /**
@@ -79,7 +79,7 @@
  * @brief   Enables the GPT subsystem.
  */
 #if !defined(HAL_USE_GPT) || defined(__DOXYGEN__)
-#define HAL_USE_GPT                         TRUE
+#define HAL_USE_GPT                         FALSE
 #endif
 
 /**
@@ -100,7 +100,7 @@
  * @brief   Enables the ICU subsystem.
  */
 #if !defined(HAL_USE_ICU) || defined(__DOXYGEN__)
-#define HAL_USE_ICU                         FALSE
+#define HAL_USE_ICU                         TRUE
 #endif
 
 /**
@@ -225,7 +225,7 @@
  * @note    Disabling this option saves both code and data space.
  */
 #if !defined(PAL_USE_WAIT) || defined(__DOXYGEN__)
-#define PAL_USE_WAIT                        TRUE
+#define PAL_USE_WAIT                        FALSE
 #endif
 
 /*===========================================================================*/
@@ -305,7 +305,7 @@
  * @note    Disabling this option saves both code and data space.
  */
 #if !defined(DAC_USE_MUTUAL_EXCLUSION) || defined(__DOXYGEN__)
-#define DAC_USE_MUTUAL_EXCLUSION            FALSE
+#define DAC_USE_MUTUAL_EXCLUSION            TRUE
 #endif
 
 /*===========================================================================*/
