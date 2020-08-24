@@ -23,7 +23,7 @@ AR Path="/5F5D026F/5F32730A" Ref="U302"  Part="5"
 F 0 "U302" H 10480 5446 50  0000 L CNN
 F 1 "74ACT00" H 10480 5355 50  0000 L CNN
 F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 10250 5400 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/74act00" H 10250 5400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 10250 5400 50  0001 C CNN
 	5    10250 5400
 	1    0    0    -1  
 $EndComp
@@ -32,8 +32,8 @@ L Amplifier_Operational:LM4562 U?
 U 3 1 5F32731C
 P 8900 3850
 AR Path="/5ED6119E/5F32731C" Ref="U?"  Part="3" 
-AR Path="/5F5D026F/5F32731C" Ref="U307"  Part="3" 
-F 0 "U307" H 8858 3896 50  0000 L CNN
+AR Path="/5F5D026F/5F32731C" Ref="U305"  Part="3" 
+F 0 "U305" H 8858 3896 50  0000 L CNN
 F 1 "LM4562" H 8858 3805 50  0000 L CNN
 F 2 "Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm" H 8900 3850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm4562.pdf" H 8900 3850 50  0001 C CNN
@@ -59,32 +59,6 @@ Wire Wire Line
 	850  5100 950  5100
 $Comp
 L power:GND #PWR?
-U 1 1 5F32735E
-P 4900 2000
-AR Path="/5ED6119E/5F32735E" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F32735E" Ref="#PWR0312"  Part="1" 
-F 0 "#PWR0312" H 4900 1750 50  0001 C CNN
-F 1 "GND" H 4905 1827 50  0000 C CNN
-F 2 "" H 4900 2000 50  0001 C CNN
-F 3 "" H 4900 2000 50  0001 C CNN
-	1    4900 2000
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5F327364
-P 4900 850
-AR Path="/5ED6119E/5F327364" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F327364" Ref="#PWR0311"  Part="1" 
-F 0 "#PWR0311" H 4900 700 50  0001 C CNN
-F 1 "+3.3V" H 4915 1023 50  0000 C CNN
-F 2 "" H 4900 850 50  0001 C CNN
-F 3 "" H 4900 850 50  0001 C CNN
-	1    4900 850 
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
 U 1 1 5F327370
 P 10250 5900
 AR Path="/5ED6119E/5F327370" Ref="#PWR?"  Part="1" 
@@ -96,14 +70,6 @@ F 3 "" H 10250 5900 50  0001 C CNN
 	1    10250 5900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4400 1300 4100 1300
-Wire Wire Line
-	4400 1500 4100 1500
-Text Label 4100 1300 0    50   ~ 0
-CLK0
-Text Label 4100 1500 0    50   ~ 0
-CLK1
 Wire Wire Line
 	2250 4200 2500 4200
 Wire Wire Line
@@ -208,58 +174,6 @@ Connection ~ 3000 5400
 Connection ~ 3450 5700
 Connection ~ 3250 7050
 Connection ~ 2800 6750
-Wire Wire Line
-	5400 1150 5400 1200
-Wire Wire Line
-	5400 1450 5400 1400
-Wire Wire Line
-	6050 1700 5400 1700
-Wire Wire Line
-	5400 1800 6300 1800
-$Comp
-L Device:C C?
-U 1 1 5F3274C6
-P 4550 950
-AR Path="/5ED6119E/5F3274C6" Ref="C?"  Part="1" 
-AR Path="/5F5D026F/5F3274C6" Ref="C306"  Part="1" 
-F 0 "C306" V 4298 950 50  0000 C CNN
-F 1 "100n" V 4389 950 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0805" H 4588 800 50  0001 C CNN
-F 3 "~" H 4550 950 50  0001 C CNN
-	1    4550 950 
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5F3274CC
-P 4300 1000
-AR Path="/5ED6119E/5F3274CC" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F3274CC" Ref="#PWR0310"  Part="1" 
-F 0 "#PWR0310" H 4300 750 50  0001 C CNN
-F 1 "GND" H 4305 827 50  0000 C CNN
-F 2 "" H 4300 1000 50  0001 C CNN
-F 3 "" H 4300 1000 50  0001 C CNN
-	1    4300 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4300 950  4300 1000
-Wire Wire Line
-	4300 950  4400 950 
-Wire Wire Line
-	4900 850  4900 950 
-Wire Wire Line
-	4900 950  4800 950 
-Wire Wire Line
-	4800 1000 4800 950 
-Connection ~ 4800 950 
-Wire Wire Line
-	4800 950  4700 950 
-Wire Wire Line
-	5000 1000 5000 950 
-Wire Wire Line
-	5000 950  4900 950 
-Connection ~ 4900 950 
 $Comp
 L uSDX:FST3253 U?
 U 1 1 5F3274F2
@@ -273,10 +187,6 @@ F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 1860 4600 50  0001 C CNN
 	1    1850 4600
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	5400 1150 5550 1150
-Wire Wire Line
-	5400 1450 5550 1450
 $Comp
 L Device:Ferrite_Bead FB?
 U 1 1 5F327517
@@ -315,93 +225,17 @@ Wire Wire Line
 	950  5050 950  5100
 $Comp
 L 74xx:74LS00 U?
-U 4 1 5F327591
+U 3 1 5F327591
 P 3550 4800
 AR Path="/5F327591" Ref="U?"  Part="4" 
 AR Path="/5ED6119E/5F327591" Ref="U?"  Part="4" 
-AR Path="/5F5D026F/5F327591" Ref="U303"  Part="4" 
-F 0 "U303" H 3550 5125 50  0000 C CNN
+AR Path="/5F5D026F/5F327591" Ref="U302"  Part="3" 
+F 0 "U302" H 3550 5125 50  0000 C CNN
 F 1 "74ACT00" H 3550 5034 50  0000 C CNN
 F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 3550 4800 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 3550 4800 50  0001 C CNN
-	4    3550 4800
+	3    3550 4800
 	-1   0    0    -1  
-$EndComp
-$Comp
-L power:+3.3V #PWR?
-U 1 1 5F3275B8
-P 6150 1200
-AR Path="/5ED6119E/5F3275B8" Ref="#PWR?"  Part="1" 
-AR Path="/5F5D026F/5F3275B8" Ref="#PWR0313"  Part="1" 
-F 0 "#PWR0313" H 6150 1050 50  0001 C CNN
-F 1 "+3.3V" H 6165 1373 50  0000 C CNN
-F 2 "" H 6150 1200 50  0001 C CNN
-F 3 "" H 6150 1200 50  0001 C CNN
-	1    6150 1200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_US R?
-U 1 1 5F3275BE
-P 6050 1450
-AR Path="/5ED6119E/5F3275BE" Ref="R?"  Part="1" 
-AR Path="/5F5D026F/5F3275BE" Ref="R308"  Part="1" 
-F 0 "R308" H 5982 1404 50  0000 R CNN
-F 1 "1k" H 5982 1495 50  0000 R CNN
-F 2 "Resistors_SMD:R_0805" V 6090 1440 50  0001 C CNN
-F 3 "~" H 6050 1450 50  0001 C CNN
-	1    6050 1450
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R_US R?
-U 1 1 5F3275C4
-P 6300 1450
-AR Path="/5ED6119E/5F3275C4" Ref="R?"  Part="1" 
-AR Path="/5F5D026F/5F3275C4" Ref="R309"  Part="1" 
-F 0 "R309" H 6232 1404 50  0000 R CNN
-F 1 "1k" H 6232 1495 50  0000 R CNN
-F 2 "Resistors_SMD:R_0805" V 6340 1440 50  0001 C CNN
-F 3 "~" H 6300 1450 50  0001 C CNN
-	1    6300 1450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	6050 1300 6150 1300
-Wire Wire Line
-	6150 1200 6150 1300
-Connection ~ 6150 1300
-Wire Wire Line
-	6150 1300 6300 1300
-Wire Wire Line
-	6050 1600 6050 1700
-Wire Wire Line
-	6300 1800 6300 1600
-$Comp
-L Oscillator:Si5351A-B-GT U?
-U 1 1 5F3275D0
-P 4900 1500
-AR Path="/5ED6119E/5F3275D0" Ref="U?"  Part="1" 
-AR Path="/5F5D026F/5F3275D0" Ref="U306"  Part="1" 
-F 0 "U306" H 4900 1600 50  0000 C CNN
-F 1 "SI5351" H 4850 1500 50  0000 C CNN
-F 2 "Housings_SSOP:MSOP-10_3x3mm_Pitch0.5mm" H 4900 700 50  0001 C CNN
-F 3 "https://www.silabs.com/documents/public/data-sheets/Si5351-B.pdf" H 4550 1400 50  0001 C CNN
-	1    4900 1500
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Device:Crystal Y?
-U 1 1 5F3275D6
-P 5550 1300
-AR Path="/5ED6119E/5F3275D6" Ref="Y?"  Part="1" 
-AR Path="/5F5D026F/5F3275D6" Ref="Y301"  Part="1" 
-F 0 "Y301" V 5550 1050 50  0000 L CNN
-F 1 "25MHz" V 5650 950 50  0000 L CNN
-F 2 "Crystals:Crystal_SMD_Abracon_ABM3-2pin_5.0x3.2mm" H 5550 1300 50  0001 C CNN
-F 3 "~" H 5550 1300 50  0001 C CNN
-	1    5550 1300
-	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR?
@@ -467,7 +301,7 @@ AR Path="/5F5D026F/5F4A8396" Ref="U302"  Part="4"
 F 0 "U302" H 3550 4325 50  0000 C CNN
 F 1 "74ACT00" H 3550 4234 50  0000 C CNN
 F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 3550 4000 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/74act00" H 3550 4000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 3550 4000 50  0001 C CNN
 	4    3550 4000
 	-1   0    0    -1  
 $EndComp
@@ -487,8 +321,6 @@ Wire Wire Line
 Connection ~ 2300 4050
 Wire Wire Line
 	1300 4600 1450 4600
-Wire Wire Line
-	950  5100 1100 5100
 $Comp
 L Device:R_US R?
 U 1 1 5F636131
@@ -628,60 +460,50 @@ Text HLabel 5700 6850 2    50   Output ~ 0
 RX_Q
 Text Label 4100 1700 0    50   ~ 0
 CLK2
-Text HLabel 6400 1700 2    50   3State ~ 0
-SCL
-Wire Wire Line
-	6400 1700 6050 1700
-Connection ~ 6050 1700
-Text HLabel 6400 1800 2    50   3State ~ 0
-SDA
-Wire Wire Line
-	6400 1800 6300 1800
-Connection ~ 6300 1800
 $Comp
 L Connector:Conn_01x07_Female J301
 U 1 1 5F4EA304
-P 8950 5500
-F 0 "J301" H 8978 5526 50  0000 L CNN
-F 1 "Conn_01x07_Female" H 8978 5435 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x07_Pitch2.54mm" H 8950 5500 50  0001 C CNN
-F 3 "~" H 8950 5500 50  0001 C CNN
-	1    8950 5500
+P 5150 1450
+F 0 "J301" H 5178 1476 50  0000 L CNN
+F 1 "Conn_01x07_Female" H 5178 1385 50  0000 L CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x07_Pitch2.54mm" H 5150 1450 50  0001 C CNN
+F 3 "~" H 5150 1450 50  0001 C CNN
+	1    5150 1450
 	1    0    0    -1  
 $EndComp
-Text Notes 8450 5100 0    50   ~ 0
+Text Notes 4650 1050 0    50   ~ 0
 Header for Si5351 breakout
-Text Label 8750 5200 2    50   ~ 0
+Text Label 4950 1150 2    50   ~ 0
 CLK0
-Text Label 8750 5300 2    50   ~ 0
+Text Label 4950 1250 2    50   ~ 0
 CLK1
-Text Label 8750 5400 2    50   ~ 0
+Text Label 4950 1350 2    50   ~ 0
 CLK2
 $Comp
 L power:+3.3V #PWR0319
 U 1 1 5F4ECFB4
-P 8750 5800
-F 0 "#PWR0319" H 8750 5650 50  0001 C CNN
-F 1 "+3.3V" V 8765 5928 50  0000 L CNN
-F 2 "" H 8750 5800 50  0001 C CNN
-F 3 "" H 8750 5800 50  0001 C CNN
-	1    8750 5800
+P 4950 1750
+F 0 "#PWR0319" H 4950 1600 50  0001 C CNN
+F 1 "+3.3V" V 4965 1878 50  0000 L CNN
+F 2 "" H 4950 1750 50  0001 C CNN
+F 3 "" H 4950 1750 50  0001 C CNN
+	1    4950 1750
 	0    -1   -1   0   
 $EndComp
 $Comp
 L power:GND #PWR0318
 U 1 1 5F50CBB2
-P 8750 5700
-F 0 "#PWR0318" H 8750 5450 50  0001 C CNN
-F 1 "GND" V 8755 5572 50  0000 R CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x07_Pitch2.54mm" H 8750 5700 50  0001 C CNN
-F 3 "https://learn.adafruit.com/downloads/pdf/adafruit-si5351-clock-generator-breakout.pdf" H 8750 5700 50  0001 C CNN
-	1    8750 5700
+P 4950 1650
+F 0 "#PWR0318" H 4950 1400 50  0001 C CNN
+F 1 "GND" V 4955 1522 50  0000 R CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x07_Pitch2.54mm" H 4950 1650 50  0001 C CNN
+F 3 "https://learn.adafruit.com/downloads/pdf/adafruit-si5351-clock-generator-breakout.pdf" H 4950 1650 50  0001 C CNN
+	1    4950 1650
 	0    1    1    0   
 $EndComp
-Text HLabel 8750 5500 0    50   3State ~ 0
+Text HLabel 4950 1450 0    50   3State ~ 0
 SCL
-Text HLabel 8750 5600 0    50   3State ~ 0
+Text HLabel 4950 1550 0    50   3State ~ 0
 SDA
 $Comp
 L power:+12VA #PWR0316
@@ -697,86 +519,6 @@ $EndComp
 Connection ~ 8350 3550
 Wire Wire Line
 	950  5100 950  5250
-$Comp
-L Connector:TestPoint TP301
-U 1 1 5F843469
-P 1100 5100
-F 0 "TP301" H 1042 5126 50  0000 R CNN
-F 1 "TestPoint" H 1042 5217 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1300 5100 50  0001 C CNN
-F 3 "~" H 1300 5100 50  0001 C CNN
-	1    1100 5100
-	-1   0    0    1   
-$EndComp
-Connection ~ 1100 5100
-Wire Wire Line
-	1100 5100 1450 5100
-$Comp
-L Connector:TestPoint TP302
-U 1 1 5F860DA1
-P 2550 6750
-F 0 "TP302" H 2608 6868 50  0000 L CNN
-F 1 "TestPoint" H 2608 6777 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2750 6750 50  0001 C CNN
-F 3 "~" H 2750 6750 50  0001 C CNN
-	1    2550 6750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP303
-U 1 1 5F861E84
-P 2550 7050
-F 0 "TP303" H 2608 7168 50  0000 L CNN
-F 1 "TestPoint" H 2608 7077 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2750 7050 50  0001 C CNN
-F 3 "~" H 2750 7050 50  0001 C CNN
-	1    2550 7050
-	1    0    0    -1  
-$EndComp
-Connection ~ 2550 7050
-Wire Wire Line
-	2550 7050 3250 7050
-Connection ~ 2550 6750
-Wire Wire Line
-	2550 6750 2800 6750
-$Comp
-L Connector:TestPoint TP304
-U 1 1 5F8645A7
-P 2750 5400
-F 0 "TP304" H 2808 5518 50  0000 L CNN
-F 1 "TestPoint" H 2808 5427 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2950 5400 50  0001 C CNN
-F 3 "~" H 2950 5400 50  0001 C CNN
-	1    2750 5400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2750 5400 3000 5400
-$Comp
-L Connector:TestPoint TP305
-U 1 1 5F864A5E
-P 2750 5700
-F 0 "TP305" H 2808 5818 50  0000 L CNN
-F 1 "TestPoint" H 2808 5727 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2950 5700 50  0001 C CNN
-F 3 "~" H 2950 5700 50  0001 C CNN
-	1    2750 5700
-	1    0    0    -1  
-$EndComp
-Connection ~ 2750 5700
-Wire Wire Line
-	2750 5700 3450 5700
-$Comp
-L Connector:TestPoint TP308
-U 1 1 5F864FC1
-P 5600 7400
-F 0 "TP308" H 5542 7426 50  0000 R CNN
-F 1 "TestPoint" H 5542 7517 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 5800 7400 50  0001 C CNN
-F 3 "~" H 5800 7400 50  0001 C CNN
-	1    5600 7400
-	-1   0    0    1   
-$EndComp
 $Comp
 L Connector:TestPoint TP310
 U 1 1 5F870899
@@ -794,31 +536,19 @@ Wire Wire Line
 Wire Wire Line
 	2250 5300 2250 7050
 Wire Wire Line
-	2250 7050 2550 7050
-Wire Wire Line
-	2350 6750 2550 6750
-Wire Wire Line
 	2350 5200 2350 6750
 Connection ~ 5600 6850
 Connection ~ 5600 7150
 Wire Wire Line
 	5600 7150 5600 7400
-Connection ~ 5600 7400
 Wire Wire Line
 	2250 5100 2450 5100
 Wire Wire Line
 	2450 5100 2450 5700
 Wire Wire Line
-	2450 5700 2750 5700
-Wire Wire Line
 	2250 5000 2550 5000
 Wire Wire Line
 	2550 5000 2550 5400
-Wire Wire Line
-	2550 5400 2750 5400
-Connection ~ 2750 5400
-Wire Wire Line
-	3500 1600 3500 1700
 $Comp
 L Connector:TestPoint TP306
 U 1 1 5F84DFB0
@@ -830,25 +560,12 @@ F 3 "~" H 3650 2500 50  0001 C CNN
 	1    3450 2500
 	-1   0    0    1   
 $EndComp
-$Comp
-L Connector:TestPoint TP307
-U 1 1 5F84D6BF
-P 3500 1600
-F 0 "TP307" H 3558 1718 50  0000 L CNN
-F 1 "TestPoint" H 3558 1627 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3700 1600 50  0001 C CNN
-F 3 "~" H 3700 1600 50  0001 C CNN
-	1    3500 1600
-	1    0    0    -1  
-$EndComp
 Text HLabel 2750 1300 2    50   Output ~ 0
 CLK_MEASURE
 Text HLabel 2600 2000 2    50   Input ~ 0
 TX_BIAS
 Wire Wire Line
 	3350 1900 3450 1900
-Wire Wire Line
-	3350 1700 3500 1700
 $Comp
 L 74xx:74LS00 U?
 U 1 1 5F32758B
@@ -859,7 +576,7 @@ AR Path="/5F5D026F/5F32758B" Ref="U302"  Part="1"
 F 0 "U302" H 3050 2125 50  0000 C CNN
 F 1 "74ACT00" H 3050 2034 50  0000 C CNN
 F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 3050 1800 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/74act00" H 3050 1800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 3050 1800 50  0001 C CNN
 	1    3050 1800
 	-1   0    0    -1  
 $EndComp
@@ -875,13 +592,10 @@ AR Path="/5F5D026F/5F327304" Ref="U302"  Part="2"
 F 0 "U302" H 2300 2225 50  0000 C CNN
 F 1 "74ACT00" H 2300 2134 50  0000 C CNN
 F 2 "Housings_SOIC:SOIC-14_3.9x8.7mm_Pitch1.27mm" H 2300 1900 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/74act00" H 2300 1900 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 2300 1900 50  0001 C CNN
 	2    2300 1900
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	3500 1700 4400 1700
-Connection ~ 3500 1700
 Wire Wire Line
 	5600 6850 5350 6850
 $Comp
@@ -936,24 +650,12 @@ Wire Wire Line
 	5550 6050 5800 6050
 Wire Wire Line
 	5900 5500 5800 5500
-$Comp
-L Connector:TestPoint TP309
-U 1 1 5F7FB357
-P 5800 6050
-F 0 "TP309" H 5742 6076 50  0000 R CNN
-F 1 "TestPoint" H 5742 6167 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6000 6050 50  0001 C CNN
-F 3 "~" H 6000 6050 50  0001 C CNN
-	1    5800 6050
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	5800 5500 5800 5800
 Connection ~ 5800 5500
 Connection ~ 5800 5800
 Wire Wire Line
 	5800 5800 5800 6050
-Connection ~ 5800 6050
 Wire Wire Line
 	5800 5500 5550 5500
 $Comp
@@ -1314,4 +1016,18 @@ Wire Wire Line
 Wire Wire Line
 	1300 2500 1300 4600
 Connection ~ 3450 2500
+Wire Wire Line
+	2450 5700 3450 5700
+Wire Wire Line
+	2550 5400 3000 5400
+Wire Wire Line
+	2350 6750 2800 6750
+Wire Wire Line
+	2250 7050 3250 7050
+Text Label 1900 2500 0    50   ~ 0
+SYNTH
+Wire Wire Line
+	3350 1700 4400 1700
+Wire Wire Line
+	950  5100 1450 5100
 $EndSCHEMATC
