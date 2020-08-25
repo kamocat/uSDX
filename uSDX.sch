@@ -432,42 +432,7 @@ Wire Wire Line
 	4050 4550 4450 4550
 Wire Wire Line
 	4050 4200 4450 4200
-$Comp
-L Connector:TestPoint TP101
-U 1 1 5F7AF4F1
-P 2300 2850
-F 0 "TP101" V 2254 3038 50  0000 L CNN
-F 1 "TestPoint" V 2345 3038 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 2850 50  0001 C CNN
-F 3 "~" H 2500 2850 50  0001 C CNN
-	1    2300 2850
-	0    1    1    0   
-$EndComp
 Connection ~ 2300 2850
-$Comp
-L Connector:TestPoint TP102
-U 1 1 5F7AF9D6
-P 4450 4200
-F 0 "TP102" H 4508 4318 50  0000 L CNN
-F 1 "TestPoint" H 4508 4227 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4650 4200 50  0001 C CNN
-F 3 "~" H 4650 4200 50  0001 C CNN
-	1    4450 4200
-	1    0    0    -1  
-$EndComp
-Connection ~ 4450 4200
-$Comp
-L Connector:TestPoint TP103
-U 1 1 5F7B082D
-P 4450 4550
-F 0 "TP103" H 4392 4576 50  0000 R CNN
-F 1 "TestPoint" H 4392 4667 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 4650 4550 50  0001 C CNN
-F 3 "~" H 4650 4550 50  0001 C CNN
-	1    4450 4550
-	-1   0    0    1   
-$EndComp
-Connection ~ 4450 4550
 $Comp
 L uSDX:AP6320x U101
 U 1 1 5F7B1349
@@ -582,4 +547,48 @@ Wire Wire Line
 Connection ~ 1900 3150
 Wire Wire Line
 	1900 3300 1900 3150
+$Comp
+L Mechanical:MountingHole H101
+U 1 1 5F7E5050
+P 2350 5350
+F 0 "H101" H 2450 5396 50  0000 L CNN
+F 1 "MountingHole" H 2450 5305 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_4.3mm_M4" H 2350 5350 50  0001 C CNN
+F 3 "~" H 2350 5350 50  0001 C CNN
+	1    2350 5350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H102
+U 1 1 5F7E5DED
+P 2350 5550
+F 0 "H102" H 2450 5596 50  0000 L CNN
+F 1 "MountingHole" H 2450 5505 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_4.3mm_M4" H 2350 5550 50  0001 C CNN
+F 3 "~" H 2350 5550 50  0001 C CNN
+	1    2350 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H103
+U 1 1 5F7E60D2
+P 2350 5750
+F 0 "H103" H 2450 5796 50  0000 L CNN
+F 1 "MountingHole" H 2450 5705 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_4.3mm_M4" H 2350 5750 50  0001 C CNN
+F 3 "~" H 2350 5750 50  0001 C CNN
+	1    2350 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H104
+U 1 1 5F7E6271
+P 2350 5950
+F 0 "H104" H 2450 5996 50  0000 L CNN
+F 1 "MountingHole" H 2450 5905 50  0000 L CNN
+F 2 "Mounting_Holes:MountingHole_4.3mm_M4" H 2350 5950 50  0001 C CNN
+F 3 "~" H 2350 5950 50  0001 C CNN
+	1    2350 5950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

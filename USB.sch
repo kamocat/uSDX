@@ -388,13 +388,13 @@ Connection ~ 8800 3850
 Wire Wire Line
 	8800 3850 8800 3900
 Text Label 8600 4800 0    50   ~ 0
-+D1
+D1+
 Text Label 8600 4900 0    50   ~ 0
--D1
+D1-
 Text Label 8600 4200 0    50   ~ 0
-+D2
+D2+
 Text Label 8600 4300 0    50   ~ 0
--D2
+D2-
 Wire Wire Line
 	9200 6000 9500 6000
 Wire Wire Line
@@ -424,9 +424,9 @@ F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/20005565B.pdf" H 2750 3600 
 	1    0    0    -1  
 $EndComp
 Text Label 2350 2800 2    50   ~ 0
-+D1
+D1+
 Text Label 2350 2900 2    50   ~ 0
--D1
+D1-
 $Comp
 L Device:C C507
 U 1 1 5F6245D2
@@ -527,9 +527,9 @@ F 3 "" H 3600 5650 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Text Label 2500 4550 2    50   ~ 0
-+D2
-Text Label 2350 4400 2    50   ~ 0
--D2
+D2+
+Text Label 2300 4400 2    50   ~ 0
+D2-
 Wire Wire Line
 	7050 3900 7150 3900
 Wire Wire Line
@@ -992,18 +992,18 @@ $EndComp
 $Comp
 L Connector:TestPoint TP505
 U 1 1 5F7CB027
-P 2350 4300
-F 0 "TP505" H 2408 4418 50  0000 L CNN
-F 1 "TestPoint" H 2408 4327 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2550 4300 50  0001 C CNN
-F 3 "~" H 2550 4300 50  0001 C CNN
-	1    2350 4300
+P 2300 4300
+F 0 "TP505" H 2358 4418 50  0000 L CNN
+F 1 "TestPoint" H 2358 4327 50  0000 L CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 4300 50  0001 C CNN
+F 3 "~" H 2500 4300 50  0001 C CNN
+	1    2300 4300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2350 4300 2350 4750
+	2300 4300 2300 4750
 Wire Wire Line
-	2350 4750 2500 4750
+	2300 4750 2500 4750
 Wire Wire Line
 	2500 4650 2500 4500
 $Comp
@@ -1063,20 +1063,6 @@ $EndComp
 Connection ~ 3750 5850
 Wire Wire Line
 	3600 5850 3750 5850
-$Comp
-L Connector:TestPoint TP508
-U 1 1 5F7E832E
-P 3600 4100
-F 0 "TP508" H 3542 4218 50  0000 R CNN
-F 1 "TestPoint" H 3542 4127 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3800 4100 50  0001 C CNN
-F 3 "~" H 3800 4100 50  0001 C CNN
-	1    3600 4100
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	3600 4100 3600 4350
-Connection ~ 3600 4350
 $Comp
 L Connector:TestPoint TP511
 U 1 1 5F7EDDAB
