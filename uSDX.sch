@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 5
 Title "Black Pill uSDX"
-Date "2020-08-24"
-Rev "2.0.2"
+Date "2020-08-25"
+Rev "2.0.3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -526,20 +526,6 @@ F4 "AUDIO_L" I L 7100 5100 50
 F5 "AUDIO_R" I L 7100 5200 50 
 F6 "MIC" O L 7100 5300 50 
 $EndSheet
-$Comp
-L Device:D_Schottky_x2_Serial_AKC D?
-U 1 1 5F88352B
-P 2300 3150
-AR Path="/5ED6119E/5F88352B" Ref="D?"  Part="1" 
-AR Path="/5EE4CC2E/5F88352B" Ref="D?"  Part="1" 
-AR Path="/5F88352B" Ref="D102"  Part="1" 
-F 0 "D102" V 2254 3230 50  0000 L CNN
-F 1 "BAT54S" V 2345 3230 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23" H 2300 3150 50  0001 C CNN
-F 3 "~" H 2300 3150 50  0001 C CNN
-	1    2300 3150
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
 	1900 2950 1900 3150
 Wire Wire Line
@@ -570,17 +556,6 @@ F 3 "~" H 2350 5550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H103
-U 1 1 5F7E60D2
-P 2350 5750
-F 0 "H103" H 2450 5796 50  0000 L CNN
-F 1 "MountingHole" H 2450 5705 50  0000 L CNN
-F 2 "Mounting_Holes:MountingHole_4.3mm_M4" H 2350 5750 50  0001 C CNN
-F 3 "~" H 2350 5750 50  0001 C CNN
-	1    2350 5750
-	1    0    0    -1  
-$EndComp
-$Comp
 L Mechanical:MountingHole H104
 U 1 1 5F7E6271
 P 2350 5950
@@ -591,4 +566,19 @@ F 3 "~" H 2350 5950 50  0001 C CNN
 	1    2350 5950
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:D_Schottky_x2_Serial_AKC D?
+U 1 1 5F88352B
+P 2300 3150
+AR Path="/5ED6119E/5F88352B" Ref="D?"  Part="1" 
+AR Path="/5EE4CC2E/5F88352B" Ref="D?"  Part="1" 
+AR Path="/5F88352B" Ref="D102"  Part="1" 
+F 0 "D102" V 2254 3230 50  0000 L CNN
+F 1 "BAT54S" V 2345 3230 50  0000 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 2300 3150 50  0001 C CNN
+F 3 "~" H 2300 3150 50  0001 C CNN
+	1    2300 3150
+	0    1    -1   0   
+$EndComp
+NoConn ~ 2300 3450
 $EndSCHEMATC

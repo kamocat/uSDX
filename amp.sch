@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 4 5
 Title "Black Pill uSDX"
-Date "2020-08-24"
-Rev "2.0.2"
+Date "2020-08-25"
+Rev "2.0.3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -324,7 +324,7 @@ U 1 1 5ED6BD66
 P 9650 1900
 F 0 "J401" H 9750 1875 50  0000 L CNN
 F 1 "Conn_Coaxial" H 9750 1784 50  0000 L CNN
-F 2 "uSDX:73100-0105" H 9650 1900 50  0001 C CNN
+F 2 "uSDX:SMA_edge" H 9650 1900 50  0001 C CNN
 F 3 "https://www.molex.com/pdm_docs/sd/731000105_sd.pdf" H 9650 1900 50  0001 C CNN
 	1    9650 1900
 	1    0    0    -1  
@@ -757,4 +757,6 @@ $EndComp
 Connection ~ 2350 4100
 Wire Wire Line
 	2350 4100 2550 4100
+NoConn ~ 6400 2600
+NoConn ~ 5050 1150
 $EndSCHEMATC

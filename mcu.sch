@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 2 5
 Title "Black Pill uSDX"
-Date "2020-08-24"
-Rev "2.0.2"
+Date "2020-08-25"
+Rev "2.0.3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -1026,7 +1026,7 @@ AR Path="/5ED6119E/5F83693B" Ref="U202"  Part="2"
 AR Path="/5F5D026F/5F83693B" Ref="U?"  Part="2" 
 F 0 "U202" H 5900 4567 50  0000 C CNN
 F 1 "LM4562" H 5900 4476 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5900 4200 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5900 4200 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5900 4200 50  0001 C CNN
 	2    5900 4200
 	1    0    0    -1  
@@ -1039,7 +1039,7 @@ AR Path="/5ED6119E/5F840C97" Ref="U202"  Part="1"
 AR Path="/5F5D026F/5F840C97" Ref="U?"  Part="2" 
 F 0 "U202" H 5600 3617 50  0000 C CNN
 F 1 "LM4562" H 5600 3526 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5600 3250 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5600 3250 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5600 3250 50  0001 C CNN
 	1    5600 3250
 	1    0    0    -1  
@@ -1052,7 +1052,7 @@ AR Path="/5ED6119E/5F8421FA" Ref="U202"  Part="3"
 AR Path="/5F5D026F/5F8421FA" Ref="U?"  Part="2" 
 F 0 "U202" H 7250 1850 50  0000 C CNN
 F 1 "LM4562" H 7250 1750 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 7150 1750 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 7150 1750 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 7150 1750 50  0001 C CNN
 	3    7150 1750
 	1    0    0    -1  
@@ -1800,10 +1800,10 @@ Connection ~ 10200 1750
 Wire Wire Line
 	10600 1150 10600 1300
 $Comp
-L power:+3.3V #PWR?
+L power:+3.3V #PWR0117
 U 1 1 5FAFB4A3
 P 8550 3600
-F 0 "#PWR?" H 8550 3450 50  0001 C CNN
+F 0 "#PWR0117" H 8550 3450 50  0001 C CNN
 F 1 "+3.3V" H 8565 3773 50  0000 C CNN
 F 2 "" H 8550 3600 50  0001 C CNN
 F 3 "" H 8550 3600 50  0001 C CNN

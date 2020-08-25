@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 5 5
 Title "Black Pill uSDX"
-Date "2020-08-24"
-Rev "2.0.2"
+Date "2020-08-25"
+Rev "2.0.3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -65,10 +65,6 @@ Wire Wire Line
 Connection ~ 10200 5600
 Wire Wire Line
 	10200 5600 10350 5600
-Wire Wire Line
-	6400 4100 6650 4100
-Wire Wire Line
-	7300 4200 6850 4200
 $Comp
 L power:GND #PWR0527
 U 1 1 5F5E79EE
@@ -526,14 +522,10 @@ F 3 "" H 3600 5650 50  0001 C CNN
 	1    3600 5650
 	0    -1   -1   0   
 $EndComp
-Text Label 2500 4550 2    50   ~ 0
-D2+
-Text Label 2300 4400 2    50   ~ 0
+Text Label 2500 4750 2    50   ~ 0
 D2-
 Wire Wire Line
 	7050 3900 7150 3900
-Wire Wire Line
-	6750 3900 6500 3900
 Text Label 6700 3900 2    50   ~ 0
 Vbus
 Text Label 2500 5450 2    50   ~ 0
@@ -608,13 +600,9 @@ $EndComp
 Wire Wire Line
 	2150 5750 2500 5750
 Wire Wire Line
-	2500 5850 2300 5850
-Wire Wire Line
 	1550 5850 1600 5850
 Wire Wire Line
 	1550 5750 1850 5750
-Wire Wire Line
-	2500 5950 2400 5950
 Connection ~ 1950 6200
 Wire Wire Line
 	1200 6200 1300 6200
@@ -711,12 +699,12 @@ $EndComp
 $Comp
 L Device:C C504
 U 1 1 5F6AFA41
-P 2000 4850
-F 0 "C504" V 2252 4850 50  0000 C CNN
-F 1 "10u" V 2161 4850 50  0000 C CNN
-F 2 "Capacitors_SMD:C_0805" H 2038 4700 50  0001 C CNN
-F 3 "~" H 2000 4850 50  0001 C CNN
-	1    2000 4850
+P 1800 4850
+F 0 "C504" V 2052 4850 50  0000 C CNN
+F 1 "10u" V 1961 4850 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0805" H 1838 4700 50  0001 C CNN
+F 3 "~" H 1800 4850 50  0001 C CNN
+	1    1800 4850
 	0    1    -1   0   
 $EndComp
 $Comp
@@ -733,12 +721,12 @@ $EndComp
 $Comp
 L power:GND #PWR0504
 U 1 1 5F6AFA58
-P 1850 4850
-F 0 "#PWR0504" H 1850 4600 50  0001 C CNN
-F 1 "GND" H 1855 4677 50  0000 C CNN
-F 2 "" H 1850 4850 50  0001 C CNN
-F 3 "" H 1850 4850 50  0001 C CNN
-	1    1850 4850
+P 1650 4850
+F 0 "#PWR0504" H 1650 4600 50  0001 C CNN
+F 1 "GND" H 1655 4677 50  0000 C CNN
+F 2 "" H 1650 4850 50  0001 C CNN
+F 3 "" H 1650 4850 50  0001 C CNN
+	1    1650 4850
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -952,145 +940,8 @@ F 3 "~" H 9000 4150 50  0001 C CNN
 	1    9000 4150
 	-1   0    0    1   
 $EndComp
-$Comp
-L Connector:TestPoint TP503
-U 1 1 5F7C09F5
-P 2150 2800
-F 0 "TP503" V 2345 2872 50  0000 C CNN
-F 1 "TestPoint" V 2254 2872 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2350 2800 50  0001 C CNN
-F 3 "~" H 2350 2800 50  0001 C CNN
-	1    2150 2800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Connector:TestPoint TP502
-U 1 1 5F7C10BC
-P 1850 2900
-F 0 "TP502" V 2045 2972 50  0000 C CNN
-F 1 "TestPoint" V 1954 2972 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2050 2900 50  0001 C CNN
-F 3 "~" H 2050 2900 50  0001 C CNN
-	1    1850 2900
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	2150 2800 2350 2800
-Wire Wire Line
-	2350 2900 1850 2900
-$Comp
-L Connector:TestPoint TP507
-U 1 1 5F7CA828
-P 2500 4500
-F 0 "TP507" H 2558 4618 50  0000 L CNN
-F 1 "TestPoint" H 2558 4527 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2700 4500 50  0001 C CNN
-F 3 "~" H 2700 4500 50  0001 C CNN
-	1    2500 4500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP505
-U 1 1 5F7CB027
-P 2300 4300
-F 0 "TP505" H 2358 4418 50  0000 L CNN
-F 1 "TestPoint" H 2358 4327 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 4300 50  0001 C CNN
-F 3 "~" H 2500 4300 50  0001 C CNN
-	1    2300 4300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2300 4300 2300 4750
-Wire Wire Line
-	2300 4750 2500 4750
-Wire Wire Line
-	2500 4650 2500 4500
-$Comp
-L Connector:TestPoint TP501
-U 1 1 5F7D6A77
-P 1600 6200
-F 0 "TP501" H 1658 6318 50  0000 L CNN
-F 1 "TestPoint" H 1658 6227 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 1800 6200 50  0001 C CNN
-F 3 "~" H 1800 6200 50  0001 C CNN
-	1    1600 6200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:TestPoint TP506
-U 1 1 5F7D7C1F
-P 2400 6250
-F 0 "TP506" H 2342 6276 50  0000 R CNN
-F 1 "TestPoint" H 2342 6367 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2600 6250 50  0001 C CNN
-F 3 "~" H 2600 6250 50  0001 C CNN
-	1    2400 6250
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector:TestPoint TP504
-U 1 1 5F7D8401
-P 2300 6450
-F 0 "TP504" H 2242 6476 50  0000 R CNN
-F 1 "TestPoint" H 2242 6567 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 2500 6450 50  0001 C CNN
-F 3 "~" H 2500 6450 50  0001 C CNN
-	1    2300 6450
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2400 6250 2400 5950
-Connection ~ 2400 5950
-Wire Wire Line
-	2400 5950 1950 5950
-Wire Wire Line
-	2300 6450 2300 5850
-Connection ~ 2300 5850
-Wire Wire Line
-	2300 5850 1900 5850
-$Comp
-L Connector:TestPoint TP509
-U 1 1 5F7E1D99
-P 3750 5850
-F 0 "TP509" V 3704 6038 50  0000 L CNN
-F 1 "TestPoint" V 3795 6038 50  0000 L CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3950 5850 50  0001 C CNN
-F 3 "~" H 3950 5850 50  0001 C CNN
-	1    3750 5850
-	0    1    1    0   
-$EndComp
-Connection ~ 3750 5850
 Wire Wire Line
 	3600 5850 3750 5850
-$Comp
-L Connector:TestPoint TP511
-U 1 1 5F7EDDAB
-P 6650 4100
-F 0 "TP511" H 6592 4218 50  0000 R CNN
-F 1 "TestPoint" H 6592 4127 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6850 4100 50  0001 C CNN
-F 3 "~" H 6850 4100 50  0001 C CNN
-	1    6650 4100
-	-1   0    0    -1  
-$EndComp
-Connection ~ 6650 4100
-Wire Wire Line
-	6650 4100 7300 4100
-$Comp
-L Connector:TestPoint TP512
-U 1 1 5F7EEB3A
-P 6850 4200
-F 0 "TP512" H 6793 4226 50  0000 R CNN
-F 1 "TestPoint" H 6793 4317 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 7050 4200 50  0001 C CNN
-F 3 "~" H 7050 4200 50  0001 C CNN
-	1    6850 4200
-	1    0    0    1   
-$EndComp
-Connection ~ 6850 4200
-Wire Wire Line
-	6850 4200 6400 4200
 Wire Wire Line
 	6000 4500 6050 4500
 Wire Wire Line
@@ -1098,22 +949,6 @@ Wire Wire Line
 Connection ~ 6050 4500
 Wire Wire Line
 	6050 4500 6100 4500
-$Comp
-L Connector:TestPoint TP510
-U 1 1 5F81258B
-P 6500 3650
-F 0 "TP510" H 6442 3768 50  0000 R CNN
-F 1 "TestPoint" H 6442 3677 50  0000 R CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 6700 3650 50  0001 C CNN
-F 3 "~" H 6700 3650 50  0001 C CNN
-	1    6500 3650
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	6500 3650 6500 3900
-Connection ~ 6500 3900
-Wire Wire Line
-	6500 3900 6400 3900
 $Comp
 L power:+3.3V #PWR0530
 U 1 1 5FA9F1C7
@@ -1225,23 +1060,21 @@ F 3 "" H 4150 5750 50  0001 C CNN
 $EndComp
 Connection ~ 4150 5750
 Wire Wire Line
-	2150 4850 2200 4850
+	1950 4850 2000 4850
 Wire Wire Line
 	2150 5300 2200 5300
 $Comp
 L power:+3.3V #PWR0506
 U 1 1 5FAA57FD
-P 2200 4850
-F 0 "#PWR0506" H 2200 4700 50  0001 C CNN
-F 1 "+3.3V" H 2215 5023 50  0000 C CNN
-F 2 "" H 2200 4850 50  0001 C CNN
-F 3 "" H 2200 4850 50  0001 C CNN
-	1    2200 4850
+P 2000 4850
+F 0 "#PWR0506" H 2000 4700 50  0001 C CNN
+F 1 "+3.3V" H 2015 5023 50  0000 C CNN
+F 2 "" H 2000 4850 50  0001 C CNN
+F 3 "" H 2000 4850 50  0001 C CNN
+	1    2000 4850
 	1    0    0    -1  
 $EndComp
-Connection ~ 2200 4850
-Wire Wire Line
-	2200 4850 2500 4850
+Connection ~ 2000 4850
 $Comp
 L power:+3.3V #PWR0507
 U 1 1 5FAA5C5A
@@ -1314,4 +1147,18 @@ NoConn ~ 3600 5950
 NoConn ~ 3600 5050
 NoConn ~ 3600 4950
 NoConn ~ 7300 4700
+Wire Wire Line
+	6400 3900 6750 3900
+Wire Wire Line
+	6400 4100 7300 4100
+Wire Wire Line
+	6400 4200 7300 4200
+Wire Wire Line
+	1900 5850 2500 5850
+Wire Wire Line
+	1950 5950 2500 5950
+Text Label 2500 4650 2    50   ~ 0
+D2+
+Wire Wire Line
+	2000 4850 2500 4850
 $EndSCHEMATC

@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 3 5
 Title "Black Pill uSDX"
-Date "2020-08-24"
-Rev "2.0.2"
+Date "2020-08-25"
+Rev "2.0.3"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -35,7 +35,7 @@ AR Path="/5ED6119E/5F32731C" Ref="U?"  Part="3"
 AR Path="/5F5D026F/5F32731C" Ref="U305"  Part="3" 
 F 0 "U305" H 8858 3896 50  0000 L CNN
 F 1 "LM4562" H 8858 3805 50  0000 L CNN
-F 2 "Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm" H 8900 3850 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 8900 3850 50  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm4562.pdf" H 8900 3850 50  0001 C CNN
 	3    8900 3850
 	1    0    0    -1  
@@ -287,7 +287,7 @@ Wire Wire Line
 Wire Wire Line
 	3950 4900 3850 4900
 Wire Wire Line
-	2250 5200 2350 5200
+	2250 5200 2750 5200
 Wire Wire Line
 	3950 4600 3950 4700
 Connection ~ 3950 4700
@@ -534,9 +534,7 @@ Connection ~ 8350 3750
 Wire Wire Line
 	5600 6850 5600 7150
 Wire Wire Line
-	2250 5300 2250 7050
-Wire Wire Line
-	2350 5200 2350 6750
+	2350 5300 2350 7050
 Connection ~ 5600 6850
 Connection ~ 5600 7150
 Wire Wire Line
@@ -544,11 +542,9 @@ Wire Wire Line
 Wire Wire Line
 	2250 5100 2450 5100
 Wire Wire Line
-	2450 5100 2450 5700
+	2250 5000 2850 5000
 Wire Wire Line
-	2250 5000 2550 5000
-Wire Wire Line
-	2550 5000 2550 5400
+	2850 5000 2850 5400
 $Comp
 L Connector:TestPoint TP306
 U 1 1 5F84DFB0
@@ -606,8 +602,8 @@ AR Path="/5ED6119E/5F327310" Ref="U?"  Part="1"
 AR Path="/5F5D026F/5F327310" Ref="U305"  Part="1" 
 F 0 "U305" H 4200 6167 50  0000 C CNN
 F 1 "LM4562" H 4200 6076 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 4200 5800 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 4200 5800 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 4200 5800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4562.pdf" H 4200 5800 50  0001 C CNN
 	1    4200 5800
 	1    0    0    -1  
 $EndComp
@@ -666,8 +662,8 @@ AR Path="/5ED6119E/5F7FB369" Ref="U?"  Part="1"
 AR Path="/5F5D026F/5F7FB369" Ref="U305"  Part="2" 
 F 0 "U305" H 5250 5867 50  0000 C CNN
 F 1 "LM4562" H 5250 5776 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5250 5500 50  0001 C CNN
-F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5250 5500 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5250 5500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4562.pdf" H 5250 5500 50  0001 C CNN
 	2    5250 5500
 	1    0    0    -1  
 $EndComp
@@ -945,7 +941,7 @@ AR Path="/5ED6119E/5F5E280C" Ref="U?"  Part="1"
 AR Path="/5F5D026F/5F5E280C" Ref="U304"  Part="1" 
 F 0 "U304" H 3900 7517 50  0000 C CNN
 F 1 "LM4562" H 3900 7426 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 3900 7150 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 3900 7150 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 3900 7150 50  0001 C CNN
 	1    3900 7150
 	1    0    0    -1  
@@ -967,7 +963,7 @@ AR Path="/5ED6119E/5F5F1B99" Ref="U?"  Part="1"
 AR Path="/5F5D026F/5F5F1B99" Ref="U304"  Part="2" 
 F 0 "U304" H 5050 7217 50  0000 C CNN
 F 1 "LM4562" H 5050 7126 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 5050 6850 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 5050 6850 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 5050 6850 50  0001 C CNN
 	2    5050 6850
 	1    0    0    -1  
@@ -982,7 +978,7 @@ AR Path="/5ED6119E/5F5FC118" Ref="U?"  Part="1"
 AR Path="/5F5D026F/5F5FC118" Ref="U304"  Part="3" 
 F 0 "U304" H 7650 4267 50  0000 C CNN
 F 1 "LM4562" H 7650 4176 50  0000 C CNN
-F 2 "Housings_SOIC:SO-8_5.3x6.2mm_Pitch1.27mm" H 7650 3900 50  0001 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 7650 3900 50  0001 C CNN
 F 3 "https://www.ti.com/lit/ds/snas326k/snas326k.pdf" H 7650 3900 50  0001 C CNN
 	3    7650 3900
 	1    0    0    -1  
@@ -1017,17 +1013,25 @@ Wire Wire Line
 	1300 2500 1300 4600
 Connection ~ 3450 2500
 Wire Wire Line
-	2450 5700 3450 5700
-Wire Wire Line
-	2550 5400 3000 5400
-Wire Wire Line
-	2350 6750 2800 6750
-Wire Wire Line
-	2250 7050 3250 7050
+	2850 5400 3000 5400
 Text Label 1900 2500 0    50   ~ 0
 SYNTH
 Wire Wire Line
 	3350 1700 4400 1700
 Wire Wire Line
 	950  5100 1450 5100
+Wire Wire Line
+	2750 5200 2750 5700
+Wire Wire Line
+	2750 5700 3450 5700
+Wire Wire Line
+	2450 6750 2800 6750
+Wire Wire Line
+	2450 5100 2450 6750
+Wire Wire Line
+	2350 7050 3250 7050
+Wire Wire Line
+	2250 5300 2350 5300
+NoConn ~ 1850 1350
+NoConn ~ 3800 7100
 $EndSCHEMATC
