@@ -31,3 +31,4 @@ datasheets/
 # Compiled files
 **/build/
 **/.dep/
+/.idea
