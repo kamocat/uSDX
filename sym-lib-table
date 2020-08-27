@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name uSDX)(type Legacy)(uri ${KIPRJMOD}/uSDX.lib)(options "")(descr ""))
+  (lib (name dk_Diodes-Rectifiers-Single)(type Legacy)(uri ${KIPRJMOD}/digikey-symbols/dk_Diodes-Rectifiers-Single.lib)(options "")(descr ""))
 )
