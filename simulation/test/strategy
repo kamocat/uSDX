@@ -1,0 +1,4 @@
+Run a frequency sweep through the hilbert transform.
+Compute the magnitude of the complex signal.
+Magnitude should be flat.
+Compute the phase of the two signals, measure phase difference. (Phase can be computed using arctan, keeping in mind the quadrant).
