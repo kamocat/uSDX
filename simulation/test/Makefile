@@ -1,13 +1,12 @@
 SRC=../src
 
-all: build plot
+all: build run plot
 
 build:
-	g++ test.cpp hilbert.cpp -ggdb -o filt.out
+	g++ test.cpp metrology.cpp hilbert.cpp -ggdb -o filt.out
+
+run:
 	./filt.out
 	
 plot:
 	gnuplot plot_settings
-
-float:
-	g++ test2.cpp ../ftoa.cpp -ggdb -o float.out

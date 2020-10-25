@@ -1,6 +1,7 @@
 /* Contains functions for measuring phase, amplitude, and frequency */
 
 #include "metrology.h"
+#include <iostream>
 
 
 /* Estimates the peak using a quadratic model.
@@ -10,22 +11,23 @@
  */
 float estimate_peak(float y1, float y2, float y3){
   float a, b;
-  a = y3 + y1 - y2;
+  a = y3 + y1 - 2*y2;
   b = (y1 - y3) / 2;
+  std::cout<<"a: "<<a<<" b: "<<b<<std::endl;
   return b/a;
 }
 
 /* Finds peaks and zero-crossings.
    Returns the number of nodes found.
  */
-int find_nodes( vector<float> nodes, vector<float> y){
+int find_nodes( std::vector<float> nodes, std::vector<float> y){
   const short sign = 0b01;
   const short slope = 0b10;
   short state = 0;
   float prev = 0;
   float cur = 0;
   int i = -1;
-  for(auto next = y.begin(); i != y.end(); ++i ){
+  for(auto next = y.begin(); next != y.end(); ++next ){
     state <<= 2;
     state |= cur<0.0 ? sign : 0;
     state |= *next>cur ? slope : 0;
