@@ -13,4 +13,4 @@ float estimate_peak(float y1, float y2, float y3);
 /* Finds peaks and zero-crossings.
    Returns the number of nodes found.
  */
-int find_nodes( std::vector<float> nodes, std::vector<float> y);
+int find_nodes( std::vector<float> &nodes, std::vector<float> &y);

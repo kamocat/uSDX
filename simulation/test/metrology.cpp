@@ -11,16 +11,20 @@
  */
 float estimate_peak(float y1, float y2, float y3){
   float a, b;
-  a = y3 + y1 - 2*y2;
-  b = (y1 - y3) / 2;
-  std::cout<<"a: "<<a<<" b: "<<b<<std::endl;
-  return b/a;
+  a = (y3 + y1 - 2*y2) * 0.5;
+  b = (y1 - y3) * 0.5;
+  float x = 0.5 * b/a;
+  #ifdef PEAK
+    float peak = a*(x*x) + b*x + y2;
+    std::cout<<"a: "<<a<<" b: "<<b<<" peak: "<<peak<<std::endl;
+  #endif
+  return x;
 }
 
 /* Finds peaks and zero-crossings.
    Returns the number of nodes found.
  */
-int find_nodes( std::vector<float> nodes, std::vector<float> y){
+int find_nodes( std::vector<float> &nodes, std::vector<float> &y){
   const short sign = 0b01;
   const short slope = 0b10;
   short state = 0;

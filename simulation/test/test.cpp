@@ -17,8 +17,17 @@ void logspace(float * buf, int n, float start, float end){
   }
 }
 
+std::vector <float> linspace(float start, float end, int n){
+  float inc = (end-start)/(n-1);
+  std::vector <float> x;
+  for( int i = 0; i < n; ++i ){
+    x.push_back(start+i*inc);
+  }
+  return x;
+}
+
 int main( int argc, char ** argv){
-#ifdef MAGTEST
+#ifdef PEAK
   if( argc >= 4 ){
     float y1 = std::stod(argv[1]);
     float y2 = std::stod(argv[2]);
@@ -29,6 +38,19 @@ int main( int argc, char ** argv){
     std::cerr<<"Usage: "<<argv[0]<<" y1 y2 y3"<<std::endl;
     return 1;
   }
+#endif
+#ifdef PHASE
+  std::vector <float> x = linspace(0, 20, 100);
+  std::vector <float> y;
+  for(auto i = x.begin(); i!=x.end(); ++i){
+    y.push_back(sin(*i));
+  }
+  std::vector <float> n;
+  find_nodes(n, y);
+  for(auto i = y.begin(); i!=y.end(); ++i){
+    std::cout<<*i<<std::endl;
+  }
+  
 #endif
 #ifdef HILTEST
   int size = 1000;
@@ -56,6 +78,9 @@ int main( int argc, char ** argv){
     log<<Q<<'\t';
     log<<mag<<'\t';
     log<<std::endl;
+    farr.push_back(f);
+    Iarr.push_back(I);
+    Qarr.push_back(Q);
   }
   std::cout<<"done."<<std::endl;
   log.close();
