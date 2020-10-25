@@ -1,48 +1,46 @@
 /* Contains functions for measuring phase, amplitude, and frequency */
 
-#include <vector>
+#include "metrology.h"
 
-static enum state{
-  inc = 0b00,
-  dec = 0b01,
-  neg = 0b10,
-  pos = 0b01
-};
 
-/* Estimates the peak between equally spaced points y1, y2, and y3.
- * Returns a value between 0 and 2.
+/* Estimates the peak using a quadratic model.
+ * Assumes evenly-spaced points (y1 at x=-1, y2 at x=0, y3 at x=1)
+ * Assumes peak is between y1 and y3
+ * Returns the estimated location of the peak.
  */
 float estimate_peak(float y1, float y2, float y3){
-  float x;
-  if(y1>y3){
-    x = 1 + 0.5*(y3-y1)/(y2-y1);
-  } else {
-    x = 1 - 0.5*(y3-y1)/(y2-y3);
-  }
-  return x;
+  float a, b;
+  a = y3 + y1 - y2;
+  b = (y1 - y3) / 2;
+  return b/a;
 }
 
 /* Finds peaks and zero-crossings.
    Returns the number of nodes found.
  */
 int find_nodes( vector<float> nodes, vector<float> y){
+  const short sign = 0b01;
+  const short slope = 0b10;
   short state = 0;
-  state |= y[0]<0.0 ? neg : pos;
-  state |= y[1]>y ? inc : dec;
-  //FIXME: y.begin() is an iterator, not an index
-  for(auto i = y.begin()+1; i != y.end()-1; ++i ){
-    state |= y[i]<0.0 ? neg : pos;
-    state |= y[i+1]>y ? inc : dec;
-    if( (state>>2 ^ state) & dec){ // sign changed
+  float prev = 0;
+  float cur = 0;
+  int i = -1;
+  for(auto next = y.begin(); i != y.end(); ++i ){
+    state <<= 2;
+    state |= cur<0.0 ? sign : 0;
+    state |= *next>cur ? slope : 0;
+    if( (state>>2 ^ state) & sign){ // sign changed
       // Interpolate zero crossing
-      float x = y[i]/(y[i]-y[i-1]);
+      float x = cur/(cur-prev);
       nodes.push_back(x+i);
     }
-    if( (state>>2 ^ state) & neg){ // Inflection point
-      // Estimate peak. We know it's beteen i+1 and i-1
-      float x = estimate_peak(y[i-1], y[i], y[i+1]);
+    if( (state>>2 ^ state) & slope){ // Inflection point
+      float x = estimate_peak(prev, cur, *next);
       nodes.push_back(x+i);
     }
+    ++i;
+    prev = cur;
+    cur = *next;
   }
-  return nodes.length();
+  return nodes.size();
 }
