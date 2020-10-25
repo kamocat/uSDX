@@ -35,12 +35,13 @@ int find_nodes( std::vector<float> &nodes, std::vector<float> &y){
     state <<= 2;
     state |= cur<0.0 ? sign : 0;
     state |= *next>cur ? slope : 0;
-    if( (state>>2 ^ state) & sign){ // sign changed
+    short change = ((state>>2) ^ state) & 0xF;
+    if( change & sign){ // sign changed
       // Interpolate zero crossing
       float x = cur/(cur-prev);
       nodes.push_back(x+i);
     }
-    if( (state>>2 ^ state) & slope){ // Inflection point
+    if( change & slope){ // Inflection point
       float x = estimate_peak(prev, cur, *next);
       nodes.push_back(x+i);
     }

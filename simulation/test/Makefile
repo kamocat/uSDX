@@ -9,7 +9,7 @@ peak:
 	g++ test.cpp metrology.cpp -DPEAK -ggdb -o peak.out
 
 phase:
-	g++ test.cpp metrology.cpp -DPHASE -ggdb -o filt.out
+	g++ test.cpp metrology.cpp -DPHASE -ggdb -Og -o filt.out
 
 run:
 	./filt.out

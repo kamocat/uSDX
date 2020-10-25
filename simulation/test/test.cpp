@@ -47,7 +47,7 @@ int main( int argc, char ** argv){
   }
   std::vector <float> n;
   find_nodes(n, y);
-  for(auto i = y.begin(); i!=y.end(); ++i){
+  for(auto i = n.begin(); i!=n.end(); ++i){
     std::cout<<*i<<std::endl;
   }
   
