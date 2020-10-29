@@ -55,7 +55,7 @@ int main( int argc, char ** argv){
 #ifdef PHASE
   std::vector <float> x = linspace(0, 20, 100);
   std::vector <float> y, I, Q;
-  class Hilbert h(8);
+  class Hilbert h(4);
   for(auto i = x.begin(); i!=x.end(); ++i){
     float val = sin(*i);
     y.push_back(val);
@@ -85,8 +85,8 @@ int main( int argc, char ** argv){
   for( auto i = x.begin(); i != x.end(); ++i){
     float f = sin(*i * tau);
     log<<*i<<'\t'<<f<<'\t';
-    float I = h.ProcessI(f)/130e3;
-    float Q = h.ProcessQ(f)/360;
+    float I = h.ProcessI(f)/4000;
+    float Q = h.ProcessQ(f)/60;
     float mag = sqrt(I*I+Q*Q);
     log<<I<<'\t';
     log<<Q<<'\t';

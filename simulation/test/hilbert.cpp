@@ -10,8 +10,8 @@ Hilbert::Hilbert(const int order){
 
   // Create coeffecients
   for( int i = 0; i<len; ++i ){
-    Icoef[i] = powf(epi, powf(2,-i));
-    Qcoef[i] = powf(epi, powf(2,-i-1));
+    Icoef[i] = powf(epi, powf(2,-i*2));
+    Qcoef[i] = powf(epi, powf(2,-i*2-1));
     Icoef[i+len] = 1/Icoef[i];
     Qcoef[i+len] = 1/Qcoef[i];
   }
