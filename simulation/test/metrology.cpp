@@ -24,7 +24,7 @@ float estimate_peak(float y1, float y2, float y3){
 /* Finds peaks and zero-crossings.
    Returns the number of nodes found.
  */
-int find_nodes( std::vector<float> &nodes, std::vector<float> &y){
+int find_nodes( std::vector<struct point> &nodes, std::vector<float> &y){
   const short sign = 0b01;
   const short slope = 0b10;
   short state = 0;
@@ -32,18 +32,25 @@ int find_nodes( std::vector<float> &nodes, std::vector<float> &y){
   float cur = 0;
   int i = -1;
   for(auto next = y.begin(); next != y.end(); ++next ){
+    struct point p;
     state <<= 2;
     state |= cur<0.0 ? sign : 0;
     state |= *next>cur ? slope : 0;
     short change = ((state>>2) ^ state) & 0xF;
     if( change & sign){ // sign changed
       // Interpolate zero crossing
-      float x = cur/(cur-prev);
-      nodes.push_back(x+i);
+      p.x = cur/(cur-prev);
+      p.x += i;
+      // determine quadrant
+      p.y = state & sign ? 3 : 1;
+      nodes.push_back(p);
     }
     if( change & slope){ // Inflection point
-      float x = estimate_peak(prev, cur, *next);
-      nodes.push_back(x+i);
+      p.x = estimate_peak(prev, cur, *next);
+      p.x += i;
+      // determine quadrant
+      p.y = state & slope ? 4 : 2;
+      nodes.push_back(p);
     }
     ++i;
     prev = cur;

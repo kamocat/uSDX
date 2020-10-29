@@ -1,0 +1,4 @@
+set datafile separator comma
+plot 'tmp.csv' using 1:2 with fillsteps, \
+'tmp.csv' using 3:4 with points
+pause -1

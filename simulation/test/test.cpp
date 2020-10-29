@@ -45,10 +45,12 @@ int main( int argc, char ** argv){
   for(auto i = x.begin(); i!=x.end(); ++i){
     y.push_back(sin(*i));
   }
-  std::vector <float> n;
+  std::vector <struct point> n;
+  std::vector <struct point> I;
+  std::vector <struct point> Q;
   find_nodes(n, y);
   for(auto i = n.begin(); i!=n.end(); ++i){
-    std::cout<<*i<<std::endl;
+    std::cout<<i->x<<", "<<i->y<<std::endl;
   }
   
 #endif
