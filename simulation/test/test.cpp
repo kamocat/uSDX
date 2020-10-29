@@ -29,6 +29,16 @@ std::vector <float> linspace(float start, float end, int n){
   return x;
 }
 
+void save_points(std::vector <struct point> p, const char * fname){
+  std::ofstream log;
+  log.open(fname);
+  for(auto i = p.begin(); i!=p.end(); ++i){
+    log<<i->x<<'\t'<<i->y<<std::endl;
+  }
+  log.close();
+}
+
+
 int main( int argc, char ** argv){
 #ifdef PEAK
   if( argc >= 4 ){
@@ -44,17 +54,21 @@ int main( int argc, char ** argv){
 #endif
 #ifdef PHASE
   std::vector <float> x = linspace(0, 20, 100);
-  std::vector <float> y;
+  std::vector <float> y, I, Q;
+  class Hilbert h(8);
   for(auto i = x.begin(); i!=x.end(); ++i){
-    y.push_back(sin(*i));
+    float val = sin(*i);
+    y.push_back(val);
+    I.push_back(h.ProcessI(val));
+    Q.push_back(h.ProcessQ(val));
   }
-  std::vector <struct point> n;
-  std::vector <struct point> I;
-  std::vector <struct point> Q;
+  std::vector <struct point> n, nI, nQ;
   find_nodes(n, y);
-  for(auto i = n.begin(); i!=n.end(); ++i){
-    std::cout<<i->x<<", "<<i->y<<std::endl;
-  }
+  save_points(n, "Y.csv");
+  find_nodes(nI, I);
+  save_points(nI, "I.csv");
+  find_nodes(nQ, Q);
+  save_points(nQ, "Q.csv");
   
 #endif
 #ifdef HILTEST
@@ -63,7 +77,7 @@ int main( int argc, char ** argv){
   std::cout << "Initializing hilbert transform...";
   class Hilbert h(order);
   std::cout << "done."<<std::endl<<"Creating chirp...";
-  std::vector <float> x = logspace(5, 200, size);
+  std::vector <float> x = logspace(5, 50, size);
   std::cout << "done."<<std::endl<<"Processing filter...";
   std::ofstream log;
   log.open("result.csv");

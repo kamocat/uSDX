@@ -1,4 +1,2 @@
-set datafile separator comma
-plot 'tmp.csv' using 1:2 with fillsteps, \
-'tmp.csv' using 3:4 with points
+plot 'I.csv' with steps, 'Q.csv' with steps
 pause -1

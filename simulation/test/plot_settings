@@ -1,11 +1,7 @@
 set datafile separator whitespace
 #plot 'result.csv' using 2 with lines
 #set logscale y
-#plot 'result.csv' using 2 with lines, '' using 3 with lines, '' using 4 with lines
-#plot 'result.csv' using 4 with lines, '' using 3 with lines
-plot 'result.csv' using 3 with lines
+plot 'result.csv' using 2 with lines, '' using 3 with lines, '' using 4 with lines
 pause -1
-plot 'result.csv' using 4 with lines
-pause -1
-plot 'result.csv' using 5 with lines
+plot 'result.csv' using 3:4 with lines
 pause -1
