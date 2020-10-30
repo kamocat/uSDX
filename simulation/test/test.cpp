@@ -5,7 +5,22 @@
 #include <fstream>
 #include <vector>
 #include <cmath>
-const float tau = 2 * 3.141592;
+
+std::vector <float> chirp(float w0, float wend, int n){
+  const float tau = 3.141592 * 2;
+  w0= logf(w0 * tau);
+  wend = logf(wend * tau);
+  float inc = (wend-w0)/(n-1);
+  const float e = 2.71828;
+  std::vector <float> buf;
+  float x = 0;
+  for( int i = 0; i < n; ++i ){
+    x += pow(e,(w0+i*inc));
+    x = fmodf(x, tau); // wrap around at 2pi
+    buf.push_back(sin(x));
+  }
+  return buf;
+}
 
 std::vector <float> logspace(float start, float end, int n){
   start = logf(start);
@@ -72,21 +87,20 @@ int main( int argc, char ** argv){
   
 #endif
 #ifdef HILTEST
-  int size = 1000;
-  int order = 4;
+  int size = 10000;
+  int order = 6;
   std::cout << "Initializing hilbert transform...";
   class Hilbert h(order);
   std::cout << "done."<<std::endl<<"Creating chirp...";
-  std::vector <float> x = logspace(5, 50, size);
+  std::vector <float> x = chirp( 0.1, 0.001, size);
   std::cout << "done."<<std::endl<<"Processing filter...";
   std::ofstream log;
   log.open("result.csv");
   log<<"x\tf\tI\tQ\tmag\t"<<std::endl;
-  for( auto i = x.begin(); i != x.end(); ++i){
-    float f = sin(*i * tau);
-    log<<*i<<'\t'<<f<<'\t';
-    float I = h.ProcessI(f)/4000;
-    float Q = h.ProcessQ(f)/60;
+  for( auto f = x.begin(); f != x.end(); ++f){
+    log<<*f<<'\t';
+    float I = h.ProcessI(*f);
+    float Q = h.ProcessQ(*f);
     float mag = sqrt(I*I+Q*Q);
     log<<I<<'\t';
     log<<Q<<'\t';

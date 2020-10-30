@@ -30,11 +30,17 @@ Hilbert::Hilbert(const Hilbert &copy){
 }
 
 float Hilbert::ProcessI(float sample){
-  return simple_iir(sample, Icoef, Imem);
+  float result = simple_iir(sample, Icoef, Imem);
+  // Correct the gain
+  result *= 1./4000;
+  return result;
 }
 
 float Hilbert::ProcessQ(float sample){
-  return simple_iir(sample, Qcoef, Qmem);
+  float result = simple_iir(sample, Qcoef, Qmem);
+  // Correct the gain
+  result *= 1./60;
+  return result;
 }
 
 Hilbert::~Hilbert(void){
