@@ -269,19 +269,6 @@ Wire Wire Line
 	2950 4100 2950 4200
 Connection ~ 2950 4200
 $Comp
-L Device:D_Schottky D?
-U 1 1 5F53ABD8
-P 2050 2850
-AR Path="/5ED6119E/5F53ABD8" Ref="D?"  Part="1" 
-AR Path="/5F53ABD8" Ref="D101"  Part="1" 
-F 0 "D101" H 2050 2633 50  0000 C CNN
-F 1 "D_Schottky" H 2050 2724 50  0000 C CNN
-F 2 "Diodes_SMD:D_0805" H 2050 2850 50  0001 C CNN
-F 3 "~" H 2050 2850 50  0001 C CNN
-	1    2050 2850
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:LED D?
 U 1 1 5F53ABE4
 P 3050 2650
@@ -575,10 +562,30 @@ AR Path="/5EE4CC2E/5F88352B" Ref="D?"  Part="1"
 AR Path="/5F88352B" Ref="D102"  Part="1" 
 F 0 "D102" V 2254 3230 50  0000 L CNN
 F 1 "BAT54S" V 2345 3230 50  0000 L CNN
-F 2 "TO_SOT_Packages_SMD:SOT-23" H 2300 3150 50  0001 C CNN
+F 2 "digikey-footprints:SOT-23-3" H 2300 3150 50  0001 C CNN
 F 3 "~" H 2300 3150 50  0001 C CNN
 	1    2300 3150
 	0    1    -1   0   
 $EndComp
 NoConn ~ 2300 3450
+$Comp
+L dk_Diodes-Rectifiers-Single:SS14 D101
+U 1 1 5F481CBF
+P 2100 2850
+F 0 "D101" H 2150 3075 50  0000 C CNN
+F 1 "SS14" H 2150 2984 50  0000 C CNN
+F 2 "digikey-footprints:DO-214AC" H 2300 3050 60  0001 L CNN
+F 3 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" H 2300 3150 60  0001 L CNN
+F 4 "SS14CT-ND" H 2300 3250 60  0001 L CNN "Digi-Key_PN"
+F 5 "SS14" H 2300 3350 60  0001 L CNN "MPN"
+F 6 "Discrete Semiconductor Products" H 2300 3450 60  0001 L CNN "Category"
+F 7 "Diodes - Rectifiers - Single" H 2300 3550 60  0001 L CNN "Family"
+F 8 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" H 2300 3650 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/on-semiconductor/SS14/SS14CT-ND/965729" H 2300 3750 60  0001 L CNN "DK_Detail_Page"
+F 10 "DIODE SCHOTTKY 40V 1A SMA" H 2300 3850 60  0001 L CNN "Description"
+F 11 "ON Semiconductor" H 2300 3950 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 2300 4050 60  0001 L CNN "Status"
+	1    2100 2850
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -307,28 +307,6 @@ X 2 2 150 0 50 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Device_D_Schottky
-#
-DEF Device_D_Schottky D 0 40 N N 1 F N
-F0 "D" 0 100 50 H V C CNN
-F1 "Device_D_Schottky" 0 -100 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- TO-???*
- *_Diode_*
- *SingleDiode*
- D_*
-$ENDFPLIST
-DRAW
-P 2 0 1 0 50 0 -50 0 N
-P 4 0 1 10 50 50 50 -50 -50 0 50 50 N
-P 6 0 1 10 -75 25 -75 50 -50 50 -50 -50 -25 -50 -25 -25 N
-X K 1 -150 0 100 R 50 50 1 1 P
-X A 2 150 0 100 L 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # Device_D_Schottky_x2_Serial_AKC
 #
 DEF Device_D_Schottky_x2_Serial_AKC D 0 30 Y N 1 F N
@@ -632,6 +610,31 @@ P 4 0 1 0 130 15 115 -10 145 -10 130 15 N
 X G 1 -200 0 100 R 50 50 1 1 I
 X S 2 100 -200 100 U 50 50 1 1 P
 X D 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# dk_Diodes-Rectifiers-Single_SS14
+#
+DEF dk_Diodes-Rectifiers-Single_SS14 D 0 40 Y Y 1 F N
+F0 "D" 50 100 50 H V C CNN
+F1 "dk_Diodes-Rectifiers-Single_SS14" 50 -100 50 H V C CNN
+F2 "digikey-footprints:DO-214AC" 200 200 60 H I L CNN
+F3 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" 200 300 60 H I L CNN
+F4 "SS14CT-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "SS14" 200 500 60 H I L CNN "MPN"
+F6 "Discrete Semiconductor Products" 200 600 60 H I L CNN "Category"
+F7 "Diodes - Rectifiers - Single" 200 700 60 H I L CNN "Family"
+F8 "https://www.onsemi.com/pub/Collateral/SS19-D.PDF" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/on-semiconductor/SS14/SS14CT-ND/965729" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "DIODE SCHOTTKY 40V 1A SMA" 200 1000 60 H I L CNN "Description"
+F11 "ON Semiconductor" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+P 2 0 1 0 0 0 100 0 N
+P 2 0 1 0 0 50 0 -50 N
+P 4 0 1 0 100 50 100 -50 0 0 100 50 F
+X ~ A 200 0 100 L 50 50 1 1 P
+X ~ K -100 0 100 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
